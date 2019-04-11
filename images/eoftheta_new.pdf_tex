@@ -49,8 +49,8 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.55804065)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{../figs/eoftheta_new.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{images/eoftheta_new.pdf}}%
     \put(0.44596769,0.44565116){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\vec{\theta}$}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{../figs/eoftheta_new.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{images/eoftheta_new.pdf}}%
   \end{picture}%
 \endgroup%
