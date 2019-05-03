@@ -49,7 +49,7 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.85290092)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{expand_eoftheta.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{images/expand_eoftheta.pdf}}%
     \put(0.09884613,0.09884613){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
     \put(0.09591577,0.13541354){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$E_{00}(\b\theta)$}}}%
     \put(0.09591577,0.41783105){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$E_{01}(\b\theta)$}}}%
