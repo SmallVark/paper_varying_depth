@@ -1,20 +1,39 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{22}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Addison} {et~al.}(2016){Addison}, {Huang}, {Watts}, {Bennett},
+  {Halpern}, {Hinshaw}, \& {Weiland}}]{2016ApJ...818..132A}
+{Addison}, G.~E., {Huang}, Y., {Watts}, D.~J., {et~al.} 2016, \apj, 818, 132
 
 \bibitem[{{Asgari} \& {Heymans}(2018)}]{2018arXiv181110596A}
 {Asgari}, M. \& {Heymans}, C. 2018, arXiv e-prints [\eprint[arXiv]{1811.10596}]
 
-\bibitem[{{Asgari} {et~al.}(2017){Asgari}, {Heymans}, {Blake},
-  {Harnois-Deraps}, {Schneider}, \& {Van Waerbeke}}]{2017MNRAS.464.1676A}
-{Asgari}, M., {Heymans}, C., {Blake}, C., {et~al.} 2017, \mnras, 464, 1676
+\bibitem[{{Asgari} {et~al.}(2018){Asgari}, {Heymans}, {Hildebrandt}, {Miller},
+  {Schneider}, {Amon}, {Choi}, {Erben}, {Georgiou}, {Harnois-Deraps}, \&
+  {Kuijken}}]{2018arXiv181002353A}
+{Asgari}, M., {Heymans}, C., {Hildebrandt}, H., {et~al.} 2018, arXiv e-prints
+  [\eprint[arXiv]{1810.02353}]
 
 \bibitem[{{Bartelmann} \& {Schneider}(2001)}]{2001PhR...340..291B}
 {Bartelmann}, M. \& {Schneider}, P. 2001, \physrep, 340, 291
+
+\bibitem[{{Battye} \& {Moss}(2014)}]{2014PhRvL.112e1303B}
+{Battye}, R.~A. \& {Moss}, A. 2014, Physical Review Letters, 112, 051303
+
+\bibitem[{{Blake}(2019)}]{2019arXiv190207439B}
+{Blake}, C. 2019, arXiv e-prints [\eprint[arXiv]{1902.07439}]
 
 \bibitem[{{Crittenden} {et~al.}(2002){Crittenden}, {Natarajan}, {Pen}, \&
   {Theuns}}]{2002ApJ...568...20C}
 {Crittenden}, R.~G., {Natarajan}, P., {Pen}, U.-L., \& {Theuns}, T. 2002, \apj,
   568, 20
+
+\bibitem[{{Harnois-D{\'e}raps} {et~al.}(2018){Harnois-D{\'e}raps}, {Amon},
+  {Choi}, {Demchenko}, {Heymans}, {Kannawadi}, {Nakajima}, {Sirks}, {van
+  Waerbeke}, {Cai}, {Giblin}, {Hildebrandt}, {Hoekstra}, {Miller}, \&
+  {Tr{\"o}ster}}]{2018MNRAS.481.1337H}
+{Harnois-D{\'e}raps}, J., {Amon}, A., {Choi}, A., {et~al.} 2018, \mnras, 481,
+  1337
 
 \bibitem[{{Heymans} {et~al.}(2013){Heymans}, {Grocutt}, {Heavens}, {Kilbinger},
   {Kitching}, {Simpson}, {Benjamin}, {Erben}, {Hildebrandt}, {Hoekstra},
@@ -50,6 +69,19 @@
   {Peacock}, {Radovich}, {Schneider}, {Simon}, {Valentijn}, {van den Busch},
   {van Uitert}, \& {Van Waerbeke}}]{2017MNRAS.465.1454H}
 {Hildebrandt}, H., {Viola}, M., {Heymans}, C., {et~al.} 2017, \mnras, 465, 1454
+
+\bibitem[{{K{\"o}hlinger} {et~al.}(2017){K{\"o}hlinger}, {Viola}, {Joachimi},
+  {Hoekstra}, {van Uitert}, {Hildebrandt}, {Choi}, {Erben}, {Heymans},
+  {Joudaki}, {Klaes}, {Kuijken}, {Merten}, {Miller}, {Schneider}, \&
+  {Valentijn}}]{2017MNRAS.471.4412K}
+{K{\"o}hlinger}, F., {Viola}, M., {Joachimi}, B., {et~al.} 2017, \mnras, 471,
+  4412
+
+\bibitem[{{Planck Collaboration} {et~al.}(2016){Planck Collaboration}, {Ade},
+  {Aghanim}, {Arnaud}, {Ashdown}, {Aumont}, {Baccigalupi}, {Banday},
+  {Barreiro}, {Bartolo}, \& et~al.}]{2016A&A...594A..14P}
+{Planck Collaboration}, {Ade}, P.~A.~R., {Aghanim}, N., {et~al.} 2016, \aap,
+  594, A14
 
 \bibitem[{{Planck Collaboration} {et~al.}(2018){Planck Collaboration},
   {Aghanim}, {Akrami}, {Ashdown}, {Aumont}, {Baccigalupi}, {Ballardini},
@@ -93,6 +125,11 @@
   {Mellier}}]{2002A&A...389..729S}
 {Schneider}, P., {van Waerbeke}, L., \& {Mellier}, Y. 2002, \aap, 389, 729
 
+\bibitem[{{Shirasaki} {et~al.}(2019){Shirasaki}, {Hamana}, {Takada},
+  {Takahashi}, \& {Miyatake}}]{2019arXiv190109488S}
+{Shirasaki}, M., {Hamana}, T., {Takada}, M., {Takahashi}, R., \& {Miyatake}, H.
+  2019, arXiv e-prints [\eprint[arXiv]{1901.09488}]
+
 \bibitem[{{Takahashi} {et~al.}(2012){Takahashi}, {Sato}, {Nishimichi},
   {Taruya}, \& {Oguri}}]{2012ApJ...761..152T}
 {Takahashi}, R., {Sato}, M., {Nishimichi}, T., {Taruya}, A., \& {Oguri}, M.
@@ -126,5 +163,10 @@
   {Heymans}}]{2006APh....26...91V}
 {Van Waerbeke}, L., {White}, M., {Hoekstra}, H., \& {Heymans}, C. 2006,
   Astroparticle Physics, 26, 91
+
+\bibitem[{{Verde} {et~al.}(2013){Verde}, {Protopapas}, \&
+  {Jimenez}}]{2013PDU.....2..166V}
+{Verde}, L., {Protopapas}, P., \& {Jimenez}, R. 2013, Physics of the Dark
+  Universe, 2, 166
 
 \end{thebibliography}

@@ -52,6 +52,43 @@ P^{\text{obs}}(\b \ell) = & P(\b \ell)+\int \frac{\text{d}^2\b \ell'}{(2\pi)^2} 
 which is a convolution of the power spectrum and the 2-dimensional sinc function.
 \label{sec:calc of PS}
 
+\subsection{The function $E(\theta)$}
+\label{sec:model_e}
+When computing the shear correlation between a pair of galaxies, it is of central importance whether those two galaxies lie in the same pointing or not. We want to model the probability that a pair of galaxies with separation $\b\theta$ lie in the same pointing by the function $E(\b\theta)$, which we will derive here:
+
+{
+\def\vec{\b}
+\begin{figure}
+    \centering
+    \def\svgwidth{200pt}    
+    \hspace*{1cm}
+    \input{images/eoftheta_new.pdf_tex}  
+    \hspace*{-2cm}
+    \caption[Graphic how to obtain $E(\b\theta)$]{Graphic representation on how to obtain the function $E(\b\theta)$. For a separation vector $\b\theta$, the dashed square represents the area of galaxies that have their partner in the same pointing.}
+    \label{fig:explain_etheta}
+\end{figure}
+}
+Given one square field of length $L$ (in our case $L=60\arcmin$) and a separation vector $\b\theta$, without loss of generality we can assume $\theta_1,\theta_2\geq 0$. As depicted in Figure \ref{fig:explain_etheta}, the dashed square represents all possible positions that the first galaxy can take, such that the second galaxy is still within the same pointing. The volume of this square equals \begin{equation}
+V(|\b\theta|,\phi)  = \big[L-|\b\theta|\cos(\phi)\big]\,\big[L-|\b\theta|\sin(\phi)\big]\, ,
+\end{equation} where $\phi$ represents the angle of the vector $\b\theta$. The function $E(\b\theta)$ then simply equals $V(|\b\theta|,\phi)/L^2$. To exclude negative Volumes (which could occur when $|\b\theta|>1$ holds), we need to add the Heaviside theta function $\mathcal{H}$:
+\begin{equation}
+E(\b\theta)  = \left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right]\, \mathcal{H}\left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\mathcal{H}\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right]\, .
+\label{eq:eoftheta1}
+\end{equation} 
+As $E(\b\theta)$ is not isotropic, in order to obtain the function $E(\theta) = E(|\b\theta|)$, we need to azimuthally average Equation \eqref{eq:eoftheta1} over all angles $\phi$. While the case $\theta_1,\theta_2\geq 0$ certainly does not hold for all angles $\phi$, we can eliminate the other cases by simple symmetry.
+\begin{align}
+E(\theta) = & \frac{4}{2\pi}\int_0^{\frac{\pi}{2}}\d\phi\, E(\b\theta) = \frac{2}{\pi}\begin{cases}
+\int_0^{\frac{\pi}{2}} \d\phi\, \left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right]\, ,  & |\b\theta|  \leq L \\[10pt]
+\int_{\cos\inv(L/|\b\theta|)}^{\sin\inv(L/|\b\theta|)} \d\phi\, \left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right] \, , \quad   & L \leq |\b\theta| \leq \sqrt{2}L \\[10pt]
+0\, , &\sqrt{2}L \leq\theta
+\end{cases} \nonumber\\[10pt]
+ = & \begin{cases}
+\frac{1}{L^2 \pi}\left[L^2\pi - (4L-\theta) \theta\right]\, ,  & \theta \leq L \\[10pt]
+\frac{2}{\pi}\,\left[4\sqrt{\frac{\theta^2}{L^2}-1} -1 - \frac{\theta^2}{2L^2} - \cos\inv\left(\frac{L}{\theta}\right) + \sin\inv\left(\frac{L}{\theta}\right)\right]\, ,  & L  \leq \theta \leq \sqrt{2}L \\[10pt]
+0\, ,  & \sqrt{2}L \leq \theta
+\end{cases}\, .
+\end{align}
+
 \subsection{Calculation of the shear correlation functions}
 \label{sec:calc of xipm}
 Following \citet{2017MNRAS.465.1454H}, given a set of galaxies we calculate the shear correlation functions via \begin{equation}

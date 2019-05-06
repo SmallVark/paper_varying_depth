@@ -13,58 +13,43 @@ g(\chi,p_i) =& \int_\chi^{\chi_H} {\rm d}\chi'\, p_i(\chi') \frac{f_K(\chi'-\chi
 \end{align}
 Here, $J_{0,4}$ denote the 0-th and 4-th order Bessel Functions.
 \subsection{Using an analytic Model}
-For a first simple analysis we will assume that a deeper redshift distribution just yields a stronger shear signal. Following \citet{2006APh....26...91V}, we estimate
+\label{sec:xipm_analytic}
+For a first simple analysis we will assume that a deeper redshift distribution just yields a stronger shear signal, in the sense that the shear field for a deeper redshift distribution gets multiplied by a weight $W$. While this is not true for a 3-dimensional matter distribution, it should be valid for small variations in redshift. Additionally, we assume that a higher depth does not only lead to a stronger average shear, but also to a higher galaxy number density, implying a correlation between those two quantities.
+
+Let $N^i(\b \theta),N^j(\b\theta)$ be the average weighted number of galaxies per pointing in redshift bins $i$ and $j$ and let $W^i(\b \theta),W^j(\b\theta)$ be the weighting of average shear. The observed correlation function $\xi^{ij,\text{obs}}_\pm(\theta)$ now changes from one of constant depth $\xi_\pm^{ij,\rm{const}}(\theta)$ via (compare Eq. \todo{Take eq. from Hildebrandt et al. (2017)?})
+\begin{align}
+\xi^{ij,\text{obs}}_\pm(\theta) = & \frac{\la N^i(\bth)N^j(\bthp)\gamma^{i,\rm{obs}}_{\rm t}(\bth)\gamma^{j,\rm{obs}}_{\rm t}(\bthp)\ra }{\la N^i(\bth)N^j(\bthp)\ra} \pm \frac{\la N^i(\bth)N^j(\bthp)\gamma^{i,\rm{obs}}_\times(\bth)\gamma^{j,\rm{obs}}_\times(\bthp)\ra }{\la N^i(\bth)N^j(\bthp)\ra} \nonumber\\
+ = & \frac{\la N^i(\bth)N^j(\bthp)W^i(\bth)W^j(\bthp)\ra}{\la N^i(\bth)N^j(\bthp)\ra} \xi_{\pm}^{ij,\rm{const}}(\theta) \, ,
+ \label{eq:xipmblub1}
+ \end{align}
+ where the average $\la\ldots\ra$ represents both an ensemble average as well as an average over the position $\bth$.
+ Assuming that depth and galaxy number density of neighbouring pointings are uncorrelated, the only important property of a galaxy pair is whether or not they lie in the same pointing, which is described by the function $E(\theta)$.
+
+To compute the modified shear correlation functions, we parametrize the number densities \linebreak$N^{i}(\b \theta)=\la N^{i} \ra [1+n^{i}(\b \theta)]$ and the weight $W^{i}(\b \theta)=1+w^{i}(\b \theta)$ and, as in \eqref{eq:defweightf}, interpret $n^{i}(\b \theta)$ as a function with average $\la n^{i} \ra = 0$, that is constant on each pointing. Without loss of generality we set $\la N^i\ra = 1$. We can see that $\la n^i(\bth)n^j(\bthp)\ra = E(\theta)\la n^i(\bth)n^j(\bth)\ra \equiv E(\theta)\la n^i n^j \ra$ holds and compute:
+\begin{align}
+&\la N^i(\bth)N^j(\bthp)W^i(\bth)W^j(\bthp)\ra \nonumber\\
+&\qquad =  1 + \la n^iw^i\ra + \la n^j w^j\ra + E(\theta)\left[ \la n^in^j\ra + \la n^i w^j \ra  + \la n^jw^i\ra + \la w^iw^j\ra + \la n^in^jw^i\ra + \la n^in^jw^j\ra + \la n^iw^iw^j\ra \right. \nonumber\\
+&\qquad\quad \left. + \la n^jw^iw^j\ra + \la n^in^jw^iw^j\ra  \right] 
+ \end{align}
+Ignoring correlations higher than second order\footnote{It is not inherently obvious that this is a valid assumption. However, after performing both calculations we noticed no difference between the outcomes of both equations}, and performing the same calculation for the denominator of Eq.\,\eqref{eq:xipmblub1}, we get
+ \begin{align}
+ \xi^{ij,\rm{obs}}_\pm(\theta) = \frac{1 + \la n^iw^i\ra + \la n^jw^j\ra + E(\theta)\left[\la n^in^j\ra + \la n^iw^j\ra + \la n^j w^i\ra + \la w^iw^j\ra\right]}{1+E(\theta)\la n^i n^j\ra }\xi^{ij,\rm{const}}_\pm (\theta) \, .
+ \end{align}
+For the calculation of the reference correlation functions $\xi_\pm^{ij}(\theta)$ we distribute the \textit{same} galaxies into our survey, only this time we will not order their weightings $W$ or their number densities $N$ by pointing. We can imagine this by cutting the footprint into infinitesimal elements $\d^2\b\theta$, and redistributing those at random. When we calculate the correlation function of this survey, we note that $\la n^i(\bth)\ra \la n^j(\bthp)\ra = 0$ holds for $\b\theta\neq \b 0$, as the two corresponding infinitesimal elements have uncorrelated weighting and number density. Performing the same calculations as above, this yields a relation between the correlation function of constant optical depth $\xi_\pm^{ij,\rm{const}}$ and the modelled one $\xi_\pm^{ij}$:
+\begin{equation}
+\xi_\pm^{ij}(\theta) = \left(1+\la n^iw^i\ra + \la n^jw^j\ra \right)\xi_\pm^{ij,\rm{const}}(\theta)\, .
+\end{equation}
+The ratio of modelled and observed correlation function thus becomes: \begin{equation}
+\frac{\xi^{ij}_\pm(\theta)}{\xi_\pm^{ij,\rm{obs}}(\theta)} \approx \frac{1+\la n^iw^i\ra+\la n^jw^j\ra + E(\theta)\la n^in^j\ra}{1 + \la n^iw^i\ra + \la n^jw^j\ra + E(\theta)\left[\la n^in^j\ra + \la n^iw^j\ra + \la n^j w^i\ra + \la w^iw^j\ra\right]}
+\, .
+\end{equation}
+It is interesting to note that $\xi^{ij}_\pm = \xi_\pm^{ij,\rm{obs}}$ holds wherever $E(\theta)=0$, meaning that the correlation function is not affected for large angular scales. Given a set of average redshifts, following \citet{2006APh....26...91V}, we can estimate 
 \[
 \la |\gamma| \ra \propto \la z \ra ^{0.85}\, .
 \]
-\todo{Maybe implement redshift-dependent index?}
-Additionally, we assume that a higher depth does not only lead to a stronger average shear, but also to a higher galaxy number density, implying a correlation between those two quantities.
-
-%For a pair of galaxies that we use to measure the correlation function, it is crucial to determine whether those two galaxies lie within the same pointing. We want to define a function $E(\theta)$ that determines 
-
-Let $N(\b \theta)$ be the number-density per tile and $W(\b \theta)$ the weighting of average shear. The observed correlation function $\xi^{\text{obs}}_\pm(\theta)$ now changes from one of constant depth $\xi_\pm^{\rm const}$ via 
-\begin{align*}
-\xi^{\text{obs}}_\pm(\theta) = & \frac{\la N(\b 0)N(\b \theta)\gammao_{\rm t}(\b 0)\gammao_{\rm t}(\b \theta)\ra }{\la N(\b 0)N(\b \theta)\ra} \pm \frac{\la N(\b 0)N(\b \theta)\gammao_\times(\b 0)\gammao_\times(\b \theta)\ra }{\la N(\b 0)N(\b \theta)\ra} \\
- = & \frac{\la N(\b 0)N(\b \theta)W(\b 0)W(\b \theta)\ra}{\la N(\b 0)N(\b \theta)\ra} \xi_{\pm}^{\rm const}(\theta) \, .
- \end{align*}
- Assuming that depth and galaxy number density of neighbouring pointings are uncorrelated, the only important property of a galaxy pair is whether or not they lie in the same pointing. We want to denote the probability that a random pair of galaxies of distance $\theta$ lie in the same pointing with $E(\theta)$. This function can be calculated as in Appendix \ref{sec:details on etheta} and equates to
-\begin{equation}
-E(\theta) =  \begin{cases}
-\frac{1}{L^2 \pi}\left[L^2\pi - (4L-\theta) \theta\right]\, ,  & \theta \leq L \\[10pt]
-\frac{2}{\pi}\,\left[4\sqrt{\frac{\theta^2}{L^2}-1} -1 - \frac{\theta^2}{2L^2} - \cos\inv\left(\frac{L}{\theta}\right) + \sin\inv\left(\frac{L}{\theta}\right)\right]\, ,  & L  \leq \theta \leq \sqrt{2}L \\[10pt]
-0\, ,  & \sqrt{2}L \leq \theta
-\end{cases}\, .
-\end{equation} 
- This function is depicted in Figure \ref{fig:eoftheta_lin}. 
- 
- \begin{figure}
- \centering
- \includegraphics[width=0.5\textwidth]{images/eoftheta.png}
- \caption{Probability that a random pair of galaxies of distance $\theta$ lie in the same pointing.}
- \label{fig:eoftheta_lin}
- \end{figure}
-
-We again parametrize the number density $N(\b \theta)=\la N \ra (1+n(\b \theta))$ and the weight $W(\b \theta)=1+w(\b \theta)$ and, as in \eqref{eq:defweightf}, interpret $n(\b \theta)$ as a locally constant function with average $\la n \ra = 0$. We can see that $\la n(\b 0)n(\b \theta)\ra = E(\theta)\la n(\b 0)n(\b 0)\ra \equiv E(\theta)\la n n \ra$ holds and get for the autocorrelation of a single bin, 
- \begin{align}
-\xi^{\text{obs}}_\pm(\theta) = & \frac{1 + 2\la nw \ra + E(\theta)\left[\la (n+w)^2\ra + 2 \la n^2 w\ra + 2\la nw^2\ra + \la n^2 w^2\ra \right]}{1+E(\theta)\la n^2\ra }\xi_\pm^{\rm const}(\theta) \\
-\approx & \frac{1 + 2\la nw \ra + E(\theta)\left[\la (n+w)^2\ra \right]}{1+E(\theta)\la n^2\ra }\xi_\pm^{\rm const}(\theta)\, , \nonumber
- \label{eq:ffunct}
-\end{align}
-holds. We see that in addition to a modification of the correlation function due to the stronger shear signal in deeper pointings, we also get a scale-independent modification due to the correlation between depth and number density.
-
-However, as a survey of constant depth is completely unrealistic, also the modelled correlation function will be subject to the same effect. If we assume the same redshift-distributions for galaxies as in the case of varying depth, and just assert that those changes are not correlated with position, we get 
-\begin{equation}
-\xi_\pm = (1+2\la nw\ra)\xi_\pm^{\rm const}\, .
-\end{equation}
-The ratio of modelled and observed correlation function thus becomes: \begin{align}
-\frac{\xi_\pm}{\xi_\pm^{\rm obs}} = & \frac{\left(1+2\la nw\ra\left)\left(1+E(\theta)\la n^2\ra\right)\right.\right.}{1 + 2\la nw \ra + E(\theta)\left[\la (n+w)^2\ra + 2 \la n^2 w\ra + 2\la nw^2\ra + \la n^2 w^2\ra \right]} \\
-\equiv & F(\theta) \, .
-\end{align}
-A similar, but longer, equation governs the cross-correlation between different bins. This equation and its derivation can be found in Appendix \todo{create this and cite it.}.
-%It is interesting to note that $F(\theta)=1$ holds wherever $E(\theta)=0$, meaning that the correlation function is not affected for large angular scales. 
-We shall later see that this approximation is valid for higher tomographic redshift bins $z\gtrsim 0.5$, but starts to break down at lower redshifts. 
+We shall later see that this approximation is valid for higher tomographic redshift bins $z\gtrsim 0.5$, but starts to break down at lower redshifts. We thus want to construct a model that is valid for an arbitrary distribution of redshifts and does not rely on the assumption of a single lens plane. 
 \subsection{Using a semi-analytic Model}
-The analysis of data from the Kilo-Degree Survey showed that the redshift-distribution of sources was highly correlated with the depth in the $r$-band. We thus chose to separate the survey into 10 percentiles, sorted by $r$-band depth, meaning that if a pointing had a worse depth than 90\% of the other pointings, it would belong to the first percentile, and so on. Now for each percentile $m$ and each tomographic redshift bin $i$ we can extract a weighted number of galaxies $N^i_m$ and, in case the pointing overlaps with a spectroscopic survey, a source redshift distribution $p^i_m(z)$. Using \eqref{eq:xipm_from_pkappa}, we can compute the shear correlation functions $\xi_{\pm,mn}^{ij}(\theta)$ for each set of percentiles $m,n$ and redshift bins $i,j$\footnote{For the calculation of the shear correlation functions we use the \textsc{Nicaea}-program. Among other things, it calculates the shear correlation functions for a given cosmology and source redshift distribution. To estimate the power spectrum on nonlinear scales we use the methods developed by \citet{2012ApJ...761..152T}.}. When we compute the measured shear correlation functions of a survey, we take the weighted average of tangential and cross shears of all pairs of galaxies (\citet{2017MNRAS.465.1454H} give a good overview for the process). If, for a single pair of galaxies, one galaxy lies in the $m$-th percentile of redshift bin $i$ and the second one lies in the $n$-th percentile of redshift bin $j$, then their contribution to the observed correlation functions is, on average, $\xi_{\pm,mn}^{ij}(\theta)$. This means that if we know each of those single correlation functions, we can reconstruct the total correlation functions via a weighted average of the single functions. Formally, we define \[
+The analysis of data from the Kilo-Degree Survey showed that the redshift-distribution of sources was highly correlated with the depth in the $r$-band. We thus chose to separate the survey into 10 percentiles, sorted by $r$-band depth, meaning that if a pointing had a worse depth than 90\% of the other pointings, it would belong to the first percentile, and so on. Now for each percentile $m$ and each tomographic redshift bin $i$ we can extract a weighted number of galaxies $N^i_m$ and, in case the pointing overlaps with a spectroscopic survey, a source redshift distribution $p^i_m(z)$. Using \eqref{eq:xipm-pkappa}, we can compute the shear correlation functions $\xi_{\pm,mn}^{ij}(\theta)$ for each set of percentiles $m,n$ and redshift bins $i,j$\footnote{For the calculation of the shear correlation functions we use the \textsc{Nicaea}-program. Among other things, it calculates the shear correlation functions for a given cosmology and source redshift distribution. To estimate the power spectrum on nonlinear scales we use the methods developed by \citet{2012ApJ...761..152T}.}. When we compute the measured shear correlation functions of a survey, we take the weighted average of tangential and cross shears of all pairs of galaxies (\citet{2017MNRAS.465.1454H} give a good overview for the process\todo{Cite the same eq. as above from Hildebrandt et al. (2017)}). If, for a single pair of galaxies, one galaxy lies in the $m$-th percentile of redshift bin $i$ and the second one lies in the $n$-th percentile of redshift bin $j$, then their contribution to the observed correlation functions is, on average, $\xi_{\pm,mn}^{ij}(\theta)$. This means that if we know each of those single correlation functions, we can reconstruct the total correlation functions via a weighted average of the single functions. Formally, we define \[
 \xi_\pm^{ij,\rm{obs}}(\theta) = \frac{\sum_{m,n} P_{mn}^{ij}(\theta)\xi_{\pm,mn}^{ij}(\theta)}{\sum_{m,n} P_{mn}^{ij}(\theta)}\, ,
 \label{eq:def_xiobs}
 \]
@@ -105,7 +90,4 @@ Consequently, we can apply this to \eqref{eq:correctionfunction1}, yielding
 \xi_{\pm}^{ij,\rm{obs}}(\theta) = \frac{1}{C}\left\{ E(\theta)\left[\sum_{m=1}^{10} N_m^iN_m^j \xi_{\pm,mm}^{ij}(\theta)\right] +\frac{\big[1-E(\theta)\big]}{10}\xi_\pm^{ij}(\theta)N^iN^j\right\}\, .
 \label{eq:correctionfunction2}
 \end{equation}
-For each set of redshift bins we thus only have to compute eleven correlation functions, which reduces the number of functions to compute from 1275 to 165. We can see that for large distances $\theta$, such that $E(\theta)=0$ holds, we have $C=N^iN^j$ and thus \[
-\xi_{\pm}^{ij,\rm{obs}}(\theta) = \frac{1}{N^iN^j}\xi_\pm^{ij}(\theta)N^iN^j = \xi_\pm^{ij}(\theta)\, ,
-\]
-so on large scales our observed correlation functions agree with the ones that we would usually calculate.
+For each set of redshift bins we thus only have to compute eleven correlation functions, which reduces the number of functions to compute from 1275 to 165. We can see that for large distances $\theta$, such that $E(\theta)=0$ holds, the observed correlation functions agree with the ones that we would usually calculate.
