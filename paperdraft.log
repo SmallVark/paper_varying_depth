@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  6 MAY 2019 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  7 MAY 2019 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1327,48 +1327,46 @@ LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
 \openout2 = `model_xipm.aux'.
 
  (./model_xipm.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<images/eoftheta.pdf, id=33, 433.62pt x 289.08pt>
+File: images/eoftheta.pdf Graphic file (type pdf)
+ <use images/eoftheta.pdf>
+Package pdftex.def Info: images/eoftheta.pdf used on input line 30.
+(pdftex.def)             Requested size: 196.324pt x 130.88318pt.
+
+Underfull \vbox (badness 1490) has occurred while \output is active []
 
  [5
 
 
 ]
-Overfull \hbox (24.63875pt too wide) in paragraph at lines 33--33
+Overfull \hbox (24.63875pt too wide) in paragraph at lines 40--40
 [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-Underfull \vbox (badness 7012) has occurred while \output is active []
+ [6 <./images/eoftheta.pdf>] [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7])
-[8] [9]
+ [8])
+[9]
 \openout2 = `results.aux'.
 
- (./results.tex <images/allxis_0111.pdf, id=52, 433.62pt x 289.08pt>
+ (./results.tex <images/allxis_0111.pdf, id=70, 433.62pt x 289.08pt>
 File: images/allxis_0111.pdf Graphic file (type pdf)
 
 <use images/allxis_0111.pdf>
 Package pdftex.def Info: images/allxis_0111.pdf used on input line 6.
 (pdftex.def)             Requested size: 392.64803pt x 261.7796pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2951) has occurred while \output is active []
 
  [10
 
 
  <./images/allxis_0111.pdf>]
-
-LaTeX Warning: Reference `fig:mcmc_kids' on page 11 undefined on input line 15.
-
-
-
-LaTeX Warning: Reference `fig:mcmc_euclid' on page 11 undefined on input line 1
-5.
-
-<images/eandbmodes0p5t100.pdf, id=83, 433.62pt x 289.08pt>
+<images/eandbmodes0p5t100.pdf, id=101, 433.62pt x 289.08pt>
 File: images/eandbmodes0p5t100.pdf Graphic file (type pdf)
 
 <use images/eandbmodes0p5t100.pdf>
@@ -1525,14 +1523,14 @@ Overfull \hbox (27.61707pt too wide) in paragraph at lines 51--51
  []
 
 (./images/eoftheta_new.pdf_tex
-<images/eoftheta_new.pdf, id=175, page=1, 437.44484pt x 244.112pt>
+<images/eoftheta_new.pdf, id=193, page=1, 437.44484pt x 244.112pt>
 File: images/eoftheta_new.pdf Graphic file (type pdf)
 
 <use images/eoftheta_new.pdf, page 1>
 Package pdftex.def Info: images/eoftheta_new.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 200.0pt x 111.6075pt.
 
-<images/eoftheta_new.pdf, id=176, page=2, 437.44484pt x 244.112pt>
+<images/eoftheta_new.pdf, id=194, page=2, 437.44484pt x 244.112pt>
 File: images/eoftheta_new.pdf Graphic file (type pdf)
 
 <use images/eoftheta_new.pdf, page 2>
@@ -1553,7 +1551,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
 (./images/expand_eoftheta.pdf_tex
-<images/expand_eoftheta.pdf, id=190, page=1, 284.33081pt x 242.50601pt>
+<images/expand_eoftheta.pdf, id=208, page=1, 284.33081pt x 242.50601pt>
 File: images/expand_eoftheta.pdf Graphic file (type pdf)
 
 <use images/expand_eoftheta.pdf, page 1>
@@ -1566,37 +1564,34 @@ LaTeX Warning: Reference `sec:xipm_semianalytic' on page 21 undefined on input
 line 162.
 
 (./images/e_1.pdf_tex
-<images/e_1.pdf, id=196, page=1, 164.10234pt x 322.806pt>
+<images/e_1.pdf, id=215, page=1, 164.10234pt x 322.806pt>
 File: images/e_1.pdf Graphic file (type pdf)
 
 <use images/e_1.pdf, page 1>
 Package pdftex.def Info: images/e_1.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 100.0pt x 196.70941pt.
 
-<images/e_1.pdf, id=197, page=2, 164.10234pt x 322.806pt>
+<images/e_1.pdf, id=216, page=2, 164.10234pt x 322.806pt>
 File: images/e_1.pdf Graphic file (type pdf)
 
 <use images/e_1.pdf, page 2>
 Package pdftex.def Info: images/e_1.pdf, page2 used on input line 54.
 (pdftex.def)             Requested size: 100.0pt x 196.70941pt.
 ) (./images/e_2.pdf_tex
-<images/e_2.pdf, id=198, page=1, 162.20601pt x 322.806pt>
+<images/e_2.pdf, id=217, page=1, 162.20601pt x 322.806pt>
 File: images/e_2.pdf Graphic file (type pdf)
 
 <use images/e_2.pdf, page 1>
 Package pdftex.def Info: images/e_2.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 100.0pt x 199.00967pt.
 
-<images/e_2.pdf, id=199, page=2, 162.20601pt x 322.806pt>
+<images/e_2.pdf, id=218, page=2, 162.20601pt x 322.806pt>
 File: images/e_2.pdf Graphic file (type pdf)
 
 <use images/e_2.pdf, page 2>
 Package pdftex.def Info: images/e_2.pdf, page2 used on input line 54.
 (pdftex.def)             Requested size: 100.0pt x 199.00967pt.
-)
-Underfull \vbox (badness 3029) has occurred while \output is active []
-
- [21 <./images/e_1.pdf> <./images/e_1.pdf
+) [21 <./images/e_1.pdf> <./images/e_1.pdf
 
 pdfTeX warning: pdflatex (file ./images/e_1.pdf): PDF inclusion: multiple pdfs 
 with page group included in a single page
@@ -1609,99 +1604,141 @@ with page group included in a single page
 pdfTeX warning: pdflatex (file ./images/e_2.pdf): PDF inclusion: multiple pdfs 
 with page group included in a single page
 >] (./images/drawing.pdf_tex
-<images/drawing.pdf, id=206, page=1, 115.74901pt x 161.60374pt>
+<images/drawing.pdf, id=225, page=1, 115.74901pt x 161.60374pt>
 File: images/drawing.pdf Graphic file (type pdf)
 
 <use images/drawing.pdf, page 1>
 Package pdftex.def Info: images/drawing.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 120.0pt x 167.5461pt.
 
-<images/drawing.pdf, id=207, page=2, 115.74901pt x 161.60374pt>
+<images/drawing.pdf, id=226, page=2, 115.74901pt x 161.60374pt>
 File: images/drawing.pdf Graphic file (type pdf)
 
 <use images/drawing.pdf, page 2>
 Package pdftex.def Info: images/drawing.pdf, page2 used on input line 54.
 (pdftex.def)             Requested size: 120.0pt x 167.5461pt.
 )
-<images/eab.pdf, id=208, 433.62pt x 289.08pt>
+<images/eab.pdf, id=227, 433.62pt x 289.08pt>
 File: images/eab.pdf Graphic file (type pdf)
  <use images/eab.pdf>
 Package pdftex.def Info: images/eab.pdf used on input line 221.
 (pdftex.def)             Requested size: 314.11961pt x 209.42104pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `fig:100degsqr' on page 22 undefined on input line 227
-.
-
-
-LaTeX Warning: Reference `fig:450degsqr' on page 22 undefined on input line 227
-.
-
-
-LaTeX Warning: Reference `fig:1000degsqr' on page 22 undefined on input line 22
-7.
-
-) [22] [23 <./images/drawing.pdf> <./images/drawing.pdf
+ [22 <./images/drawing.pdf> <./images/drawing.pdf
 
 pdfTeX warning: pdflatex (file ./images/drawing.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
-> <./images/eab.pdf
+>] <images/obscorr.pdf, id=233, 433.62pt x 433.62pt>
+File: images/obscorr.pdf Graphic file (type pdf)
+ <use images/obscorr.pdf>
+Package pdftex.def Info: images/obscorr.pdf used on input line 233.
+(pdftex.def)             Requested size: 274.85242pt x 274.86264pt.
 
-pdfTeX warning: pdflatex (file ./images/eab.pdf): PDF inclusion: multiple pdfs 
-with page group included in a single page
->] (./paperdraft.aux (./introduction.aux) (./model_ps.aux) (./model_xipm.aux)
-(./results.aux) (./discussion.aux) (./appendix.aux))
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/euclid.pdf, id=234, 433.62pt x 433.62pt>
+File: images/euclid.pdf Graphic file (type pdf)
+ <use images/euclid.pdf>
+Package pdftex.def Info: images/euclid.pdf used on input line 239.
+(pdftex.def)             Requested size: 274.85242pt x 274.86264pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23 <./images/eab.pdf>] [24 <./images/obscorr.pdf> <./images/euclid.pdf
+
+pdfTeX warning: pdflatex (file ./images/euclid.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>] <images/100degtwofoot_final.pdf, id=325, 433.62pt x 289.08pt>
+File: images/100degtwofoot_final.pdf Graphic file (type pdf)
+
+<use images/100degtwofoot_final.pdf>
+Package pdftex.def Info: images/100degtwofoot_final.pdf used on input line 248.
+
+(pdftex.def)             Requested size: 392.64803pt x 261.7796pt.
+
+<images/450degtwofoot_final.pdf, id=326, 433.62pt x 289.08pt>
+File: images/450degtwofoot_final.pdf Graphic file (type pdf)
+
+<use images/450degtwofoot_final.pdf>
+Package pdftex.def Info: images/450degtwofoot_final.pdf used on input line 255.
+
+(pdftex.def)             Requested size: 392.64803pt x 261.7796pt.
+
+<images/1000degtwofoot_final.pdf, id=327, 433.62pt x 289.08pt>
+File: images/1000degtwofoot_final.pdf Graphic file (type pdf)
+
+<use images/1000degtwofoot_final.pdf>
+Package pdftex.def Info: images/1000degtwofoot_final.pdf used on input line 262
+.
+(pdftex.def)             Requested size: 392.64803pt x 261.7796pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [25
+
+ <./images/100degtwofoot_final.pdf> <./images/450degtwofoot_final.pdf
+
+pdfTeX warning: pdflatex (file ./images/450degtwofoot_final.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>] [26 <./images/1000degtwofoot_final.pdf>] (./paperdraft.aux
+(./introduction.aux) (./model_ps.aux) (./model_xipm.aux) (./results.aux)
+(./discussion.aux) (./appendix.aux))
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 18061 strings out of 493104
- 327732 string characters out of 6139412
- 406417 words of memory out of 5000000
- 21050 multiletter control sequences out of 15000+600000
+ 18105 strings out of 493104
+ 328836 string characters out of 6139412
+ 414281 words of memory out of 5000000
+ 21088 multiletter control sequences out of 15000+600000
  99088 words of font info for 170 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,19n,79p,2290b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmex
-tra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
-rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/txfonts/txexa.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t
-xsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf
--dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
-mes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperdraft.pdf (23 pages, 675786 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
+mib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfon
+ts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txexa.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
+uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on paperdraft.pdf (26 pages, 927816 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
+ 469 PDF objects out of 1000 (max. 8388607)
+ 350 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

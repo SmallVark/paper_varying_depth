@@ -127,7 +127,7 @@ Now the term $\sum_{a\in F_k^i} w_a^i$ denotes the (weighted) number of galaxies
 \frac{2\pi\theta\,\d\theta \, NA}{10}  \sum_m N_m^i \left[ E(\theta) N_m^j + \frac{1-E(\theta)}{10}\sum_n N_n^j\right]\, .
  \]
 Taking the ratio of the two quantities, we see that Equations \eqref{eq:xip_from_observations} and \eqref{eq:correctionfunction1} are the same\footnote{Note that while here $N_m^i$ denotes a number density, in Equations \eqref{eq:xip_from_observations} and \eqref{eq:correctionfunction1} it denotes the total (weighted) number of galaxies. However, the difference is just a multiplication with the area $A$ of the pointings, which appears both in the numerator and the denominator and is thus cancelled out.}.
-\section{Outlook: Finite field effects}
+\section{Finite field effects}
 \label{sec:expand_eoftheta}
 \begin{figure}
     \centering
@@ -135,7 +135,7 @@ Taking the ratio of the two quantities, we see that Equations \eqref{eq:xip_from
 %    \hspace*{1cm}
     \input{images/expand_eoftheta.pdf_tex}  
 %    \hspace*{-2cm}
-    \caption[Graphic how to obtain $E_{ab}(\theta)$]{Graphic representation of the definitions of $E_{ab}(\theta)$. When the first galaxy is in the bottom left pointing, the probability to find the second galaxy in a pointing of distance $(a,b)$ is $E_{mn}(\theta)$.}
+    \caption{Graphic representation of the definitions of $E_{ab}(\theta)$. When the first galaxy is in the bottom left pointing, the probability to find the second galaxy in a pointing of distance $(a,b)$ is $E_{ab}(\theta)$.}
     \label{fig:expand_etheta}
 \end{figure}
 In this chapter we will outline how to calculate the correction of the correlation functions for a finite survey with a potentially correlated distribution of depth between pointings. Essentially, this boils down to the calculation of $P_{mn}^{ij}(\theta)$ from Equation \eqref{eq:def_xiobs}. We calculate this weighting by the geometrical probability that a pair of galaxies of separation $\theta$ is of percentiles $m$ and $n$, $P(m,n|\theta)$, weighted by the respective number of galaxies in the percentiles $N_m^i,N_n^j$: \[
@@ -181,28 +181,28 @@ we can use the expectation value \eqref{eq:pmnabstar} to calculate \eqref{eq:pmn
 \label{fig:e01theta}
 \end{figure}
 
-The $E_{ab}$ can all be calculated analytically, similar to our method in Chapter \ref{sec:model_e}. We again assume a selection of square fields with side length $L$, and later set $L=60\arcmin$ to adapt to the KV450 survey. As an example, for $E_{01}$ we have several possible situations, depicted in Figure \ref{fig:e01theta}. For a separation vector $\b\theta$ with modulus $\theta<L$ and inclination angle $\phi$, the dashed rectangle in Figure \ref{fig:e01theta}\subref{fig:e01thetaa} depicts the galaxies that have a partner in the upper pointing. For $L<\theta<\sqrt{2}L$, the dashed rectangle in Figure \ref{fig:e01theta}\subref{fig:e01thetaa} represents the area of galaxies with a partner in the upper square under the condition that $\theta\sin(\phi)<L$. For $\theta\sin(\phi)>L$, the situation is depicted by Figure \ref{fig:e01theta}\subref{fig:e01thetab}. As soon as $\theta>\sqrt{2}L$ holds, the situation of Figure \ref{fig:e01theta}\subref{fig:e01thetaa} is impossible. When $\theta<2L$ holds, the vector is only constrained by $\theta\cos(\phi)<L$, but as soon as $\theta >2L$ holds, we additionally need to impose $\theta\sin(\phi)<2L$. Again setting $E_{ab}(\b\theta) = V(\theta,\phi)/L^2$, we define \begin{align}
+The $E_{ab}$ can all be calculated analytically, similar to our method in Chapter \ref{sec:model_e}. We again assume a selection of square fields with side length $L$, and later set $L=60\arcmin$ to adapt to the KV450 survey. As an example, for $E_{01}$ we have several possible situations, depicted in Figure \ref{fig:e01theta}. Again setting $E_{ab}(\b\theta) = V(\theta,\phi)/L^2$, we define \begin{align}
 E_{01}^{(a)}(\b\theta) & \equiv \frac{\theta}{L}\sin(\phi)[1-\frac{\theta}{L}\cos(\phi)] \nonumber\\
 E_{01}^{(b)}(\b\theta) & \equiv [2-\frac{\theta}{L}\sin(\phi)]\, [1-\frac{\theta}{L}\cos(\phi)]
 \end{align}
-Taking the azimuthal average, we compute:
+With some geometric considerations, we compute:
 {
 \begingroup
 \addtolength{\jot}{1em}
 \begin{align}
 E_{01}(\theta) = & \begin{cases}
-\frac{1}{\pi}\int_0^{\frac{\pi}{2}} \d\phi\, E_{01}^{(a)}(\b\theta) & \frac{\theta}{L} < 1 \\[10pt]
- \frac{1}{\pi}  \left[\int_{\cos\inv(L/\theta)}^{\sin\inv(L/\theta)}\d\phi\,E_{01}^{(a)}(\b\theta) + \int_{\sin\inv(L/\theta)}^{\frac{\pi}{2}}\d\phi\, E_{01}^{(b)}(\b\theta) \right]  & 1 < \frac{\theta}{L} < \sqrt{2} \\[10pt]
- \frac{1}{\pi} \int_{\cos\inv(L/\theta)}^{\frac{\pi}{2}}\d\phi\, E_{01}^{(b)}(\b\theta) & \sqrt{2}<\frac{\theta}{L}<2 \\[10pt]
-\frac{1}{\pi} \int_{\cos\inv(L/\theta)}^{\sin\inv(2L/\theta)}\d\phi\, E_{01}^{(b)}(\b\theta) & 2<\frac{\theta}{L}<\sqrt{5} \\[10pt]
- 0 & \sqrt{5}<\frac{\theta}{L}
+\frac{1}{\pi}\int_0^{\frac{\pi}{2}} \d\phi\, E_{01}^{(a)}(\b\theta), & \frac{\theta}{L} < 1 \\[10pt]
+ \frac{1}{\pi}  \left[\int_{\cos\inv(L/\theta)}^{\sin\inv(L/\theta)}\d\phi\,E_{01}^{(a)}(\b\theta) + \int_{\sin\inv(L/\theta)}^{\frac{\pi}{2}}\d\phi\, E_{01}^{(b)}(\b\theta) \right],  & 1 < \frac{\theta}{L} < \sqrt{2} \\[10pt]
+ \frac{1}{\pi} \int_{\cos\inv(L/\theta)}^{\frac{\pi}{2}}\d\phi\, E_{01}^{(b)}(\b\theta), & \sqrt{2}<\frac{\theta}{L}<2 \\[10pt]
+\frac{1}{\pi} \int_{\cos\inv(L/\theta)}^{\sin\inv(2L/\theta)}\d\phi\, E_{01}^{(b)}(\b\theta), & 2<\frac{\theta}{L}<\sqrt{5} \\[10pt]
+ 0, & \sqrt{5}<\frac{\theta}{L}
 \end{cases}\nonumber\\
  = & \begin{cases}
- \frac{(2L-\theta)\theta}{2\pi L^2} & \frac{\theta}{L} < 1 \\[10pt]
- \frac{1}{\pi}\left[\frac{3}{2}- 2\frac{\theta}{L}+\frac{\theta^2}{L^2}+2\sqrt{\frac{\theta^2}{L^2}-1}+2\rm{sec\inv}\left(\frac{\theta}{L}\right)\right] & 1<\frac{\theta}{L}<\sqrt{2} \\[10pt]
- \frac{1}{2\pi}\left[-1-4\frac{\theta}{L}+4\sqrt{\frac{\theta^2}{L^2}-1}+4\rm{csc\inv}\left(\frac{\theta}{L}\right)\right] & \sqrt{2} < \frac{\theta}{L} < 2 \\[10pt]
- \frac{1}{2\pi}\left[-5-\frac{\theta^2}{L^2}+2\sqrt{\frac{\theta^2}{L^2}-4}+4\sqrt{\frac{\theta^2}{L^2}-1}-4\rm{sec\inv}\left(\frac{\theta}{L}\right)+4\sin\inv\left(\frac{2L}{\theta}\right)\right] & 2 < \frac{\theta}{L} < \sqrt{5} \\[10pt]
- 0 & \sqrt{5}<\frac{\theta}{L}
+ \frac{(2L-\theta)\theta}{2\pi L^2}, & \frac{\theta}{L} < 1 \\[10pt]
+ \frac{1}{\pi}\left[\frac{3}{2}- 2\frac{\theta}{L}+\frac{\theta^2}{L^2}+2\sqrt{\frac{\theta^2}{L^2}-1}+2\rm{sec\inv}\left(\frac{\theta}{L}\right)\right], & 1<\frac{\theta}{L}<\sqrt{2} \\[10pt]
+ \frac{1}{2\pi}\left[-1-4\frac{\theta}{L}+4\sqrt{\frac{\theta^2}{L^2}-1}+4\rm{csc\inv}\left(\frac{\theta}{L}\right)\right], & \sqrt{2} < \frac{\theta}{L} < 2 \\[10pt]
+ \frac{1}{2\pi}\left[-5-\frac{\theta^2}{L^2}+2\sqrt{\frac{\theta^2}{L^2}-4}+4\sqrt{\frac{\theta^2}{L^2}-1}-4\rm{sec\inv}\left(\frac{\theta}{L}\right)+4\sin\inv\left(\frac{2L}{\theta}\right)\right], & 2 < \frac{\theta}{L} < \sqrt{5} \\[10pt]
+ 0, & \sqrt{5}<\frac{\theta}{L}
  \end{cases}\, .
 \end{align}
 \endgroup
@@ -225,3 +225,41 @@ E_{01}(\theta) = & \begin{cases}
 Naturally, to calculate those functions for all possible combinations would be rather tedious, however they are simple to determine numerically (compare Figure \ref{fig:eoftheta_sim}). A plot of these functions can be found in Figure \ref{fig:eab}.
 
 When we now simulate random distributions of the depth-function for a $100\,\rm{deg}^2$-field, a $450\,\rm{deg}^2$-field and a $1000\,\rm{deg}^2$-field, we can compare how they differ from each other and estimate how important finite-field effects are. As can be seen from Figures \ref{fig:100degsqr}, \ref{fig:450degsqr} and \ref{fig:1000degsqr}, the effect is quite significant for a $100\,\rm{deg}^2$-field, but almost negligible for a $1000\,\rm{deg}^2$-field. This leads to the assumption that both for the KiDS- as for the Euclid-survey, finite field effects do not need to be accounted for. However, if the distribution of depth is correlated in the surveys, that might have a noticeable impact on the results.
+
+\section{Additional Figures}
+\subsection{Results of the MCMC}
+\begin{figure}[h]
+\centering
+	\includegraphics[width=0.7\textwidth]{images/obscorr.pdf}
+	\caption{Bias in the parameters for a KiDS-like Survey.}
+	\label{fig:mcmc_kids}
+\end{figure}  
+\begin{figure}[h]
+\centering
+	\includegraphics[width=0.7\textwidth]{images/euclid.pdf}
+	\caption{Bias in the parameters for a Euclid-like Survey.}
+	\label{fig:mcmc_euclid}
+\end{figure}  
+\clearpage
+\subsection{Finite field effects}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/100degtwofoot_final.pdf}
+\caption[Correction of the correlation functions for a $100\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $100\,\rm{deg}^2$-field.}
+\label{fig:100degsqr}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/450degtwofoot_final.pdf}
+\caption[Correction of the correlation functions for a $450\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $450\,\rm{deg}^2$-field.}
+\label{fig:450degsqr}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/1000degtwofoot_final.pdf}
+\caption[Correction of the correlation functions for a $1000\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $1000\,\rm{deg}^2$-field.}
+\label{fig:1000degsqr}
+\end{figure}
