@@ -22,9 +22,9 @@
 \def\({\left(}
 \def\r){\right)}
 \def\b#1{\bm{#1}}
-\def\Dd{D_{\text{d}}}
-\def\Dds{D_{\text{ds}}}
-\def\Ds{D_{\text{s}}}
+\def\Dd{D_{\rm{d}}}
+\def\Dds{D_{\rm{ds}}}
+\def\Ds{D_{\rm{s}}}
 \def\la{\left<}
 \def\ra{\right>}
 \def\gammao{\gamma^{\text{obs}}}
@@ -96,11 +96,229 @@ Institute for Astronomy, University of Edinburgh, Royal Observatory, Blackford H
 
 %
 %-------------------------------------------------------------------
-\include{introduction}
-\include{model_ps}
-\include{model_xipm}
-\include{results}
-\include{discussion}
+\section{Introduction}
+The discovery of cosmic shear has provided us with a new and powerful cosmological tool to investigate the Standard Model of Cosmology and to determine its parameters. Contrary to the analysis of the Cosmic Microwave Background (CMB) by \citet{2018arXiv180706209P}, cosmic shear is more sensitive to the properties of the local Universe and thus provides an excellent consistency check for the standard model of cosmology. Current cosmic shear surveys are especially sensitive to the parameter $S_8=\sigma_8 \sqrt{\Omega_{\rm m}/0.3}$, where $\sigma_8$ denotes the normalisation of the matter power spectrum and $\Omega_{\rm m}$ is the matter density.
+It is interesting to note that all three current major cosmic shear results report a lower $S_8$ than inferred from the CMB analysis: While \citet{2018arXiv180706209P} determined a value of $S_8 = 0.830 \pm 0.013$, \citet{2018arXiv180909148H} report $S_8 = 0.800^{+0.029}_{-0.028}$ from analysis of the Subaru Hyper Suprime-Cam survey, \citet[][hereafter H18]{2018arXiv181206076H} obtained $0.737_{-0.036}^{+0.040}$ from KiDS+VIKING data and the Dark Energy Survey \citep{2018PhRvD..98d3528T} arrived at $S_8=0.782\pm 0.027$. Also, \citet{2013MNRAS.432.2433H} report $S_8 = 0.759 \pm 0.020$ from their analysis of CFHTLens data. This discrepancy has received a lot of attention \citep{2017MNRAS.471.1259J,2016MNRAS.459..971K}. It could be interpreted as a statistical coincidence, a sign of new physics like massive neutrinos \citep{2014PhRvL.112e1303B}, time-varying dark energy or modified gravity \citep{2016A&A...594A..14P}; or as the manifestation of a systematic effect, either in the cosmic shear surveys or in the Planck mission \citep{2016ApJ...818..132A}, that is not yet accounted for. 
+
+For current cosmic shear surveys, the estimated systematic error is of comparable size to the statistical error, implying that for next-generation surveys, a significant reduction of systematic errors is necessary \citep[compare][hereafter H17]{2017MNRAS.465.1454H}. With next-generation surveys like the Large Synoptic Survey Telescope and Euclid \todo{Could someone please point me to papers to cite for these surveys?} soon to start, systematic effects in gravitational lensing have received a large amount of attention \citep{2018arXiv181002353A,2019arXiv190207439B,2019arXiv190109488S}. %\todo{Citations.. \citet{2017MNRAS.464.1676A} has a few...}
+
+To check for remaining systematics, a weak lensing signal can be divided into two components, the so-called E- and B-modes \citep{2002ApJ...568...20C,2002A&A...389..729S}. To leading order, B-modes can not be created by astrophysical phenomena and are thus an excellent test for remaining systematics. Note that the non-existence of B-modes does not necessarily imply that the sample is free of remaining systematics.
+
+One systematic effect is the variation of depth in a survey. While effects like Galactic extinction or dithering strategies do play a role in every survey, this work focuses on the effects caused by varying atmospheric conditions that are found in ground-based surveys. To first order, this variation can be modelled by a piece-wise constant depth function which varies from pointing to pointing. In this work we assume the specifications of the Kilo-Degree Survey, namely an assembly of $1\,\text{deg}^2$ square fields. 
+
+In Sect. \ref{sec:modelling_single_lens} we will introduce a simple toy model to understand this effect and analyze the impact on the cosmic shear power spectrum. In Sect. \ref{sec:xipm} we will estimate the effect on the shear correlation functions $\xi_\pm$ using two different models. We will present our results in Sect. \ref{sec:results}. In Sect. \ref{sec:discussion} we will discuss our results and comment on the impacts of our used simplifications. We will assume the standard weak gravitational lensing formalism, a summary of which can be found in \citet{2001PhR...340..291B}.
+
+%-------------------------------------------------------------------
+
+\section{Modelling the power spectrum}
+\label{sec:modelling_single_lens}
+For our first analysis we will further simplify our assumptions: We imagine that all the matter between sources and observer is concentrated in a single lens plane of distance $D_{\rm d}$ from the observer. If we now distribute sources at varying distances $D_{\rm s}$, then the convergence $\kappa$ varies according to $\kappa \propto D_{\rm{ds}}/D_{\rm s}$. 
+% Following \citet{1993ApJ...404..441K}, we can simulate the shear $\gamma$ from the convergence by convolution with the kernel \[
+%\mathcal{D}(\bm{\theta}) = \frac{\theta_2^2-\theta_1^2-2i\theta_1\theta_2}{\pi |\bm{\theta}|^4}\, .
+%\]
+
+%Similarly, an observer that measures the shear $\gamma$ can reconstruct the convergence $\kappa$ by convolution with the kernel $\mathcal{D}^*$, where ${}^*$ denotes the complex conjugate. Assuming that the optical depth, and thus the source redshift populations, vary between pointing, an observer will measure a shear-signal that is modified by a depth-function $W(\bm{\theta}) = 1-w(\bm{\theta})$, where $\langle w(\bm{\theta})\rangle=0$ holds. The reconstruction of the observed convergence $\kappa^{\rm obs}$ will thus not yield the original convergence. In particular there is no reason why the convolution with a complex kernel should have a nonzero imaginary part. This allows us to separate our received signal into E- and B-modes following \[
+%	\kappa = \kappa^E+i\kappa^B\, ,
+%\]
+%where $B$-Modes can not be generated by a lensing signal and are thus a tracer of remaining systematics.
+%2002A&A...389..729S SRC
+
+Assuming that the depth, and thus the source redshift populations, varies between pointings, an observer will measure a shear-signal that is modified by a step-like depth-function $\gammao(\b\theta)=W(\b \theta)\gamma(\b\theta)$, where $W$ is proportional to the mean of the lensing efficiency $\Dds/\Ds$ of one pointing and $\gamma$ denotes the shear that this pointing would read if it were of average depth.
+We can parametrize $W$ as $W(\bm{\theta}) = 1+w(\bm{\theta})$, where $\langle w(\bm{\theta})\rangle=0$ holds. 
+In accordance to the definition of the shear power spectrum \begin{equation}
+\la \hat{\gamma}(\b\ell)\,\hat{\gamma}^*(\b\ell')\ra = (2\pi)^2\delta(\b\ell-\b\ell')P(|\b\ell|) \, ,
+\end{equation}
+we define the observed power spectrum via \begin{equation}
+P^{\text{obs}}(\b\ell) \equiv \frac{1}{(2\pi)^2}\int \d^2 \ell'\,  \la \gammaoh(\b \ell)\, \gammaoh {}^*(\b \ell')\ra \, .
+\end{equation}
+Here, and throughout the rest of this paper, $\hat{\gamma}$ denotes the Fourier transform of $\gamma$. Note that due to the depth-function both the assumptions of homogeneity and isotropy break down, which means that we can neither assume isotropy in the power spectrum, nor can we assume that $\la \gammaoh(\b \ell) \gammaoh {}^*(\b \ell')\ra$ vanishes for $\b\ell\neq\b\ell'$.
+To model a constant depth on each individual pointing $\b \alpha$, we can choose random variables $w_{\b \alpha}$, that only need to satisfy $\langle w_{\b \alpha}\rangle=0$, and parametrize $w(\b\theta)$ as 
+\begin{equation}
+w(\b \theta) = \sum_{\b \alpha \in \mathbb{Z}^2} w_{\b \alpha} \Xi(\b \theta-L\b \alpha)\text{ , with the Box-Function } \Xi(\b \theta) = \begin{cases}
+1 \qquad \b \theta\in \left[-\frac{L}{2},\frac{L}{2}\right]^2 \\
+0 \qquad \text{else}
+\end{cases},
+\label{eq:defweightf}
+\end{equation}
+where $L$ is the length of one pointing.
+Following the calculations in Appendix \ref{sec:calc of PS}, we derive 
+\begin{equation}
+P^{\text{obs}}(\b \ell)  =  P(\b \ell) + \la w^2\ra \int\frac{\text{d}^2\b k}{(2\pi)^2}\,\hat{\Xi}(\b \ell-\b k)\, P(\b k)\, ,
+\end{equation}
+where $\la w^2\ra \equiv \la w_{\b \alpha}^2\ra$ is the dispersion of the depth-function and $\hat{\Xi}$ is the Fourier transform of a box-function, which is a 2-dimensional sinc-function (compare \ref{sec:calc of PS}).
+The observed power spectrum $P^{\text{obs}}$ is thus composed of the original power spectrum $P$, plus a convolution of the power spectrum with a sinc-function, scaling with the variance of the function $w(\b\theta)$. In particular, the power spectrum is not isotropic anymore.
+
+%-------------------------------------------------------------------
+
+\section{Modelling the shear correlation functions}
+\label{sec:xipm}
+Convenient measures to infer cosmological information from observational data are the shear correlation functions $\xi_\pm$, which are defined as \[
+\xi_\pm(\theta) = \la \gamma_{\rm t}\gamma_{\rm t}\ra(\theta) \pm \la \gamma_\times\gamma_\times\ra(\theta) \, .
+\]
+Here, $\gamma_t$ and $\gamma_\times$ denote the tangential- and cross-component of the shear for a galaxy pair with respect to their relative orientation \citep[compare][]{2002A&A...396....1S}.
+The shear correlation functions are the prime estimators to quantify a cosmic-shear signal since it is simple to include a weighting of the shear measurements into the correlation functions and, contrary to the power spectrum, one does not have to worry about the shape of the survey footprint, or masked regions. Given two comoving distance probability distributions of sources $p_i(\chi),p_j(\chi)$, one can compute the shear correlation functions from the underlying matter power spectrum $P_\delta(\ell,\chi)$ via \citep[compare][]{1992ApJ...388..272K} \begin{align}
+\label{eq:xipm-pkappa}
+\xi_\pm^{ij}(\theta) =& \int_0^\infty \frac{{\rm d}\ell\,\ell}{2\pi}\, J_{0,4}(\ell\theta)\, P^{ij}(\ell)\, , \\
+\label{eq:pkappa-pdelta/lenseff}
+P^{ij}(\ell) =& \frac{9 H_0^4\Omega_{\rm m}^2}{4c^4}\int_0^{\chi_{\rm{H}}} {\rm d}\chi\, \frac{g^i(\chi)g^j(\chi)}{a^2(\chi)}\, P_\delta\left(\frac{\ell}{f_K(\chi)},\chi\right)\, , \\
+\label{eq:lenseff}
+g^i(\chi) =& \int_\chi^{\chi_{\rm{H}}} {\rm d}\chi' \, p_i(\chi') \, \frac{f_K(\chi'-\chi)}{f_K(\chi')}\, .
+\end{align}
+Here, $J_{0,4}$ denote the 0-th and 4-th order Bessel Functions, $f_K(\chi)$ is the comoving angular diameter distance and $\chi_{\rm{H}}$ is chosen such that $p_i(\chi)=0$ holds for all $\chi>\chi_{\rm{H}}$.
+\subsection{Using an analytic model}
+\label{sec:xipm_analytic}
+For a first simple analysis we will assume that a deeper redshift distribution just yields a stronger shear signal, in the sense that the shear field for a deeper redshift distribution gets multiplied by a weight $W>1$. While this is not true for a 3-dimensional lensing matter distribution, it should be a reasonable first approximation for small variations in mean source redshift. Additionally, we assume that a higher depth does not only lead to a stronger average shear, but also to a higher galaxy number density, implying a correlation between those two quantities.
+
+Let $N^i(\b \theta),N^j(\b\theta)$ be the average weighted number of galaxies per pointing in redshift bins $i$ and $j$ and let $W^i(\b \theta),W^j(\b\theta)$ be the weighting of average shear. The observed correlation functions $\xi^{ij,\text{obs}}_\pm(\theta)$ now change from one of uniform depth $\xi_\pm^{ij,\rm{uni}}(\theta)$ via (compare H17)
+\begin{align}
+\xi^{ij,\text{obs}}_\pm(\theta) = & \frac{\la N^i(\bth)N^j(\bthp)\gamma^{i,\rm{obs}}_{\rm t}(\bth)\gamma^{j,\rm{obs}}_{\rm t}(\bthp)\ra }{\la N^i(\bth)N^j(\bthp)\ra} \pm \frac{\la N^i(\bth)N^j(\bthp)\gamma^{i,\rm{obs}}_\times(\bth)\gamma^{j,\rm{obs}}_\times(\bthp)\ra }{\la N^i(\bth)N^j(\bthp)\ra} \nonumber\\
+ = & \frac{\la N^i(\bth)N^j(\bthp)W^i(\bth)W^j(\bthp)\ra}{\la N^i(\bth)N^j(\bthp)\ra} \xi_{\pm}^{ij,\rm{const}}(\theta) \, ,
+ \label{eq:xipmblub1}
+ \end{align}
+ where the average $\la\ldots\ra$ represents both an ensemble average as well as an average over the position $\bth$.
+ Assuming that depth of different pointings is uncorrelated implies that the same holds for the functions $W$ and $N$. This means that the only important property of a galaxy pair is whether or not they lie in the same pointing. We want to denote the probability that a random galaxy pair of separation $\theta$ lies in the same pointing, by $E(\theta)$. This function is depicted in Figure \ref{fig:eoftheta_lin}, and an analytical expression is derived in \ref{sec:model_e}.
+ 
+\begin{figure}
+ \centering
+ \includegraphics[width=0.5\textwidth]{images/eoftheta.pdf}
+ \caption{Probability $E(\theta)$ that a random pair of galaxies of distance $\theta$ lie in the same $1\deg ^2$ pointing.}
+ \label{fig:eoftheta_lin}
+\end{figure}
+
+To compute the modified shear correlation functions, we parametrize the number densities \linebreak$N^{i}(\b \theta)=\la N^{i} \ra [1+n^{i}(\b \theta)]$ and the weight $W^{i}(\b \theta)=1+w^{i}(\b \theta)$ and, as in \eqref{eq:defweightf}, interpret $n^{i}(\b \theta)$ as a function with average $\la n^{i} \ra = 0$ that is constant on each pointing. We can see that $\la n^i(\bth)n^j(\bthp)\ra = E(\theta)\la n^i(\bth)n^j(\bth)\ra \equiv E(\theta)\la n^i n^j \ra$ holds and compute:
+\begin{align}
+&\frac{\la N^i(\bth)N^j(\bthp)W^i(\bth)W^j(\bthp)\ra}{\la N^i\ra \la N^j\ra } \nonumber\\
+&\qquad =  1 + \la n^iw^i\ra + \la n^j w^j\ra + E(\theta)\left[ \la n^in^j\ra + \la n^i w^j \ra  + \la n^jw^i\ra + \la w^iw^j\ra + \la n^in^jw^i\ra + \la n^in^jw^j\ra + \la n^iw^iw^j\ra \right. \nonumber\\
+&\qquad\quad \left. + \la n^jw^iw^j\ra + \la n^in^jw^iw^j\ra  \right] \, .
+ \end{align}
+Ignoring correlations higher than second order in $n^i$ and $w^i$,\footnote{It is not inherently obvious that this is a valid assumption. However, after performing calculations with and without higher order correlations, we noticed no difference between the outcomes of both equations.} and performing the same calculation for the denominator of Eq.\,\eqref{eq:xipmblub1}, we get
+ \begin{align}
+ \xi^{ij,\rm{obs}}_\pm(\theta) = \frac{1 + \la n^iw^i\ra + \la n^jw^j\ra + E(\theta)\left[\la n^in^j\ra + \la n^iw^j\ra + \la n^j w^i\ra + \la w^iw^j\ra\right]}{1+E(\theta)\la n^i n^j\ra }\xi^{ij,\rm{const}}_\pm (\theta) \, .
+ \end{align}
+ A model correlation function for a cosmic shear survey is usually calculated by taking the average redshift distribution of a redshift bin, weighted by the number density.
+ Ignoring that the depth is constant per pointing and therefore correlated on scales $\leq \sqrt{2}^\circ$ is equivalent to setting $E(\theta)\equiv 0$. Note that there is still a correlation between $N$ and $W$ for the same galaxy.
+%For the calculation of the reference correlation functions $\xi_\pm^{ij}(\theta)$ we distribute the \textit{same} galaxies into our survey, only this time we will not order their weightings $W$ or their number densities $N$ by pointing. We can imagine this by cutting the footprint into infinitesimal elements $\d^2\b\theta$, and redistributing those at random. When we calculate the correlation function of this survey, we note that $\la n^i(\bth)\ra \la n^j(\bthp)\ra = 0$ holds for $\b\theta\neq \b 0$, as the two corresponding infinitesimal elements have uncorrelated weighting and number density. This is equivalent to setting $E(\theta)\equiv 0$.
+ Performing the same calculations as above, this yields a relation between the correlation function of constant optical depth $\xi_\pm^{ij,\rm{const}}$ and the modelled one $\xi_\pm^{ij}$:
+\begin{equation}
+\xi_\pm^{ij}(\theta) = \left(1+\la n^iw^i\ra + \la n^jw^j\ra \right)\xi_\pm^{ij,\rm{const}}(\theta)\, .
+\end{equation}
+The ratio of modelled and observed correlation function thus becomes: \begin{equation}
+\frac{\xi^{ij}_\pm(\theta)}{\xi_\pm^{ij,\rm{obs}}(\theta)} \approx \frac{1+\la n^iw^i\ra+\la n^jw^j\ra + E(\theta)\la n^in^j\ra}{1 + \la n^iw^i\ra + \la n^jw^j\ra + E(\theta)\left[\la n^in^j\ra + \la n^iw^j\ra + \la n^j w^i\ra + \la w^iw^j\ra\right]}
+\, .
+\end{equation}
+It is interesting to note that $\xi^{ij}_\pm = \xi_\pm^{ij,\rm{obs}}$ holds wherever $E(\theta)=0$, meaning that the correlation function is not affected for large angular scales. 
+
+While this model serves as a good, intuitive first approximation, it completely ignores any effects from the large scale structure (LSS) between the closest and the most distant galaxy. Therefore, we do not expect this model to yield reliable, quantitative results for cosmic shear surveys.
+
+However, we will now derive a more sophisticated model that includes the effects of the LSS. While it is computationally more expensive, it yields accurate results for cosmic shear surveys, which are sensitive to the exact redshift distributions of sources as well as the underlying cosmology.
+%-------------------------------------------------
+%Given a set of average redshifts, following \citet{2006APh....26...91V}, we can estimate 
+%\[
+%\la |\gamma| \ra \propto \la z \ra ^{0.85}\, .
+%\]
+%We shall later see that this approximation is valid for higher tomographic redshift bins $z\gtrsim 0.5$, but starts to break down at lower redshifts. We thus want to construct a model that is valid for an arbitrary distribution of redshifts and does not rely on the assumption of a single lens plane. 
+\subsection{Using a semi-analytic Model}
+\todo{It feels like some kind of introductory sentence is missing here, right now I can not think of one, though...}
+The analysis of data from the Kilo-Degree Survey showed that the redshift distribution of sources is highly correlated with the depth in the $r$-band. We thus chose to separate the survey into 10 percentiles, sorted by $r$-band depth, i.e. if a pointing had a shallower depth than 90\% of the other pointings, it would belong to the first percentile, and so on. For each percentile $m$ and each tomographic redshift bin $i$ we can extract a weighted number of galaxies $N^i_m$ and, a source redshift distribution $p^i_m(z)$ following the DIR method of H17\footnote{Instead of using the actual number of galaxies, we take the sum of their lensing weights, following H17. Due to this we account for different weighting of galaxies on the shear correlation functions as well as on the average redshift distribution.}. Using \eqref{eq:xipm-pkappa}, we can compute the model correlation functions $\xi_{\pm,mn}^{ij}(\theta)$ for each pair of percentiles $m,n$ and redshift bins $i,j$.\footnote{For the calculation of the shear correlation functions we use the \textsc{Nicaea}-program \citep{10.1093/mnras/stx2082}. Among other quantities, it calculates the shear correlation functions for a given cosmology and source redshift distribution. For the power spectrum on nonlinear scales, we use the method of \citet{2012ApJ...761..152T}.} When measuring the shear correlation functions of a survey, we take the weighted average of tangential and cross shears of all pairs of galaxies (compare H17). If, for a single pair of galaxies, one galaxy lies in the $m$-th percentile of redshift bin $i$ and the second one lies in the $n$-th percentile of redshift bin $j$, then their contribution to the observed correlation functions is, on average, $\xi_{\pm,mn}^{ij}(\theta)$. This means that if we know each of those single correlation functions, we can reconstruct the total correlation functions via a weighted average of the single functions. Formally, we define \[
+\xi_\pm^{ij,\rm{obs}}(\theta) = \frac{\sum_{m,n} P_{mn}^{ij}(\theta)\,\xi_{\pm,mn}^{ij}(\theta)}{\sum_{m,n} P_{mn}^{ij}(\theta)}\, ,
+\label{eq:def_xiobs}
+\]
+where $P_{mn}^{ij}$ is a weighting of the correlation functions, which has to be proportional to the probability that a galaxy pair of separation $\theta$ comes from percentiles $m$ and $n$.\todo{We \textit{could} completely scratch this derivation and just point to the Appendix; I personally feel that this approach is more intuitive than the more mathematical one of the appendix, but if the paper gets too long we definitely do not need two methods to derive the same equation.} In this analysis, we will assume an infinitely large survey footprint with an uncorrelated distribution of depth. We will later discuss the validity of these assumptions as well as possible mitigation strategies. 
+
+To calculate $\mathcal{P}_{mn}^{ij}(\theta)$ we imagine two arbitrary (infinitesimally small) surface elements $\d^2\b\theta_1,\d^2\b\theta_2$ of separation $\theta$ on the sky. For the case $m\neq n$ we know that a pair of galaxies contributing to $\mathcal{P}_{mn}^{ij}(\theta)$ has to lie in different pointings, else they would automatically be of the same percentile. The probability that the imagined surface elements are within different pointings is $[1-E(\theta)]$. Furthermore, the first element $\d^2\b\theta_1$ has to lie in percentile $m$, the probability of which is $1/10$. The pointing of the second element $\d^2\b\theta_2$ has to be of percentile $n$; the probability of that is also equal to $1/10$. The probability that a galaxy pair populates those surface elements is proportional to the weighted number of galaxies $N_m^i,N_n^j$. We get for $n\neq m$: \[
+\mathcal{P}_{mn}^{ij}(\theta) = [1-E(\theta)]\frac{1}{100} N_m^i N_n^j\, .
+\label{eq:pmnij_corr1}
+\]
+For the calculation of $\mathcal{P}_{mm}^{ij}(\theta)$ we have to account for a different possibility: In case that the galaxy lies in the same pointing [accounted for by the factor $E(\theta)$], it automatically is of the same percentile. We therefore set \[
+\mathcal{P}_{mm}^{ij}(\theta) = E(\theta)\frac{1}{10} N_m^iN_m^j + [1-E(\theta)]\frac{1}{100} N_m^i N_m^j \, .
+\label{eq:pmnij_corr2}
+\]
+We can then write $\mathcal{P}_{mn}^{ij}(\theta)$ as: \[
+\mathcal{P}_{mn}^{ij}(\theta) = E(\theta)\frac{1}{10} N_m^iN_n^j\,\delta_{mn} + [1-E(\theta)]\frac{1}{100} N_m^i N_n^j \, ,
+\label{eq:pmnij_uncorr}
+\]
+where $\delta_{mn}$ denotes the Kronecker delta.
+Inserting this into Eq.\,\eqref{eq:def_xiobs}, we compute
+\begin{align}
+\xi_{\pm,mn}^{ij,\rm{obs}}(\theta) = & \frac{1}{C}\sum_{m=1}^{10} N_m^i \left\{ E(\theta) N_m^j \xi_{\pm,mm}^{ij}(\theta) + \frac{\big[1-E(\theta)\big]}{10}\sum_{n=1}^{10}N_n^j \xi_{\pm,mn}^{ij}(\theta)\right\}\, ,
+\label{eq:correctionfunction1}
+\end{align}
+with the normalization
+\[
+C = \sum_{m=1}^{10} N_m^i \bigg[ E(\theta)  N_m^j + \frac{\big[1-E(\theta)\big]}{10}\sum_{n=1}^{10} N_n^j\bigg]\, .
+\]
+A more mathematically rigorous derivation of this function can be found in Appendix \ref{sec:calc of xipm}.
+
+If we want to compute this for all 5 redshift bins of the KV450-survey, this forces us to calculate 1275 correlation functions and add them, thus yielding potential numerical errors (apart from being computationally expensive). However, if we examine Eq.\,\eqref{eq:lenseff}, we see that the comoving distance distribution of sources factors in linearly. This in turn implies that in Equations \eqref{eq:pkappa-pdelta/lenseff} and \eqref{eq:xipm-pkappa} both source distance distributions factor in linearly. This basically means that, instead of adding correlation functions, we can add their respective redshift distributions and compute the correlation functions of that. In particular, we can define the \textit{combined number of galaxies} $N^i$ and \textit{average redshift distribution} $p^i(z)$ of tomographic bin $i$ as \[
+N^i\equiv\sum_m N_m^i\, , \qquad p^i(z) = \frac{\sum_m N_m^i p_m^i(z)}{\sum_m N_m^i} \, .
+\]
+If we define $\xi^{ij}_\pm$ as the correlation functions between the average redshift distributions $p^i(z)$ and $p^j(z)$, then we observe: \[
+\sum_{m,n}N_m^iN_n^j\xi^{ij}_{\pm,mn} = N^iN^j\xi^{ij}_\pm\, .
+\]
+Consequently, we can apply this to \eqref{eq:correctionfunction1}, yielding
+\begin{equation}
+\xi_{\pm}^{ij,\rm{obs}}(\theta) = \frac{1}{C}\left\{ E(\theta)\left[\sum_{m=1}^{10} N_m^iN_m^j \xi_{\pm,mm}^{ij}(\theta)\right] +\frac{\big[1-E(\theta)\big]}{10}\xi_\pm^{ij}(\theta)N^iN^j\right\}\, .
+\label{eq:correctionfunction2}
+\end{equation}
+For each set of redshift bins we thus only have to compute eleven correlation functions, which reduces the number of functions to compute from 1275 to 165.
+
+%-------------------------------------------------------------------
+
+\section{Results}
+\label{sec:results}
+We applied both our methods to data from the KV450 survey and computed the ratio of observed and modeled correlation functions.\todo{Probably I should include some specifications of the KV450 survey here, like introduce the tomographic bins, etc. Or could I just link to Hendrik's paper?} Furthermore, we conducted numerical simulations investigating the same issue: A $100\,\rm{deg}^2$ field in the Scinet Light Cone Simulations (SLICS) \citep{2018MNRAS.481.1337H} was randomly separated into 10 percentiles. For each tomographic redshift bin of each percentile, galaxies were placed to trace the respective redshift distribution. Afterwards, their expected shear was determined (shape-noise in the form of intrinsic ellipticities of galaxies was not included). This was compared to a set of simulations where the galaxies were simply distributed according to the combined redshift distribution of each respective tomographic bin\todo{Catherine, is this what you did? If you are unhappy with any of these explanations, or feel like I missed something, please feel free to add it :)}. As in \citet{2018arXiv181206076H}, we have separated the data in 5 tomographic redshift bins and performed our analysis for a cross-correlation of all bins. The result can be seen in Figure \todo{For the analytic model, describe how we get to $W$ (either van Waerbecke (2006) or taking a value of $\xi_\pm$.}\ref{fig:all_xis}.
+	\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{images/allxis_0111.pdf}
+	\caption{The ratio of observed to modeled correlation functions for the analytic method (green), the semi-analytic method (blue) and the numerical simulations (red) for a cross-correlation of all redshift bins. The numbers in the upper left corners correspond to the respective redshift bins, the upper left triangle depicts the ratios of $\xi_+$, whereas the lower right triangle depicts the ratios of $\xi_-$.}
+	\label{fig:all_xis}
+	\end{figure}
+We can see that for high redshift bins, the analytic and the semi-analytic methods are consistent, whereas for low redshift bins they significantly diverge. We explain this due to the facts that the analyic method uses simplifications that are redshift-dependent and only hold for small variations in redshift, which is not fulfilled in the low redshift bins.\todo{Should I include the plot number density vs average redshift from the talk? Maybe in the appendix to avoid too many Figures?}\footnote{We also observe that in the semi-analytic model, $\xi_-$ seems to be much stronger affected by this effect: Following Equation \eqref{eq:xipm-pkappa}, $\xi_+$ is computed by filtering the power spectrum with the 0-th order Bessel function. This function peaks at $\ell\theta=0$, meaning that for all values of $\theta$, the correlation function $\xi_+$ is sensitive to small values of $\ell$, corresponding to large separations $\theta$. However, $\xi_-$ is obtained by filtering with the 4-th order Bessel function, which peaks at approximately $\ell\theta\approx 5$, so for different $\theta$ this function is sensitive to varying parts of the convergence power spectrum. A more detailed analysis of this can be found in the Appendix of \citet{2017MNRAS.471.4412K}.}
+
+The simulations seem to be in rough agreement with the models, but there are some significant differences. After a thorough analysis we explain these discrepancies the following way: The simulations were performed on a $100\,\rm{deg}^2$ field, which means that shot-noise of the fields plays a significant role. After performing the same simulations for a different distribution of depth between the pointings and obtaining completely different results, we are quite certain that this is the dominating effect. The implications of this and possible mitigation strategies will be discussed in Section \ref{sec:discussion}.
+
+Calculating the correction for varying values of $\Omega_{\rm{m}}$ and $\sigma_8$ reveals a nontrivial dependency on the cosmology, which can be observed in Figure \ref{fig:comparecosmo}.
+
+As the next step we computed a reference correlation function given a fiducial cosmology for each combination of redshift bins, and modified said correlation function according to our semi-analytic model. Then we ran a Markov-Chain Monte Carlo simulation\footnote{The code for this was developed by Jan-Luca van den Busch and used in a modified version.} to check for a potential bias in the cosmological parameters, using the covariance-matrix computed in \citet{2017MNRAS.465.1454H}. As our main interest lies in the $\Omega_{\rm m}$ - $\sigma_8$ combination, we restricted our analysis to those two parameters. As can be seen in Figure \ref{fig:mcmc_kids}, the impact of varying depth is noticeable, but insignificant compared to the uncertainties. However, to get a rough estimate for the impact on a Euclid-like survey, we divided the used covariance-matrix by 30, to account for the increased survey area. As can be seen in Figure \ref{fig:mcmc_euclid}, here the impact on both $\Omega_{\rm m}$ and $\sigma_8$ is significant, however it seems that the parameter $S_8$ is extremely robust against this effect.
+
+To estimate the B-Modes created by this effect, we have extracted the \emph{Complete Orthogonal Sets of E- and B-Mode Integrals} (COSEBIS, compare \citet{2010A&A...520A.116S}), once of a reference set of correlation functions, to estimate numerical inaccuracies,\footnote{For a reference correlation function the B-Modes should be consistent with zero.} and then for the correlation functions that have been modified to account for a varying depth. We report a consistent B-Mode pattern across all redshift-bins, which can be seen in Figure \ref{fig:bmodes_cosebi}. We also note that the difference in E-Modes is as large as the B-Modes, which suggests that any significant change in the cosmological parameters due to a varying depth will also yield the significant detection of B-Modes.
+
+\begin{figure}
+\centering
+\includegraphics[width = \textwidth, trim = {0 1.5cm 2.5cm 0}, clip]{images/eandbmodes0p5t100.pdf}
+\caption{Difference in the logarithmic E- and B-modes between the reference and the observed correlation functions for an angular range of $\theta_{\rm{min}}=0.\!^\prime 5,\,\theta_{\rm{max}}=100\arcmin$.}
+\label{fig:bmodes_cosebi}
+\end{figure}
+
+%-------------------------------------------------------------------
+
+\section{Discussion}
+\label{sec:discussion}
+With our semi-analytic model we try to describe the impacts of varying depth in ground-based surveys. During our analysis we have assumed a few simplifications, which we will discuss.
+\begin{enumerate}
+\item In the most general terms, we are analysing the effects of a position-based selection function on cosmic shear surveys. In our analysis, this selection function was governed by the $r$-band depth of a pointing. This neglects a number of other effects: The depth in different bands and the seeing of a pointing will also modify the number densities and redshift distributions on the scale of a pointing, whereas dithering strategies as well as imperfections in the telescope and CCD cause modifications on sub-pointing scales. However, we believe that these effects are subdominant compared to the variations caused by the $r$-band depth.
+
+\item We have assumed an infinitely large survey area with an uncorrelated distribution of the depth-function. While the boundary effects arising from a finite survey footprint would have a small impact on the shape of the function $E(\theta)$\footnote{This would be due to the fact that a pointing next to a boundary has less neighbours, therefore making it more likely that a galaxy pair is in the same pointing.}, the governing factor is the shot noise of the depth-distribution. We have assumed that the probability that a neighbouring pointing is of percentile $n$ is exactly the expectation value, namely $1/10$. While this is true for an infinitely large survey with an uncorrelated distribution of the depth-function, Figure \ref{fig:all_xis} clearly shows that it is not valid for a $100\,\rm{deg}^2$ field. Whether our assumption holds true for the $450\,\rm{deg}^2$ footprint of the KV450 survey, or even the $1350\,\rm{deg}^2$ footprint of the final survey is an important question. Also, we have assumed an uncorrelated distribution of the depth-function, both in the simulations as well as in the models. While this is likely true as a rough approximation (very few pointings of the survey were taken on the same night and thus under the same weather conditions), effects like airmass, lunar phase, Galactic extinction and seasonal weather are likely to influence the depth on scales larger than one pointing.
+
+A strategy for the mitigation of finite field effects, boundaries and a correlated distribution of depth is given in Appendix \ref{sec:expand_eoftheta}. We find that finite field effects are not significant for a $450\,\rm{deg}^2$ or $1000\,\rm{deg}^2$-field, if the distribution of depth is uncorrelated.
+
+\item In our MCMC simulations we did not account for degeneracies with other cosmological parameters
+% (apart from $\Omega_{\rm m}, \sigma_8, w_0$ and $w_a$)
+ or observational effects. Especially intrinsic alignments and baryonic feedback also modify the correlation functions especially on small scales, so they are probably degenerate with the effect of varying depth. In an actual MCMC simulation that accounts for these effects, we suspect that the parameters for intrinsic alignments and baryonic feedback change to mitigate this effect, and the impact on cosmological parameters is actually smaller than in our results. Also, possible degeneracies between $S_8$ and other cosmological parameters might bias the resulting values. %Furthermore, when including the effects of dark energy we notice that our observation of $S_8$ being constant is no longer valid: For a `Euclid-like' survey we notice a bias of $\sim 0.8\sigma$. This gives rise to the assumption that the results of an MCMC with the full parameter space, including observational effects, will differ from our results. 
+\end{enumerate}
+
+Despite these repercussions, we are confident to say that the effects of varying depth are not significant for the KV450 survey. The cosmological parameters did not change significantly and the main parameter, $S_8$, is especially robust against this effect. In particular this means that a varying depth can not explain the discrepancy between observations of the local Universe and results from analysis of the CMB.
+
+We have shown that this effect can create B-modes. However, \citet{2018arXiv181002353A} measured the B-modes of the KV450 survey in the same $\theta$-range. Those B-modes are at least one order of magnitude larger and still consistent with zero, so it is safe to say that the modes created by varying depth are negligible. An interesting observation is that the change in E-modes is as big as the created B-modes (compare Figure \ref{fig:cosebis_eandb}). This means that as soon as this effect causes significant biases in the cosmological parameters, it will also create significant B-modes\footnote{While this is no big surprise, it is not trivial. It could be possible that a systematic effect only creates E-modes and no B-modes, which would be extremely unfortunate as it could bias cosmological parameters without ever being detected by a B-mode analysis.}. Additionally, the created pattern is very characteristic, which makes it easy to recognize in a B-mode analysis of an actual survey.
+
+For next-generation surveys like Euclid, this effect will be significant. Although Euclid is a space-based telescope, the photometric redshift determination will still be done by ground-based telescopes and therefore suffer from the same effects. While we did not yet perform a quantitative study of this effect for Euclid, we are certain that a such a study should be conducted.
+
+While the cosmology dependency (compare Fig. \ref{fig:comparecosmo}) is not significant for the KV450 survey, it will be relevant for the Euclid survey. In that case, a calculation of the correction for this effect is necessary for every cosmology in the MCMC simulation, underlining the necessity for a fast, analytic model.
+
+%As an outlook it would be interesting to perform a full MCMC simulation, including both cosmological and nuisance parameters. One might also check the most popular extensions to the standard model of cosmology, and see whether varying depth could cause a bias towards one of these models. Furthermore, the method developed in Appendix \ref{sec:expand_eoftheta} could be applied to the actual footprint of the KV450 survey to see whether finite field effects or a correlated distribution of $r$-band depth are significant.
+Additionally is interesting to note that $E(\theta)$ is the azimuthal average of the function $E(\b\theta)$, which is not isotropic. Therefore, it would be possible to observe a direction-dependent correlation function $\xi_\pm^{ij,\rm{obs}}(\b\theta)$ in future surveys. An anisotropy in the observed correlation function could be a sign for the influence of varying depth.
+\todo{Should we give an outlook?}
+
 %--------------------------------------------------------------------
 
 
@@ -112,7 +330,279 @@ Something should probably be put in here...
 \bibliographystyle{aa}
 \bibliography{cite}
 \begin{appendix}
-\include{appendix}
+\section{Detailed Calculations}
+\subsection{Calculation of the power spectrum}
+In this Section we will perform the calculation for the observed power spectrum $P^{\text{obs}}(\b \ell)$. For this, we assume an infinitely large field in order to perform our integration over $\mathbb{R}^2$. In reality, finite field effects would play a role here. We begin with the calculation of the correlation for the Fourier transformed shear:
+\begin{align}
+& \la \gammaoh(\b \ell) \gammaoh {}^*(\b \ell')\ra\nonumber\\
+ &\qquad = \la\int\text{d}^2 \theta\int\text{d}^2 \theta'\,W(\b \theta)W(\b \theta')\gamma(\b \theta)\gamma^*(\b \theta')\exp(\i \b \ell\b \theta-\i \b \ell'\b \theta')\ra\nonumber\\
+ &\qquad = \la\int\text{d}^2 \theta\int\text{d}^2 \theta'\,W(\b \theta)W(\b \theta')\exp(\i \b \ell\b \theta-\i \b \ell'\b \theta') \int \frac{\text{d}^2 k}{(2\pi)^2}\int \frac{\text{d}^2 \ell}{(2\pi)^2}\, \tilde{\gamma}(\b k)\tilde{\gamma}^*(\b \ell)\exp(-\i \b k\b \theta+\i \b \ell\b \theta')\ra \nonumber\\
+&\qquad = \la \int \text{d}^2 \theta \int \text{d}^2 \theta' \int \frac{\text{d}^2 k}{(2\pi)^2} \int \frac{\text{d}^2 \ell}{(2\pi)^2}\, P(\b k)(2\pi)^2 \delta(\b k-\b \ell) \exp[\i (\b \ell\b \theta-\b \ell'\b \theta'-\b k\b \theta+\b \ell\b \theta')]W(\b \theta)W(\b \theta')\ra \nonumber\\
+  &\qquad = \la \int \frac{\text{d}^2 k}{(2\pi)^2} \, P(\b k) \int \text{d}^2 \theta\, W(\b \theta)\exp[\i\b \theta(\b \ell-\b k)]\int \text{d}^2 \theta'\, W(\b \theta') \exp[-\i\b \theta(\b \ell'-\b k)] \ra \nonumber\\
+  &\qquad = \la \int\frac{\text{d}^2 k}{(2\pi)^2} \, P(\b k)\widetilde{W}(\b \ell-\b k)\widetilde{W}^* (\b \ell'-\b k)\ra
+\end{align}
+It is important to keep in mind that the ensemble averages of the weight function are independent of the ensemble averages of the shear values, meaning $\la W(\b \theta)\gamma(\b \theta)\ra = \la W(\b \theta)\ra \la \gamma(\b \theta)\ra$. We can define $W(\b \theta)=1+w(\b\theta)$ with $\la w(\b \theta)\ra = 0$, which leads to the expession
+\begin{align}
+& \la \gammaoh(\b \ell) \gammaoh {}^*(\b \ell')\ra \nonumber\\
+ &\qquad = \la \int\frac{\text{d}^2 k}{(2\pi)^2} \, P(\b k) \left[ (2\pi)^4\delta(\b \ell-\b k)\delta(\b \ell'-\b k)+(2\pi)^2\big[ \tilde{w}(\b \ell-\b k)\delta(\b \ell'-\b k) + \tilde{w}^*(\b \ell'-\b k)\delta(\b \ell-\b k)\big]\right.\right. \nonumber\\
+ & \quad\qquad \left.\left. + \tilde{w}(\b \ell-\b k)\tilde{w}(\b \ell'-\b k) \right] \right. \bigg> \nonumber\\
+ &\qquad =  (2\pi)^2\delta(\b \ell-\b \ell')P(\b \ell) + \left[ \la \tilde{w}(\b \ell-\b \ell')\ra P(\b \ell')+\la \tilde{w}^*(\b \ell'-\b \ell)\ra P(\b \ell)\right] + \la \int \frac{\text{d}^2 k}{(2\pi)^2} \, \tilde{w}(\b \ell-\b k)\tilde{w}^*(\b \ell'-\b k)P(\b k)\ra \nonumber\\
+& \qquad \overset{(*)}{=}  (2\pi)^2\delta(\b \ell-\b \ell')P(\b \ell) + \la \int \frac{\text{d}^2 k}{(2\pi)^2}\, \tilde{w}(\b \ell-\b k)\tilde{w}^*(\b \ell'-\b k)P(\b k)\ra \, ,
+\label{eq:pobs1}
+\end{align}
+where in $(*)$ we have used that the average $\la \tilde{w}(\b \ell)\ra$ vanishes.
+Up until now, we have not specified our weight-function $w$. We parametrize it as \begin{equation}
+w(\b \theta) = \sum_{\b \alpha \in \mathbb{Z}^2} w_{\b \alpha} \Xi(\b \theta-L\b \alpha)\text{ , with the Box-Function } \Xi(\b \theta) = \begin{cases}
+1 \qquad \b \theta\in \left[-\frac{L}{2},\frac{L}{2}\right]^2 \\
+0 \qquad \text{else}
+\end{cases}.
+\end{equation}
+Here, the $w_{\b \alpha}$ are random variables, drawn from the random distribution describing the survey depths. For the Fourier-Transform we compute: \begin{equation}
+\tilde{w}(\b \ell) = \sum_{\b \alpha \in \mathbb{Z}^2} w_{\b \alpha} \exp(-\i \b \ell L\b \alpha) \widetilde{\Xi}(\b \ell)\, ,
+\end{equation}
+where
+\begin{equation}
+\widetilde{\Xi}(\b\ell) = \frac{4\sin\left(\frac{L\ell_1}{2}\right)\sin\left(\frac{L\ell_2}{2}\right)}{\ell_1\ell_2}\, ,
+\end{equation}
+is a 2-dimensional sinc function.
+Assuming an uncorrelated weight-distribution $\left(\la w_{\b \alpha} w_{\b \beta}\ra = 0\text{ for }\b \alpha\neq\b \beta\right)$ and setting $\la w^2\ra \equiv \la w_{\b \alpha}^2\ra$ for each $\b \alpha$, we get
+\begin{align}
+&\la \int \frac{\text{d}^2 k}{(2\pi)^2}\, \tilde{w}(\b \ell-\b k)\tilde{w}^*(\b \ell'-\b k)P(\b k)\ra \nonumber\\
+&\qquad = \la \int \frac{\text{d}^2 k}{(2\pi)^2} \sum_{\b \alpha,\b \beta}w_{\b \alpha}w_{\b \beta} \exp[-\i(\b \ell - \b k)L\b \alpha]\, \widetilde{\Xi}(\b \ell - \b k) \exp[\i(\b \ell' - \b k)L\b \beta]\, \widetilde{\Xi}^*(\b \ell' - \b k)P(\b k)\ra \nonumber\\
+&\qquad = \int \frac{\text{d}^2 k}{(2\pi)^2} \sum_{\b \alpha} \la w^2\ra \exp[-\i(\b \ell - \b k)L\b \alpha + i(\b \ell' - \b k) L\b \alpha]\, \widetilde{\Xi}(\b \ell - \b k)\widetilde{\Xi}^*(\b \ell' - \b k)P(\b k) \, .
+\end{align}
+Using this result, we can obtain the observed power spectrum \begin{equation}
+P^{\rm{obs}}(\b\ell) = \frac{1}{(2\pi)^2}\int\d^2\ell' \la \gammaoh(\b \ell) \gammaoh {}^*(\b \ell')\ra\, ,
+\end{equation}
+by performing the $\b \ell'$-integration in \eqref{eq:pobs1}:
+\begin{align}
+P^{\text{obs}}(\b \ell) = & P(\b \ell)+\int \frac{\text{d}^2\b \ell'}{(2\pi)^2} \int\frac{\text{d}^2\b k}{(2\pi)^2}\sum_{\b \alpha}\la w^2\ra \exp[-\i(\b \ell-\b k)L\b \alpha+\i(\b \ell'-\b k)L\b \alpha]\, \widetilde{\Xi}(\b \ell-\b k)\widetilde{\Xi}(\b \ell' - \b k) P(\b k) \nonumber\\
+= & P(\b \ell)+ \int\frac{\text{d}^2\b k}{(2\pi)^2}\sum_{\b \alpha}\la w^2\ra \exp[-\i(\b \ell-\b k)L\b \alpha]\, \widetilde{\Xi}(\b \ell - \b k)P(k) \int\frac{\text{d}^2\b \ell}{(2\pi)^2}\, \widetilde{\Xi}^*(\b \ell'-\b k)\exp[\i(\b \ell'- \b k)L\b \alpha] \nonumber\\
+ = & P(\b \ell) + \la w^2\ra \int\frac{\text{d}^2\b k}{(2\pi)^2}\, \widetilde{\Xi}(\b \ell-\b k)P(\b k) \sum_{\b \alpha}\exp[-\i(\b \ell - \b k)L\b \alpha]\,\Xi(L\b \alpha) \nonumber\\
+ = & P(\b \ell) + \la w^2\ra \int\frac{\text{d}^2\b k}{(2\pi)^2}\,\widetilde{\Xi}(\b \ell-\b k)P(\b k)\, ,
+\end{align}
+which is a convolution of the power spectrum and the 2-dimensional sinc function.
+\label{sec:calc of PS}
+
+\subsection{The function $E(\theta)$}
+\label{sec:model_e}
+When computing the shear correlation between a pair of galaxies, it is of central importance whether those two galaxies lie in the same pointing or not. We want to model the probability that a pair of galaxies with separation $\b\theta$ lie in the same pointing by the function $E(\b\theta)$, which we will derive here:
+
+{
+\def\vec{\b}
+\begin{figure}
+    \centering
+    \def\svgwidth{200pt}    
+    \hspace*{1cm}
+    \input{images/eoftheta_new.pdf_tex}  
+    \hspace*{-2cm}
+    \caption[Graphic how to obtain $E(\b\theta)$]{Graphic representation on how to obtain the function $E(\b\theta)$. For a separation vector $\b\theta$, the dashed square represents the area of galaxies that have their partner in the same pointing.}
+    \label{fig:explain_etheta}
+\end{figure}
+}
+Given one square field of length $L$ (in our case $L=60\arcmin$) and a separation vector $\b\theta$, without loss of generality we can assume $\theta_1,\theta_2\geq 0$. As depicted in Figure \ref{fig:explain_etheta}, the dashed square represents all possible positions that the first galaxy can take, such that the second galaxy is still within the same pointing. The volume of this square equals \begin{equation}
+V(|\b\theta|,\phi)  = \big[L-|\b\theta|\cos(\phi)\big]\,\big[L-|\b\theta|\sin(\phi)\big]\, ,
+\end{equation} where $\phi$ represents the angle of the vector $\b\theta$. The function $E(\b\theta)$ then simply equals $V(|\b\theta|,\phi)/L^2$. To exclude negative Volumes (which could occur when $|\b\theta|>1$ holds), we need to add the Heaviside theta function $\mathcal{H}$:
+\begin{equation}
+E(\b\theta)  = \left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right]\, \mathcal{H}\left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\mathcal{H}\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right]\, .
+\label{eq:eoftheta1}
+\end{equation} 
+As $E(\b\theta)$ is not isotropic, in order to obtain the function $E(\theta) = E(|\b\theta|)$, we need to azimuthally average Equation \eqref{eq:eoftheta1} over all angles $\phi$. While the case $\theta_1,\theta_2\geq 0$ certainly does not hold for all angles $\phi$, we can eliminate the other cases by simple symmetry.
+\begin{align}
+E(\theta) = & \frac{4}{2\pi}\int_0^{\frac{\pi}{2}}\d\phi\, E(\b\theta) = \frac{2}{\pi}\begin{cases}
+\int_0^{\frac{\pi}{2}} \d\phi\, \left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right]\, ,  & |\b\theta|  \leq L \\[10pt]
+\int_{\cos\inv(L/|\b\theta|)}^{\sin\inv(L/|\b\theta|)} \d\phi\, \left[1-\frac{|\b\theta|}{L}\cos(\phi)\right]\,\left[1-\frac{|\b\theta|}{L}\sin(\phi)\right] \, , \quad   & L \leq |\b\theta| \leq \sqrt{2}L \\[10pt]
+0\, , &\sqrt{2}L \leq\theta
+\end{cases} \nonumber\\[10pt]
+ = & \begin{cases}
+\frac{1}{L^2 \pi}\left[L^2\pi - (4L-\theta) \theta\right]\, ,  & \theta \leq L \\[10pt]
+\frac{2}{\pi}\,\left[4\sqrt{\frac{\theta^2}{L^2}-1} -1 - \frac{\theta^2}{2L^2} - \cos\inv\left(\frac{L}{\theta}\right) + \sin\inv\left(\frac{L}{\theta}\right)\right]\, ,  & L  \leq \theta \leq \sqrt{2}L \\[10pt]
+0\, ,  & \sqrt{2}L \leq \theta
+\end{cases}\, .
+\end{align}
+
+\subsection{Calculation of the shear correlation functions}
+\label{sec:calc of xipm}
+Following \citet{2017MNRAS.465.1454H}, given a set of galaxies we calculate the shear correlation functions via \begin{equation}
+\xi^{ij}_+(\theta) = \frac{\sum_{a,b}w_a^iw_b^j\epsilon_a^i\epsilon_b^{j*}\Delta(|\b\theta_a^i-\b\theta_b^i|)}{\sum_{a,b}w_a^iw_b^j\Delta(|\b\theta_a^i-\b\theta_b^i|)}\, .
+\label{eq:xip_from_observations}
+\end{equation}
+Here, $w$ represents the lensing weight of the galaxy, whereas $\epsilon$ is its (complex) ellipticity and $\b \theta$ its position on the sky. We have defined the function $\Delta$ as \[
+\Delta(|\b\theta_a^i-\b\theta_b^i|) = \begin{cases}
+1, \,\, & |\b\theta_a^i-\b\theta_b^j| \in [\theta,\theta+{\rm d}\theta] \\
+0, & \text{ else}
+\end{cases}\, ,
+\]
+where we assume ${\rm d}\theta \ll \theta$. We define $N$ as the number of pointings in the survey and $F_k^i$ as the set of galaxies in pointing $k$ and tomographic bin $i$. The numerator in Equation \eqref{eq:xip_from_observations} then transforms to: \begin{align}
+& \sum_{k,\ell=1}^N \sum_{a\in F_k^i}\sum_{b\in F_{\ell}^j} w_a^iw_b^j\epsilon_a^i\epsilon_b^{j*} \Delta(|\b\theta_a^i-\b\theta_b^i|) \nonumber\\
+ = & \sum_{k=1}^N\sum_{a\in F_k^i}w_a^i \sum_{\ell=1}^N \sum_{b\in F_{\ell}^j} w_b^j \Delta(|\b\theta_a^i-\b\theta_b^i|)\, \epsilon_a^i\epsilon_b^{j*} \nonumber\\
+  = & \sum_{k=1}^N\sum_{a\in F_k^i}w_a^i \left[\sum_{b\in F_{k}^j} w_b^j \Delta(|\b\theta_a^i-\b\theta_b^i|)\, \epsilon_a^i\epsilon_b^{j*} + \sum_{\ell\neq k} \sum_{b\in F_{\ell}^j} w_b^j \Delta(|\b\theta_a^i-\b\theta_b^i|)\, \epsilon_a^i\epsilon_b^{j*}\right] \, .
+\end{align}
+When we denote the probability that pointing $k$ is of percentile $m$ by $\mathcal{P}_m^k$ and assume that the product $\epsilon_a^i\epsilon_b^{j*}$ always equals its expectation value, we can set the numerator as \[
+\sum_{k=1}^N\sum_{a\in F_k^i}w_a^i \sum_m \mathcal{P}_m^k \left[\overbrace{\sum_{b\in F_{k}^j} w_b^j \Delta(|\b\theta_a^i-\b\theta_b^i|)}^{\rm{(\ref{eq:numerator1}.a)}}\,  \xi_{+,mm}^{ij}(\theta) + \overbrace{\sum_{\ell\neq k} \sum_{b\in F_{\ell}^j} w_b^j \Delta(|\b\theta_a^i-\b\theta_b^i|)}^{\rm{(\ref{eq:numerator1}.b)}} \sum_n \mathcal{P}_n^{\ell} \xi_{+,mn}^{ij}(\theta)\right] \, .
+\label{eq:numerator1}
+\]
+The term (\ref{eq:numerator1}.a) denotes all galaxies that lie within distance interval $[\theta,\theta+{\rm d}\theta]$ of galaxy $a$, and are in the same pointing as galaxy $a$. This term is equal to the (weighted) number density of galaxies in the pointing multiplied by $2\pi\theta\, {\rm d}\theta\, E(\theta)$. 
+
+The term (\ref{eq:numerator1}.b) denotes all galaxies within distance interval $[\theta,\theta+{\rm d}\theta]$ of galaxy $a$, that are \textit{not} in the same pointing as galaxy $a$. This is equal to the number density of galaxies in the respective pointings multiplied by $2\pi\theta\, {\rm d}\theta\, [1-E(\theta)]$. 
+ 
+If we assume that said number density in a pointing is equal to the number density in the percentile it belongs to, $N_n^j$, and set $\mathcal{P}_n^\ell=1/10$, the numerator becomes \begin{align}
+\sum_{k=1}^N \sum_{a\in F_k^i} w_a^i \sum_m P^k_m \left[2\pi\theta\,\d\theta\,E(\theta) N_m^j \xi_{+,mm}^{ij}(\theta) + 2\pi\theta\,\d\theta\,\frac{1-E(\theta)}{10}\, \sum_n N_n^j \xi_{+,mn}^{ij}(\theta) \right] \, .
+\end{align}
+Now the term $\sum_{a\in F_k^i} w_a^i$ denotes the (weighted) number of galaxies in pointing $k$, which we set as the number density of galaxies in the respective percentile multiplied with the area $A$ of the pointing. Applying this and setting $\mathcal{P}_m^k=1/10$, the numerator reads 
+\begin{align}
+\frac{2\pi\theta\,\d\theta}{10} \sum_{k=1}^N \sum_m N_m^i A &\left[ E(\theta) N_m^j \xi_{+,mm}^{ij}(\theta) + \frac{1-E(\theta)}{10}\sum_n N_n^j\xi_{+,mn}^{ij}(\theta)\right] \nonumber\\
+ =  \, \frac{2\pi\theta\,\d\theta \, NA}{10}  \sum_m N_m^i &\left[ E(\theta) N_m^j \xi_{+,mm}^{ij}(\theta) + \frac{1-E(\theta)}{10}\sum_n N_n^j\xi_{+,mn}^{ij}(\theta)\right] \, .
+\end{align}
+%
+ The same line of argumentation can be applied to the denominator, which then reads: \[
+\frac{2\pi\theta\,\d\theta \, NA}{10}  \sum_m N_m^i \left[ E(\theta) N_m^j + \frac{1-E(\theta)}{10}\sum_n N_n^j\right]\, .
+ \]
+Taking the ratio of the two quantities, we see that Equations \eqref{eq:xip_from_observations} and \eqref{eq:correctionfunction1} are the same\footnote{Note that while here $N_m^i$ denotes a number density, in Equations \eqref{eq:xip_from_observations} and \eqref{eq:correctionfunction1} it denotes the total (weighted) number of galaxies. However, the difference is just a multiplication with the area $A$ of the pointings, which appears both in the numerator and the denominator and is thus cancelled out.}.
+\section{Finite field effects}
+\label{sec:expand_eoftheta}
+\begin{figure}
+    \centering
+    \def\svgwidth{200pt}    
+%    \hspace*{1cm}
+    \input{images/expand_eoftheta.pdf_tex}  
+%    \hspace*{-2cm}
+    \caption{Graphic representation of the definitions of $E_{ab}(\theta)$. When the first galaxy is in the bottom left pointing, the probability to find the second galaxy in a pointing of distance $(a,b)$ is $E_{ab}(\theta)$.}
+    \label{fig:expand_etheta}
+\end{figure}
+In this chapter we will outline how to calculate the correction of the correlation functions for a finite survey with a potentially correlated distribution of depth between pointings. Essentially, this boils down to the calculation of $\mathcal{P}_{mn}^{ij}(\theta)$ from Equation \eqref{eq:def_xiobs}. We calculate this weighting by the geometrical probability that a pair of galaxies of separation $\theta$ is of percentiles $m$ and $n$, $\mathcal{P}(m,n|\theta)$, weighted by the respective number of galaxies in the percentiles $N_m^i,N_n^j$: \[
+\mathcal{P}_{mn}^{ij}(\theta) = N_m^iN_n^j\mathcal{P}(m,n|\theta)\, .
+\label{eq:pmnij1}
+\]
+ At first we define Functions $E_{ab}(\b\theta)$ as the probabilty that a galaxy pair of separation $\b\theta$ is in pointings of distance $(a,b)$. This situation is depicted in Figure \ref{fig:expand_etheta}. Due to symmetry, for the azimuthal average of the functions, $E_{ab}(\theta) = E_{-ab}(\theta) = E_{ba}(\theta)$ holds for all combinations of $a$ and $b$. Note that $E_{00}(\theta)=E(\theta)$ and $\sum_{a,b}E_{ab}(\theta)\equiv 1$.
+
+Let $\mathcal{P}^*(m,n|a,b)$ denote the probability that two pointings of distance $(a,b)$ are of percentile $m$ and $n$ (which is directly calculable from a given survey footprint). 
+Then the following equation holds: \[
+\mathcal{P}(m,n|\theta) = \sum_{a,b} E_{ab}(\theta)\mathcal{P}^*(m,n|a,b)\, .
+\label{eq:pmntheta}
+\]
+Note that the expectation value of $\mathcal{P}^*(m,n|a,b)$ for uncorrelated distributions is \[
+\la \mathcal{P}^*(m,n|a,b)\ra = \begin{cases}
+0.1\,\delta_{mn},\qquad & \text{for }(a,b)=(0,0) \\
+0.01, & \text{else}
+\end{cases}\, ,
+\label{eq:pmnabstar}
+\]
+where $\delta_{mn}$ denotes the Kronecker delta. Keeping in mind that \[
+\sum_{(a,b)\neq (0,0)} E_{ab}(\theta) = 1-E(\theta)\, ,
+\]
+we can use the expectation value \eqref{eq:pmnabstar} to calculate \eqref{eq:pmntheta} as a consistency check. In that case, we receive the same value for the coefficients in \eqref{eq:pmnij1} as we have in Equation \eqref{eq:pmnij_uncorr} in Chapter \ref{sec:xipm_semianalytic} for the case of an infinite footprint and uncorrelated distribution of depth.
+
+\begin{figure}
+\centering
+\begin{subfigure}[c]{0.49\textwidth}
+\def\svgwidth{100pt}
+\hspace*{2cm}
+\input{images/e_1.pdf_tex}
+\subcaption{For $\theta\sin(\phi)<L$ the volume of the dashed rectangle is $V(\theta,\phi)=\theta\sin(\phi)[L-\theta\cos(\phi)]$.}
+\label{fig:e01thetaa}
+\end{subfigure}
+\begin{subfigure}[c]{0.49\textwidth}
+\def\svgwidth{100pt}
+\hspace*{2cm}
+\input{images/e_2.pdf_tex}
+\subcaption{For $\theta\sin(\phi)>L$ the volume of the dashed rectangle is $V(\theta,\phi)=[2L-\theta\sin(\phi)]\, [L-\theta\cos(\phi)]$.}
+\label{fig:e01thetab}
+\end{subfigure}
+\caption[How to calculate $E_{01}(\theta)$]{How to calculate $E_{01}(\theta)$ for different values of $\theta$.}
+\label{fig:e01theta}
+\end{figure}
+
+The $E_{ab}$ can all be calculated analytically, similar to our method in Chapter \ref{sec:model_e}. We again assume a selection of square fields with side length $L$, and later set $L=60\arcmin$ to adapt to the KV450 survey. As an example, for $E_{01}$ we have several possible situations, depicted in Figure \ref{fig:e01theta}. Again setting $E_{ab}(\b\theta) = V(\theta,\phi)/L^2$, we define \begin{align}
+E_{01}^{(a)}(\b\theta) & \equiv \frac{\theta}{L}\sin(\phi)[1-\frac{\theta}{L}\cos(\phi)] \nonumber\\
+E_{01}^{(b)}(\b\theta) & \equiv [2-\frac{\theta}{L}\sin(\phi)]\, [1-\frac{\theta}{L}\cos(\phi)]
+\end{align}
+With some geometric considerations, we compute:
+{
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align}
+E_{01}(\theta) = & \begin{cases}
+\frac{1}{\pi}\int_0^{\frac{\pi}{2}} \d\phi\, E_{01}^{(a)}(\b\theta), & \frac{\theta}{L} < 1 \\[10pt]
+ \frac{1}{\pi}  \left[\int_{\cos\inv(L/\theta)}^{\sin\inv(L/\theta)}\d\phi\,E_{01}^{(a)}(\b\theta) + \int_{\sin\inv(L/\theta)}^{\frac{\pi}{2}}\d\phi\, E_{01}^{(b)}(\b\theta) \right],  & 1 < \frac{\theta}{L} < \sqrt{2} \\[10pt]
+ \frac{1}{\pi} \int_{\cos\inv(L/\theta)}^{\frac{\pi}{2}}\d\phi\, E_{01}^{(b)}(\b\theta), & \sqrt{2}<\frac{\theta}{L}<2 \\[10pt]
+\frac{1}{\pi} \int_{\cos\inv(L/\theta)}^{\sin\inv(2L/\theta)}\d\phi\, E_{01}^{(b)}(\b\theta), & 2<\frac{\theta}{L}<\sqrt{5} \\[10pt]
+ 0, & \sqrt{5}<\frac{\theta}{L}
+\end{cases}\nonumber\\
+ = & \begin{cases}
+ \frac{(2L-\theta)\theta}{2\pi L^2}, & \frac{\theta}{L} < 1 \\[10pt]
+ \frac{1}{\pi}\left[\frac{3}{2}- 2\frac{\theta}{L}+\frac{\theta^2}{L^2}+2\sqrt{\frac{\theta^2}{L^2}-1}+2\rm{sec\inv}\left(\frac{\theta}{L}\right)\right], & 1<\frac{\theta}{L}<\sqrt{2} \\[10pt]
+ \frac{1}{2\pi}\left[-1-4\frac{\theta}{L}+4\sqrt{\frac{\theta^2}{L^2}-1}+4\rm{csc\inv}\left(\frac{\theta}{L}\right)\right], & \sqrt{2} < \frac{\theta}{L} < 2 \\[10pt]
+ \frac{1}{2\pi}\left[-5-\frac{\theta^2}{L^2}+2\sqrt{\frac{\theta^2}{L^2}-4}+4\sqrt{\frac{\theta^2}{L^2}-1}-4\rm{sec\inv}\left(\frac{\theta}{L}\right)+4\sin\inv\left(\frac{2L}{\theta}\right)\right], & 2 < \frac{\theta}{L} < \sqrt{5} \\[10pt]
+ 0, & \sqrt{5}<\frac{\theta}{L}
+ \end{cases}\, .
+\end{align}
+\endgroup
+}
+
+\begin{figure}
+\centering
+\def\svgwidth{120pt}
+\input{images/drawing.pdf_tex}
+\caption[Visualisation of the numerical computation for $E_{01}(\theta)$.]{Visualisation of the numerical computation for $E_{01}(\theta)$. For a circle of radius $\theta$, the length of the red arc divided by $2\pi$ represents the fraction of galaxies within the respective pointing. This value needs to be integrated for all possible centers of the circle in the pointing. That procedure is straightforward to expand for other $E_{ab}(\theta)$.}
+\label{fig:eoftheta_sim}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width = 0.8\textwidth]{images/eab.pdf}
+\caption{The functions $E_{ab}(\theta)$ for the first few possible combinations.}
+\label{fig:eab}
+\end{figure}
+Naturally, to calculate those functions for all possible combinations would be rather tedious, however they are simple to determine numerically (compare Figure \ref{fig:eoftheta_sim}). A plot of these functions can be found in Figure \ref{fig:eab}.
+
+When we now simulate random distributions of the depth-function for a $100\,\rm{deg}^2$-field, a $450\,\rm{deg}^2$-field and a $1000\,\rm{deg}^2$-field, we can compare how they differ from each other and estimate how important finite-field effects are. As can be seen from Figures \ref{fig:100degsqr}, \ref{fig:450degsqr} and \ref{fig:1000degsqr}, the effect is quite significant for a $100\,\rm{deg}^2$-field, but almost negligible for a $1000\,\rm{deg}^2$-field. This leads to the assumption that both for the KiDS- as for the Euclid-survey, finite field effects do not need to be accounted for. However, if the distribution of depth is correlated in the surveys, that might have a noticeable impact on the results.
+
+\section{Additional Figures}
+\subsection{Results of the MCMC}
+\begin{figure}[h]
+\centering
+	\includegraphics[width=0.7\textwidth]{images/obscorr.pdf}
+	\caption{Bias in the parameters for a KiDS-like Survey.}
+	\label{fig:mcmc_kids}
+\end{figure}  
+\begin{figure}[h]
+\centering
+	\includegraphics[width=0.7\textwidth]{images/euclid.pdf}
+	\caption{Bias in the parameters for a Euclid-like Survey.}
+	\label{fig:mcmc_euclid}
+\end{figure}  
+\clearpage
+\subsection{Finite field effects}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/100degtwofoot_final.pdf}
+\caption[Correction of the correlation functions for a $100\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $100\,\rm{deg}^2$-field.}
+\label{fig:100degsqr}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/450degtwofoot_final.pdf}
+\caption[Correction of the correlation functions for a $450\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $450\,\rm{deg}^2$-field.}
+\label{fig:450degsqr}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/1000degtwofoot_final.pdf}
+\caption[Correction of the correlation functions for a $1000\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $1000\,\rm{deg}^2$-field.}
+\label{fig:1000degsqr}
+\end{figure}
+
+\subsection{Cosmology Dependency of the Results}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/compare_cosmos.pdf}
+\caption{Correction to the correlation functions in varying cosmologies. Depicted here are three flat sample cosmologies, where values within the 98\% CL of the KV450 survey were sampled.}
+\label{fig:comparecosmo}
+\end{figure}
 \end{appendix}
 \end{document}
 %
