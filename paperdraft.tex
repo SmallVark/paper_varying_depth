@@ -65,12 +65,11 @@
           \and Hendrik Hildebrandt\inst{2,1}
           \and Catherine Heymans\inst{3} 
           \and Marika Asgari\inst{3}
-          \todo{order of authors?, KiDS-Authors?}
           }
    \institute{Argelander-Institut f\"ur Astronomie, Auf dem H\"ugel 71, 53121 Bonn, Germany 
 \and 
 Astronomisches Institut, Ruhr-Universit\"at Bochum, Universit\"atsstr. 150, 44801 Bochum, Germany \and
-Institute for Astronomy, University of Edinburgh, Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK  \\ \email{sven@astro.uni-bonn.de}
+Institute for Astronomy, University of Edinburgh, Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK  \\ \email{sven@astro.uni-bonn.de, peter@astro.uni-bonn.de}
              }
 
    \date{Received XXX; accepted XXX}
@@ -102,9 +101,18 @@ It is interesting to note that all three current major cosmic shear results repo
 
 For current cosmic shear surveys, the estimated systematic error is of comparable size to the statistical error, implying that for next-generation surveys, a significant reduction of systematic errors is necessary \citep[compare][hereafter H17]{2017MNRAS.465.1454H}. With next-generation surveys like the Large Synoptic Survey Telescope \citep{Ivezic:2008} and Euclid \citep{Laureijs:2011} soon to start, systematic effects in gravitational lensing have received a large amount of attention \citep{2018arXiv181002353A,2019arXiv190207439B,2019arXiv190109488S}. %\todo{Citations.. \citet{2017MNRAS.464.1676A} has a few...}
 
-To check for remaining systematics, a weak lensing signal can be divided into two components, the so-called E- and B-modes \citep{2002ApJ...568...20C,2002A&A...389..729S}. To leading order, B-modes can not be created by astrophysical phenomena and are thus an excellent test for remaining systematics. Note that the non-existence of B-modes does not necessarily imply that the sample is free of remaining systematics.
+To check for remaining systematics, a weak lensing signal can be divided into two components, the so-called E- and B-modes \citep{2002ApJ...568...20C,2002A&A...389..729S}. To leading order, B-modes can not be created by astrophysical phenomena and are thus an excellent test for remaining systematics. The most useful E- and B-mode decomposition is provided by Complete Orthogonal Sets of E- and B-mode Integrals \citep[COSEBIs, compare][]{2010A&A...520A.116S}, as it can easily be applied to real data. Note that the non-existence of B-modes does not necessarily imply that the sample is free of remaining systematics.
 
 One systematic effect is the variation of depth in a survey. While effects like Galactic extinction or dithering strategies do play a role in every survey, this work focuses on the effects caused by varying atmospheric conditions that are found in ground-based surveys. To first order, this variation can be modelled by a piece-wise constant depth function which varies from pointing to pointing. In this work we assume the specifications of the Kilo-Degree Survey, namely an assembly of $1\,\text{deg}^2$ square fields. 
+
+The depth of a pointing primarily influences the number density as well as the average redshift of galaxies, meaning that a variation in depth is responsible for a correlation between those two quantities (compare Fig. \ref{fig:nz_of_meanz}).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{images/cov_nz_meanz.pdf}
+\caption{Galaxy number density $N$ and average redshift $\la z\ra$ in the KiDS+VIKING-450 (KV450) survey \citep{Wright:2018} in pointings of different depth for each of the five tomographic bins used in H18. Details on how the data was obtained are described in Sec. \ref{sec:xipm_semianalytic}.}
+\label{fig:nz_of_meanz}
+\end{figure}
 
 In Sect. \ref{sec:modelling_single_lens} we will introduce a simple toy model to understand this effect and analyze the impact on the cosmic shear power spectrum. In Sect. \ref{sec:xipm} we will estimate the effect on the shear correlation functions $\xi_\pm$ using two different models. We will present our results in Sect. \ref{sec:results}. In Sect. \ref{sec:discussion} we will discuss our results and comment on the impacts of our used simplifications. We will assume the standard weak gravitational lensing formalism, a summary of which can be found in \citet{2001PhR...340..291B}.
 
@@ -156,15 +164,7 @@ Convenient measures to infer cosmological information from observational data ar
 \xi_\pm(\theta) = \la \gamma_{\rm t}\gamma_{\rm t}\ra(\theta) \pm \la \gamma_\times\gamma_\times\ra(\theta) \, .
 \]
 Here, $\gamma_t$ and $\gamma_\times$ denote the tangential- and cross-component of the shear for a galaxy pair with respect to their relative orientation \citep[compare][]{2002A&A...396....1S}.
-The shear correlation functions are the prime estimators to quantify a cosmic-shear signal since it is simple to include a weighting of the shear measurements into the correlation functions and, contrary to the power spectrum, one does not have to worry about the shape of the survey footprint, or masked regions. Given two comoving distance probability distributions of sources $p_i(\chi),p_j(\chi)$, one can compute the shear correlation functions from the underlying matter power spectrum $P_\delta(\ell,\chi)$ via \citep[compare][]{1992ApJ...388..272K} \begin{align}
-\label{eq:xipm-pkappa}
-\xi_\pm^{ij}(\theta) =& \int_0^\infty \frac{{\rm d}\ell\,\ell}{2\pi}\, J_{0,4}(\ell\theta)\, P^{ij}(\ell)\, , \\
-\label{eq:pkappa-pdelta/lenseff}
-P^{ij}(\ell) =& \frac{9 H_0^4\Omega_{\rm m}^2}{4c^4}\int_0^{\chi_{\rm{H}}} {\rm d}\chi\, \frac{g^i(\chi)g^j(\chi)}{a^2(\chi)}\, P_\delta\left(\frac{\ell}{f_K(\chi)},\chi\right)\, , \\
-\label{eq:lenseff}
-g^i(\chi) =& \int_\chi^{\chi_{\rm{H}}} {\rm d}\chi' \, p_i(\chi') \, \frac{f_K(\chi'-\chi)}{f_K(\chi')}\, .
-\end{align}
-Here, $J_{0,4}$ denote the 0-th and 4-th order Bessel Functions, $f_K(\chi)$ is the comoving angular diameter distance and $\chi_{\rm{H}}$ is chosen such that $p_i(\chi)=0$ holds for all $\chi>\chi_{\rm{H}}$.
+The shear correlation functions are the prime estimators to quantify a cosmic-shear signal since it is simple to include a weighting of the shear measurements into the correlation functions and, contrary to the power spectrum, one does not have to worry about the shape of the survey footprint, or masked regions. 
 \subsection{Using an analytic model}
 \label{sec:xipm_analytic}
 For a first simple analysis we will assume that a deeper redshift distribution just yields a stronger shear signal, in the sense that the shear field for a deeper redshift distribution gets multiplied by a weight $W>1$. While this is not true for a 3-dimensional lensing matter distribution, it should be a reasonable first approximation for small variations in mean source redshift. Additionally, we assume that a higher depth does not only lead to a stronger average shear, but also to a higher galaxy number density, implying a correlation between those two quantities.
@@ -216,7 +216,19 @@ However, we will now derive a more sophisticated model that includes the effects
 \subsection{Using a semi-analytic Model}
 \label{sec:xipm_semianalytic}
 \todo{It feels like some kind of introductory sentence is missing here, right now I can not think of one, though...}
-The analysis of data from the Kilo-Degree Survey showed that the redshift distribution of sources is highly correlated with the depth in the $r$-band. We thus chose to separate the survey into 10 percentiles, sorted by $r$-band depth, i.e. if a pointing had a shallower depth than 90\% of the other pointings, it would belong to the first percentile, and so on. For each percentile $m$ and each tomographic redshift bin $i$ we can extract a weighted number of galaxies $N^i_m$ and, a source redshift distribution $p^i_m(z)$ following the DIR method of H17\footnote{Instead of using the actual number of galaxies, we take the sum of their lensing weights, following H17. Due to this we account for different weighting of galaxies on the shear correlation functions as well as on the average redshift distribution.}. Using \eqref{eq:xipm-pkappa}, we can compute the model correlation functions $\xi_{\pm,mn}^{ij}(\theta)$ for each pair of percentiles $m,n$ and redshift bins $i,j$.\footnote{For the calculation of the shear correlation functions we use the \textsc{Nicaea}-program \citep{10.1093/mnras/stx2082}. Among other quantities, it calculates the shear correlation functions for a given cosmology and source redshift distribution. For the power spectrum on nonlinear scales, we use the method of \citet{2012ApJ...761..152T}.} When measuring the shear correlation functions of a survey, we take the weighted average of tangential and cross shears of all pairs of galaxies (compare H17). If, for a single pair of galaxies, one galaxy lies in the $m$-th percentile of redshift bin $i$ and the second one lies in the $n$-th percentile of redshift bin $j$, then their contribution to the observed correlation functions is, on average, $\xi_{\pm,mn}^{ij}(\theta)$. This means that if we know each of those single correlation functions, we can reconstruct the total correlation functions via a weighted average of the single functions. Formally, we define \[
+The analysis of data from the Kilo-Degree Survey showed that the redshift distribution of sources is highly correlated with the depth in the $r$-band. We thus chose to separate the survey into 10 percentiles, sorted by $r$-band depth, i.e. if a pointing had a shallower depth than 90\% of the other pointings, it would belong to the first percentile, and so on. For each percentile $m$ and each tomographic redshift bin $i$ we can extract a weighted number of galaxies $N^i_m$ and, a source redshift distribution $p^i_m(z)$ following the DIR method of H17\footnote{Instead of using the actual number of galaxies, we take the sum of their lensing weights, following H17. Due to this we account for different weighting of galaxies on the shear correlation functions as well as on the average redshift distribution.}. Asserting an arbitrary cosmological model, we can transform the source redshift distributions $p^i_m(z)$ into comoving distance probability distributions $\mathcal{L}^i_m(\chi)$.
+
+Given two comoving distance probability distributions of sources $\mathcal{L}^i_m(\chi),\mathcal{L}^j_n(\chi)$, we can compute the shear correlation functions from the underlying matter power spectrum $P(\ell,\chi)$ via \citep[compare][]{1992ApJ...388..272K} \begin{align}
+\label{eq:xipm-pkappa}
+\xi_{\pm,mn}^{ij}(\theta) =& \int_0^\infty \frac{{\rm d}\ell\,\ell}{2\pi}\, J_{0,4}(\ell\theta)\, P^{ij}_{\kappa,mn}(\ell)\, , \\
+\label{eq:pkappa-pdelta/lenseff}
+P^{ij}_{\kappa,mn}(\ell) =& \frac{9 H_0^4\Omega_{\rm m}^2}{4c^4}\int_0^{\chi_{\rm{H}}} {\rm d}\chi\, \frac{g^i_m(\chi)g^j_n(\chi)}{a^2(\chi)}\, P_\delta\left(\frac{\ell}{f_K(\chi)},\chi\right)\, , \\
+\label{eq:lenseff}
+g^i_m(\chi) =& \int_\chi^{\chi_{\rm{H}}} {\rm d}\chi' \, \mathcal{L}^i_m(\chi') \, \frac{f_K(\chi'-\chi)}{f_K(\chi')}\, .
+\end{align}
+Here, $J_{0,4}$ denote the 0-th and 4-th order Bessel Functions, $f_K(\chi)$ is the comoving angular diameter distance and $\chi_{\rm{H}}$ is chosen such that $p_i(\chi)=0$ holds for all $\chi>\chi_{\rm{H}}$.
+
+Using \eqref{eq:xipm-pkappa}, we can compute the model correlation functions $\xi_{\pm,mn}^{ij}(\theta)$ for each pair of percentiles $m,n$ and redshift bins $i,j$.\footnote{For the calculation of the shear correlation functions we use the \textsc{Nicaea}-program \citep{10.1093/mnras/stx2082}. Among other quantities, it calculates the shear correlation functions for a given cosmology and source redshift distribution. For the power spectrum on nonlinear scales, we use the method of \citet{2012ApJ...761..152T}.} When measuring the shear correlation functions of a survey, we take the weighted average of tangential and cross shears of all pairs of galaxies (compare H17). If, for a single pair of galaxies, one galaxy lies in the $m$-th percentile of redshift bin $i$ and the second one lies in the $n$-th percentile of redshift bin $j$, then their contribution to the observed correlation functions is, on average, $\xi_{\pm,mn}^{ij}(\theta)$. This means that if we know each of those single correlation functions, we can reconstruct the total correlation functions via a weighted average of the single functions. Formally, we define \[
 \xi_\pm^{ij,\rm{obs}}(\theta) = \frac{\sum_{m,n} \mathcal{P}_{mn}^{ij}(\theta)\,\xi_{\pm,mn}^{ij}(\theta)}{\sum_{m,n} \mathcal{P}_{mn}^{ij}(\theta)}\, ,
 \label{eq:def_xiobs}
 \]
@@ -231,7 +243,7 @@ For the calculation of $\mathcal{P}_{mm}^{ij}(\theta)$ we have to account for a 
 \label{eq:pmnij_corr2}
 \]
 We can then write $\mathcal{P}_{mn}^{ij}(\theta)$ as: \[
-\mathcal{P}_{mn}^{ij}(\theta) = E(\theta)\frac{1}{10} N_m^iN_n^j\,\delta_{mn} + [1-E(\theta)]\frac{1}{100} N_m^i N_n^j \, ,
+\mathcal{P}_{mn}^{ij}(\theta) = E(\theta)\frac{1}{10} N_m^iN_m^j\,\delta_{mn} + [1-E(\theta)]\frac{1}{100} N_m^i N_n^j \, ,
 \label{eq:pmnij_uncorr}
 \]
 where $\delta_{mn}$ denotes the Kronecker delta.
@@ -246,18 +258,25 @@ C = \sum_{m=1}^{10} N_m^i \bigg[ E(\theta)  N_m^j + \frac{\big[1-E(\theta)\big]}
 \]
 A mathematically more rigorous derivation of this function can be found in Appendix \ref{sec:calc of xipm}.
 
-If we want to compute this for all 5 redshift bins of the KV450-survey, this forces us to calculate 1275 correlation functions and add them, thus yielding potential numerical errors (apart from being computationally expensive). However, if we examine Eq.\,\eqref{eq:lenseff}, we see that the comoving distance distribution of sources factors in linearly. This in turn implies that in Equations \eqref{eq:pkappa-pdelta/lenseff} and \eqref{eq:xipm-pkappa} both source distance distributions factor in linearly. This basically means that, instead of adding correlation functions, we can add their respective redshift distributions and compute the correlation functions of that. In particular, we can define the \textit{combined number of galaxies} $N^i$ and \textit{average redshift distribution} $p^i(z)$ of tomographic bin $i$ as \[
-N^i\equiv\sum_m N_m^i\, , \qquad p^i(z) = \frac{\sum_m N_m^i p_m^i(z)}{\sum_m N_m^i} \, .
+If we want to compute this for all 5 redshift bins of the KV450-survey, this forces us to calculate 1275 correlation functions and coadding them, thus yielding potential numerical errors (apart from being computationally expensive). However, if we examine Eq.\,\eqref{eq:lenseff}, we see that the comoving distance distribution of sources enters linearly. This in turn implies that in Equations \eqref{eq:pkappa-pdelta/lenseff} and \eqref{eq:xipm-pkappa} both source distance distributions enter linearly, meaning that, instead of adding correlation functions, we can add their respective redshift distributions and compute the correlation functions of that. In particular, we can define the \textit{combined number of galaxies} $N^i$ and \textit{average comoving distance probability distribution} $\mathcal{L}^i(\chi)$ of tomographic bin $i$ as \[
+N^i\equiv\sum_m N_m^i\, , \qquad \mathcal{L}^i(\chi) = \frac{\sum_m N_m^i \mathcal{L}_m^i(\chi)}{\sum_m N_m^i} \, .
 \]
-If we define $\xi^{ij}_\pm$ as the correlation functions between the average redshift distributions $p^i(z)$ and $p^j(z)$, then we observe: \[
-\sum_{m,n}N_m^iN_n^j\xi^{ij}_{\pm,mn} = N^iN^j\xi^{ij}_\pm\, .
-\]
+If we define $\xi^{ij}_\pm$ as the correlation functions between the average comoving distance distributions $\mathcal{L}^i(\chi)$ and $\mathcal{L}^j(\chi)$, then we observe: \begin{align}
+\sum_{m,n}N_m^iN_n^j\xi^{ij}_{\pm,mn} = & \, \frac{9 H_0^4\Omega_{\rm m}^2}{4c^4} \sum_{m,n} N_m^i N_n^j \int_0^\infty \frac{{\rm d}\ell\,\ell}{2\pi}\, J_{0,4}(\ell\theta) \int_0^{\chi_{\rm{H}}} \frac{{\rm d}\chi}{a^2(\chi)}\, P_\delta\left(\frac{\ell}{f_K(\chi)},\chi\right) \\
+& \int_\chi^{\chi_{\rm{H}}} {\rm d}\chi' \, \mathcal{L}^i_m(\chi') \, \frac{f_K(\chi'-\chi)}{f_K(\chi')}
+\int_\chi^{\chi_{\rm{H}}} {\rm d}\chi'' \, \mathcal{L}^j_n(\chi'') \, \frac{f_K(\chi''-\chi)}{f_K(\chi'')} \\
+ = & \,N^i N^j \, \frac{9 H_0^4\Omega_{\rm m}^2}{4c^4} \int_0^\infty \frac{{\rm d}\ell\,\ell}{2\pi}\, J_{0,4}(\ell\theta) \int_0^{\chi_{\rm{H}}} \frac{{\rm d}\chi}{a^2(\chi)}\, P_\delta\left(\frac{\ell}{f_K(\chi)},\chi\right) \\
+& \int_\chi^{\chi_{\rm{H}}} {\rm d}\chi' \, \frac{\sum_m N_m^i \mathcal{L}^i_m(\chi')}{N^i} \, \frac{f_K(\chi'-\chi)}{f_K(\chi')}
+\int_\chi^{\chi_{\rm{H}}} {\rm d}\chi'' \, \frac{\sum_n N_n^j \mathcal{L}^j_n(\chi'')}{N^j}  \, \frac{f_K(\chi''-\chi)}{f_K(\chi'')} \\
+ = & \, N^iN^j\xi^{ij}_\pm\, ,
+\end{align}
+where $\xi^{ij}_\pm$ denotes the correlation function for the average comoving distance probability distributions of redshift bins $i$ and $j$.
 Consequently, we can apply this to \eqref{eq:correctionfunction1}, yielding
 \begin{equation}
 \xi_{\pm}^{ij,\rm{obs}}(\theta) = \frac{1}{C}\left\{ E(\theta)\left[\sum_{m=1}^{10} N_m^iN_m^j \xi_{\pm,mm}^{ij}(\theta)\right] +\frac{\big[1-E(\theta)\big]}{10}\xi_\pm^{ij}(\theta)N^iN^j\right\}\, .
 \label{eq:correctionfunction2}
 \end{equation}
-For each set of redshift bins we thus only have to compute eleven correlation functions, which reduces the number of functions to compute from 1275 to 165.
+For each pair of redshift bins we thus only have to compute eleven correlation functions, which reduces the number of functions to compute from 1275 to 165.
 
 %-------------------------------------------------------------------
 
@@ -573,13 +592,13 @@ When we now simulate random distributions of the depth-function for a $100\,\rm{
 \subsection{Results of the MCMC}
 \begin{figure}[h]
 \centering
-	\includegraphics[width=0.7\textwidth]{images/obscorr.pdf}
+	\includegraphics[width=0.7\textwidth]{images/mcmc_kids.pdf}
 	\caption{Bias in the parameters for a KiDS-like Survey.}
 	\label{fig:mcmc_kids}
 \end{figure}  
 \begin{figure}[h]
 \centering
-	\includegraphics[width=0.7\textwidth]{images/euclid.pdf}
+	\includegraphics[width=0.7\textwidth]{images/mcmc_euclid.pdf}
 	\caption{Bias in the parameters for a Euclid-like Survey.}
 	\label{fig:mcmc_euclid}
 \end{figure}  
@@ -588,23 +607,9 @@ When we now simulate random distributions of the depth-function for a $100\,\rm{
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{images/100degtwofoot_final.pdf}
+\includegraphics[width=\textwidth]{images/finite_footprint.pdf}
 \caption[Correction of the correlation functions for a $100\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $100\,\rm{deg}^2$-field.}
 \label{fig:100degsqr}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{images/450degtwofoot_final.pdf}
-\caption[Correction of the correlation functions for a $450\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $450\,\rm{deg}^2$-field.}
-\label{fig:450degsqr}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{images/1000degtwofoot_final.pdf}
-\caption[Correction of the correlation functions for a $1000\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $1000\,\rm{deg}^2$-field.}
-\label{fig:1000degsqr}
 \end{figure}
 
 \subsection{Cosmology Dependency of the Results}
