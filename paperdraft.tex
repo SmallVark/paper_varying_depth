@@ -110,7 +110,7 @@ The depth of a pointing primarily influences the number density as well as the a
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{images/cov_nz_meanz.pdf}
-\caption{Galaxy number density $N$ and average redshift $\la z\ra$ in the KiDS+VIKING-450 (KV450) survey \citep{Wright:2018} in pointings of different depth for each of the five tomographic bins used in H18. Details on how the data was obtained are described in Sec. \ref{sec:xipm_semianalytic}.}
+\caption{Galaxy number density $N$ and average redshift $\la z\ra$ in the KiDS+VIKING-450 (KV450) survey \citep{Wright:2018} in pointings of different depth for each of the five tomographic bins used in H18. Details on how the data were obtained are described in Sec. \ref{sec:xipm_semianalytic}.}
 \label{fig:nz_of_meanz}
 \end{figure}
 
@@ -283,23 +283,22 @@ For each pair of redshift bins we thus only have to compute eleven correlation f
 \section{Results}
 \label{sec:results}
 We want to apply both methods to data from the KiDS+VIKING-450 (KV450) survey \citep{Wright:2018}. While the application of the semi-analytic method is straightforward, for the analytic method we need to decide how to estimate the weight function $W$ from given redshift data. Following the separation of a survey into percentiles as in Sect. \ref{sec:xipm_semianalytic}, we define $W(\b\theta)\equiv W_n$ whenever $\b\theta$ is in a pointing of percentile $n$. For the determination of $W_n$ we tried two approaches:
- As a first method, following \citet{2006APh....26...91V}, we estimate 
+ As a first method, following \citet{2006APh....26...91V,1997A&A...322....1B}, we estimate 
 \[
 W_n \propto \la z_n \ra ^{0.85}\, ,
 \]
 where $\la z_n\ra$ is the average redshift of percentile $n$. As a second method we define \[
-W_n \propto \sqrt{ \la\gamma_{\rm{t}}\gamma_{\rm{t}}\ra (\theta') + \la \gamma_\times\gamma_\times\ra (\theta')} = \sqrt{\xi_{+,nn}^{ij}(\theta')}\, ,
+W_n \propto \sqrt{ \la\gamma_{\rm{t}}\gamma_{\rm{t}}\ra (\theta_{\rm{ref}}) + \la \gamma_\times\gamma_\times\ra (\theta_{\rm{ref}})} = \sqrt{\xi_{+,nn}^{ij}(\theta_{\rm{ref}})}\, ,
 \]
-\todo{Maybe we set $W_n\propto \sqrt[4]{\la \gamma_t\gamma_t\ra^2 + \la \gamma_\times\gamma_\times\ra^2 } \propto \sqrt[4]{\xi_+^2 + \xi_-^2}$?}
-where the $\xi_{+,nn}^{ij}(\theta')$ denotes the model correlation function defined in Sect. \ref{sec:xipm_semianalytic}, evaluated at a characteristic scale $\theta'$.
+where the $\xi_{+,nn}^{ij}(\theta_{\rm{ref}})$ denotes the model correlation function defined in Sect. \ref{sec:xipm_semianalytic}, evaluated at a characteristic scale $\theta_{\rm{ref}}$.
 
-While the first method suffers from the fact that the power-law index is redshift-dependent, the second method is sensitive to the angular range $\theta$, at which the shear correlation functions are evaluated, which is completely arbitrary.
+While the first method suffers from the fact that the power-law index only holds for sources of redshifts $1\lesssim z \lesssim 2$, the second method is sensitive to the angular range $\theta$, at which the shear correlation functions are evaluated, which is fairly arbitrary.
 
 We applied both analytic methods and the semianalytic one to data from the KV450 survey, following the separation into tomographic bins as in H18, and computed the ratio of observed and modeled correlation functions.\todo{Probably I should include some more specifications of the KV450 survey here?} Furthermore, we conducted numerical simulations investigating the same issue: A $100\,\rm{deg}^2$ field in the Scinet Light Cone Simulations (SLICS) \citep{2018MNRAS.481.1337H} was randomly separated into 10 percentiles. For each tomographic redshift bin of each percentile, galaxies were placed to trace the respective redshift distribution. Afterwards, their expected shear was determined (shape-noise in the form of intrinsic ellipticities of galaxies was not included). This was compared to a set of simulations where the galaxies were simply distributed according to the combined redshift distribution of each respective tomographic bin\todo{Catherine, I feel like I am grossly oversimplifying what you did. Maybe you could write a short paragraph about the simulations?}. The results can be seen in Fig.~\ref{fig:all_xis}.
 	\begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{images/xis_all.pdf}
-	\caption{The ratio of observed to modelled correlation functions for the analytic methods (green), the semi-analytic method (blue) and the numerical simulations (red) for a cross-correlation of all redshift bins. The numbers in the upper left corners correspond to the respective redshift bins, the upper left triangle depicts the ratios of $\xi_+$, whereas the lower right triangle depicts the ratios of $\xi_-$. For the characteristic scale $\theta'$ of the second analytic method we chose $\theta' = 0.\! '5$.}
+	\caption{The ratio of observed to modelled correlation functions for the analytic methods (green), the semi-analytic method (blue) and the numerical simulations (red) for a cross-correlation of all redshift bins. The numbers in the upper left corners correspond to the respective redshift bins, the upper left triangle depicts the ratios of $\xi_+$, whereas the lower right triangle depicts the ratios of $\xi_-$. For the characteristic scale $\theta_{\rm{ref}}$ of the second analytic method we chose $\theta_{\rm{ref}} \approx 11'$.}
 	\label{fig:all_xis}
 	\end{figure}
 %We can see that for high redshift bins, the analytic and the semi-analytic methods are consistent, whereas for low redshift bins they significantly diverge. We explain this due to the facts that the analyic method uses simplifications that are redshift-dependent and only hold for small variations in redshift, which is not fulfilled in the low redshift bins.
@@ -307,7 +306,21 @@ We observe that for high redshift bins, both analytic methods as well as the sem
 
 The simulations seem to be in rough agreement with the models, but there are some significant differences. After a thorough analysis we explain these discrepancies the following way: The simulations were performed on a $100\,\rm{deg}^2$ field, which means that shot-noise of the fields plays a significant role. After performing the same simulations for a different distribution of depth between the pointings and obtaining completely different results, we are quite certain that this is the dominating effect. The implications of this and possible mitigation strategies will be discussed in Sect.~\ref{sec:discussion}.
 
-As the next step we computed a reference correlation function given a fiducial cosmology for each combination of redshift bins, and modified said correlation function according to our semi-analytic model. Then we ran a Markov-Chain Monte Carlo simulation\footnote{The code for this was developed by Jan-Luca van den Busch and used in a modified version.} to check for a potential bias in the cosmological parameters, using the covariance-matrix computed in \citet{2017MNRAS.465.1454H}. As our main interest lies in the $\Omega_{\rm m}$ - $\sigma_8$ combination, we restricted our analysis to those two parameters. As can be seen in Figure \ref{fig:mcmc_kids}, the impact of varying depth is noticeable, but insignificant compared to the uncertainties. However, to get a rough estimate for the impact on a Euclid-like survey, we divided the used covariance-matrix by 30, to account for the increased survey area. As can be seen in Figure \ref{fig:mcmc_euclid}, here the impact on both $\Omega_{\rm m}$ and $\sigma_8$ is significant, however it seems that the parameter $S_8$ is extremely robust against this effect.
+As the next step we computed a reference correlation function given a fiducial cosmology for each combination of redshift bins, and modified said correlation function according to our semi-analytic model. Then we ran a Markov-Chain Monte Carlo simulation to check for a potential bias in the cosmological parameters, using the covariance-matrix computed in \citet{2017MNRAS.465.1454H}. As our main interest lies in the $\Omega_{\rm m}$ - $\sigma_8$ combination, we restricted our analysis to those two parameters. As can be seen in Figure \ref{fig:mcmc_kids}, the impact of varying depth is barely noticeable and insignificant compared to the uncertainties. However, to get a rough estimate for the impact on a Euclid-like survey, we divided the used covariance-matrix by 30, to account for the increased survey area. As can be seen in Figure \ref{fig:mcmc_euclid}, here the impact on both $\Omega_{\rm m}$ and $\sigma_8$ is significant, however it seems that the parameter $S_8$ is considerably more robust against this effect.
+
+\begin{figure}
+\begin{subfigure}{0.5\textwidth}
+	\includegraphics[width=\textwidth]{images/mcmc_kids.pdf}
+	\caption{Bias for a KiDS-like Survey.}
+	\label{fig:mcmc_kids}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+	\includegraphics[width=\textwidth]{images/mcmc_euclid.pdf}
+	\caption{Bias for a 'Euclid-like' Survey.}
+	\label{fig:mcmc_euclid}
+\end{subfigure}
+\caption{Estimation of the bias caused by a variation of depth in a cosmic shear survey. Both simulations were computed using a fiducial cosmology of $\Omega_{\rm{m}}=0.25$ and $\sigma_8 = 0.85$.}
+\end{figure} 
 
 Calculating the correction for varying values of $\Omega_{\rm{m}}$ and $\sigma_8$ reveals a nontrivial dependency on the cosmology, which can be observed in Figure \ref{fig:comparecosmo}. However, as for the computation of the correction we need to calculate 165 correlation functions, we did not yet account for that in our MCMC analysis.
 
@@ -316,7 +329,7 @@ To estimate the B-Modes created by this effect, we have extracted the \emph{Comp
 \begin{figure}
 \centering
 \includegraphics[width = \textwidth, trim = {0 1.5cm 2.5cm 0}, clip]{images/eandbmodes0p5t100.pdf}
-\caption{Difference in the logarithmic E- and B-modes between the reference and the observed correlation functions for an angular range of $\theta_{\rm{min}}=0.\!^\prime 5,\,\theta_{\rm{max}}=100\arcmin$.}
+\caption{Logarithmic E-modes of the reference correlation functions as well as difference in the E- and B-modes between the reference and the observed correlation functions for an angular range of $\theta_{\rm{min}}=0.\!^\prime 5,\,\theta_{\rm{max}}=100\arcmin$.}
 \label{fig:bmodes_cosebi}
 \end{figure}
 
@@ -353,8 +366,7 @@ Additionally is interesting to note that $E(\theta)$ is the azimuthal average of
 
 
 \begin{acknowledgements}
-Something should probably be put in here...
-\end{acknowledgements}
+We want to thank Jan-Luca van den Busch for his permission to use and modify his code for an MCMC simulation.\end{acknowledgements}
 
 
 \bibliographystyle{aa}
@@ -521,7 +533,7 @@ Note that the expectation value of $\mathcal{P}^*(m,n|a,b)$ for uncorrelated dis
 where $\delta_{mn}$ denotes the Kronecker delta. Keeping in mind that \[
 \sum_{(a,b)\neq (0,0)} E_{ab}(\theta) = 1-E(\theta)\, ,
 \]
-we can use the expectation value \eqref{eq:pmnabstar} to calculate \eqref{eq:pmntheta} as a consistency check. In that case, we receive the same value for the coefficients in \eqref{eq:pmnij1} as we have in Equation \eqref{eq:pmnij_uncorr} in Chapter \ref{sec:xipm_semianalytic} for the case of an infinite footprint and uncorrelated distribution of depth.
+we can use the expectation value \eqref{eq:pmnabstar} to calculate \eqref{eq:pmntheta} as a consistency check. In that case, we receive the same value for the coefficients in \eqref{eq:pmnij1} as we have in Eq. \eqref{eq:pmnij_uncorr} in Sec. \ref{sec:xipm_semianalytic} for the case of an infinite footprint and uncorrelated distribution of depth.
 
 \begin{figure}
 \centering
@@ -543,7 +555,7 @@ we can use the expectation value \eqref{eq:pmnabstar} to calculate \eqref{eq:pmn
 \label{fig:e01theta}
 \end{figure}
 
-The $E_{ab}$ can all be calculated analytically, similar to our method in Chapter \ref{sec:model_e}. We again assume a selection of square fields with side length $L$, and later set $L=60\arcmin$ to adapt to the KV450 survey. As an example, for $E_{01}$ we have several possible situations, depicted in Figure \ref{fig:e01theta}. Again setting $E_{ab}(\b\theta) = V(\theta,\phi)/L^2$, we define \begin{align}
+The $E_{ab}$ can all be calculated analytically, similar to our method in Sec. \ref{sec:model_e}. We again assume a selection of square fields with side length $L$, and later set $L=60\arcmin$ to adapt to the KV450 survey. As an example, for $E_{01}$ we have several possible situations, depicted in Fig. \ref{fig:e01theta}. Setting $E_{ab}(\b\theta) = V(\theta,\phi)/L^2$, we define \begin{align}
 E_{01}^{(a)}(\b\theta) & \equiv \frac{\theta}{L}\sin(\phi)[1-\frac{\theta}{L}\cos(\phi)] \nonumber\\
 E_{01}^{(b)}(\b\theta) & \equiv [2-\frac{\theta}{L}\sin(\phi)]\, [1-\frac{\theta}{L}\cos(\phi)]
 \end{align}
@@ -586,31 +598,16 @@ E_{01}(\theta) = & \begin{cases}
 \end{figure}
 Naturally, to calculate those functions for all possible combinations would be rather tedious, however they are simple to determine numerically (compare Figure \ref{fig:eoftheta_sim}). A plot of these functions can be found in Figure \ref{fig:eab}.
 
-When we now simulate random distributions of the depth-function for a $100\,\rm{deg}^2$-field, a $450\,\rm{deg}^2$-field and a $1000\,\rm{deg}^2$-field, we can compare how they differ from each other and estimate how important finite-field effects are. As can be seen from Figures \ref{fig:100degsqr}, \ref{fig:450degsqr} and \ref{fig:1000degsqr}, the effect is quite significant for a $100\,\rm{deg}^2$-field, but almost negligible for a $1000\,\rm{deg}^2$-field. This leads to the assumption that both for the KiDS- as for the Euclid-survey, finite field effects do not need to be accounted for. However, if the distribution of depth is correlated in the surveys, that might have a noticeable impact on the results.
-
-\section{Additional Figures}
-\subsection{Results of the MCMC}
-\begin{figure}[h]
-\centering
-	\includegraphics[width=0.7\textwidth]{images/mcmc_kids.pdf}
-	\caption{Bias in the parameters for a KiDS-like Survey.}
-	\label{fig:mcmc_kids}
-\end{figure}  
-\begin{figure}[h]
-\centering
-	\includegraphics[width=0.7\textwidth]{images/mcmc_euclid.pdf}
-	\caption{Bias in the parameters for a Euclid-like Survey.}
-	\label{fig:mcmc_euclid}
-\end{figure}  
-\clearpage
-\subsection{Finite field effects}
-
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width=\textwidth]{images/finite_footprint.pdf}
-\caption[Correction of the correlation functions for a $100\,\rm{deg}^2$-field.] {Correction of the correlation functions for two different distributions of percentiles for a $100\,\rm{deg}^2$-field.}
-\label{fig:100degsqr}
+\caption{$2\sigma$-contours of the corrections for the correlation functions for a $100\,\rm{deg}^2$ field (blue), a $450\,\rm{deg}^2$ field (red) and a $1000\,\rm{deg}^2$ field (blue).}
+\label{fig:finite_footprint}
 \end{figure}
+
+We sampled several realizations of a random depth-distribution for a $100\,\rm{deg}^2$-field, a $450\,\rm{deg}^2$-field and a $1000\,\rm{deg}^2$-field and computed the variance of the resulting correlation functions. As can be seen from Fig. \ref{fig:finite_footprint}, the effect is quite significant for a $100\,\rm{deg}^2$-field, but almost negligible for a $1000\,\rm{deg}^2$-field. This leads to the assumption that both for the KV450 survey as well as for all next-generation cosmic shear surveys, finite field effects do not need to be accounted for. However, if the distribution of depth is correlated in the surveys, that might have a noticeable impact on the results.
+
+\section{Additional Figures}
 
 \subsection{Cosmology Dependency of the Results}
 \begin{figure}[h]
