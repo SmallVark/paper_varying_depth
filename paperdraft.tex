@@ -208,14 +208,16 @@ The ratio of modelled and observed correlation function thus becomes: \begin{equ
 \end{equation}
 It is interesting to note that $\xi^{ij}_\pm = \xi_\pm^{ij,\rm{obs}}$ holds wherever $E(\theta)=0$, meaning that the correlation function is not affected for large angular scales. 
 
-While this model serves as a good, intuitive first approximation, it completely ignores any effects from the large scale structure (LSS) between the closest and the most distant galaxy. Therefore, we do not expect this model to yield reliable, quantitative results for cosmic shear surveys.
 
-However, we will now derive a more sophisticated model that includes the effects of the LSS. While it is computationally more expensive, it yields accurate results for cosmic shear surveys, which are sensitive to the exact redshift distributions of sources as well as the underlying cosmology.
 %-------------------------------------------------
 
 \subsection{Using a semi-analytic Model}
 \label{sec:xipm_semianalytic}
 \todo{It feels like some kind of introductory sentence is missing here, right now I can not think of one, though...}
+The previously derived analytic model describes how varying depth between pointings modifies the correlation function due to the correlation between number density and average redshift of source galaxies. While this model serves as a good, intuitive first approximation, it completely ignores any effects from the large scale structure (LSS) between the closest and the most distant galaxy. Therefore, we do not expect this model to yield reliable, quantitative results for cosmic shear surveys.
+
+Below we derive a more sophisticated model that includes the effects of the LSS. While it is computationally more expensive, it yields accurate results for cosmic shear surveys, which are sensitive to the exact redshift distributions of sources as well as the underlying cosmology.
+
 The analysis of data from the Kilo-Degree Survey showed that the redshift distribution of sources is highly correlated with the depth in the $r$-band. We thus chose to separate the survey into 10 percentiles, sorted by $r$-band depth, i.e. if a pointing had a shallower depth than 90\% of the other pointings, it would belong to the first percentile, and so on. For each percentile $m$ and each tomographic redshift bin $i$ we can extract a weighted number of galaxies $N^i_m$ and, a source redshift distribution $p^i_m(z)$ following the DIR method of H17\footnote{Instead of using the actual number of galaxies, we take the sum of their lensing weights, following H17. Due to this we account for different weighting of galaxies on the shear correlation functions as well as on the average redshift distribution.}. Asserting an arbitrary cosmological model, we can transform the source redshift distributions $p^i_m(z)$ into comoving distance probability distributions $\mathcal{L}^i_m(\chi)$.
 
 Given two comoving distance probability distributions of sources $\mathcal{L}^i_m(\chi),\mathcal{L}^j_n(\chi)$, we can compute the shear correlation functions from the underlying matter power spectrum $P(\ell,\chi)$ via \citep[compare][]{1992ApJ...388..272K} \begin{align}
@@ -326,12 +328,13 @@ As the next step we chose a fiducial cosmology $\b \Phi$ and computed a referenc
 
 Calculating the correction $\xi_\pm^{ij}/\xi_\pm^{ij,\rm{obs}}$ for varying values of $\Omega_{\rm{m}}$ and $\sigma_8$ reveals a nontrivial dependence on the cosmology, which can be seen in Figure \ref{fig:comparecosmo}.
 
-To estimate the B-modes created by this effect, we have extracted the \emph{Complete Orthogonal Sets of E- and B-Mode Integrals} \citep[COSEBIS, compare][]{2010A&A...520A.116S}, once of a reference set of correlation functions, to estimate numerical inaccuracies,\footnote{For a reference correlation function the B-Modes should be consistent with zero.} and then for the correlation functions that have been modified to account for a varying depth. We report a consistent B-mode behaviour across all redshift-bins, which can be seen in Figure \ref{fig:bmodes_cosebi}. It should be noted that the difference in E-modes is as large as the B-modes, which suggests that any significant change in the cosmological parameters due to a varying depth will also yield the significant detection of B-modes.
+To estimate the B-modes created by this effect, we have extracted the \emph{Complete Orthogonal Sets of E- and B-Mode Integrals} \citep[COSEBIS, compare][]{2010A&A...520A.116S}, once of a reference set of correlation functions, to estimate numerical inaccuracies,\footnote{For a reference correlation function the B-Modes should be consistent with zero.} and then for the correlation functions that have been modified to account for a varying depth. We report a consistent B-mode behaviour across all redshift-bins, which can be seen in Figure \ref{fig:bmodes_cosebi}. It should be noted that the difference in E-modes is as large as the B-modes, which suggests that any significant change in the cosmological parameters due to a varying depth will also yield the significant detection of B-modes.\todo{add reference in the figure as soon as marika's paper is on arxiv}
+
 
 \begin{figure}
 \centering
-\includegraphics[width = \textwidth, trim = {0 1.5cm 2.5cm 0}, clip]{images/eandbmodes0p5t100.pdf}
-\caption{Logarithmic E-modes of the reference correlation functions as well as difference in the E- and B-modes between the reference and the observed correlation functions for an angular range of $\theta_{\rm{min}}=0.\!^\prime 5,\,\theta_{\rm{max}}=100\arcmin$.}
+\includegraphics[width = \textwidth]{images/ebmodes0p5t72.pdf}
+\caption{Difference in the E-modes (top left) and B-modes (bottom right) between the reference and the observed correlation functions for an angular range of $\theta_{\rm{min}}=0.\!^\prime 5,\,\theta_{\rm{max}}=72\arcmin$. For comparison: Total E-modes of the reference correlation function $E_n$ (top left) and B-modes measured in the KV450 survey by Asgari et al. $B_n^{\rm{KV450}}$.}
 \label{fig:bmodes_cosebi}
 \end{figure}
 
@@ -350,9 +353,9 @@ With our semi-analytic model we try to describe the impacts of varying depth in 
  or observational effects. Especially intrinsic alignments and baryonic feedback also modify the correlation functions primarily on small scales, so they are likely to be degenerate with the effect of varying depth \citep{Troxel:2015}. In an actual MCMC simulation that accounts for these effects, we suspect that the parameters for intrinsic alignments and baryonic feedback change to mitigate this effect, so that the impact on cosmological parameters is actually smaller than in our results. Also, possible degeneracies between $S_8$ and other cosmological parameters might bias the resulting values. %Furthermore, when including the effects of dark energy we notice that our observation of $S_8$ being constant is no longer valid: For a `Euclid-like' survey we notice a bias of $\sim 0.8\sigma$. This gives rise to the assumption that the results of an MCMC with the full parameter space, including observational effects, will differ from our results. 
 \end{enumerate}
 
-Despite these repercussions, we are confident to say that the effects of varying depth are not significant for the KV450 survey. The cosmological parameters did not change significantly and the main parameter, $S_8$, is especially robust against this effect. In particular this means that a varying depth can not explain the discrepancy between observations of the local Universe and results from analysis of the CMB.
+Despite these repercussions, we are confident to say that the effects of varying depth are not significant for the KV450 survey. The cosmological parameters did not change and the main parameter, $S_8$, is especially robust against this effect. In particular this means that a varying depth can not explain the discrepancy between observations of the local Universe and results from analysis of the CMB.
 
-We have shown that this effect can create B-modes. However, \citet{2018arXiv181002353A} measured the B-modes of the KV450 survey in the same $\theta$-range. Those B-modes are at least one order of magnitude larger and still consistent with zero, so it is safe to say that the modes created by varying depth are negligible. An interesting observation is that the change in E-modes is as big as the created B-modes (compare Fig.~\ref{fig:bmodes_cosebi}). This means that as soon as this effect causes a significant bias in the cosmological parameters, it will also create significant B-modes\footnote{While this is no big surprise, it is not trivial. It could be possible that a systematic effect only creates E-modes and no B-modes, which would be extremely unfortunate as it could bias cosmological parameters without ever being detected by a B-mode analysis.}. Additionally, the created pattern is very characteristic, which makes it easy to recognize in a B-mode analysis of an actual survey.
+We have shown that this effect can create B-modes. However, \todo{cite new asgari et al. here as soon as it is on arxiv}\citet{2018arXiv181002353A} measured the B-modes of the KV450 survey in the same $\theta$-range. Those B-modes are greater than the ones created by varying depth by a factor of approx.~$50$ and show a completely different pattern, so it is safe to say that the B-modes in the KV450 survey are not created by varying depth. An interesting observation is that the change in E-modes is as big as the created B-modes (compare Fig.~\ref{fig:bmodes_cosebi}). This means that as soon as this effect causes a significant bias in the cosmological parameters, it will also create significant B-modes\footnote{While this is no big surprise, it is not trivial. It could be possible that a systematic effect only creates E-modes and no B-modes, which would be extremely unfortunate as it could bias cosmological parameters without ever being detected by a B-mode analysis.}. Additionally, the created pattern is very characteristic, which makes it easy to recognize in a B-mode analysis of an actual survey.
 
 For next-generation surveys like Euclid, this effect will be significant. Although Euclid is a space-based telescope, the photometric redshift determination will still be done by ground-based telescopes and therefore suffer from the same effects. While we did not yet perform a quantitative study of this effect for Euclid, we are certain that a such a study should be conducted.
 
@@ -601,7 +604,7 @@ Naturally, to calculate those functions for all possible combinations would be r
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{images/finite_footprint.pdf}
-\caption{$2\sigma$-contours of the corrections for the correlation functions for a $100\,\rm{deg}^2$ field (blue), a $450\,\rm{deg}^2$ field (red) and a $1000\,\rm{deg}^2$ field (blue).}
+\caption{$2\sigma$-contours of the corrections for the correlation functions for a $100\,\rm{deg}^2$ field (blue), a $450\,\rm{deg}^2$ field (red) and a $1000\,\rm{deg}^2$ field (green).}
 \label{fig:finite_footprint}
 \end{figure}
 
@@ -609,7 +612,6 @@ We sampled several realizations of a random depth-distribution for a $100\,\rm{d
 
 \section{Additional Figures}
 
-\subsection{Cosmology Dependency of the Results}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{images/compare_cosmos.pdf}
