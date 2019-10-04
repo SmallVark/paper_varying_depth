@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.12)  2 OCT 2019 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.8)  4 OCT 2019 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **paperdraft.tex
-(/home/sven/Documents/git/paper_varying_depth/paperdraft.tex
+(/users/sven/Documents/git/paper_varying_depth/paperdraft.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 10 language(s) loaded.
-(/home/sven/Documents/git/paper_varying_depth/aa.cls
+Babel <3.18> and hyphenation patterns for 82 language(s) loaded.
+(/users/sven/Documents/git/paper_varying_depth/aa.cls
 Document Class: aa 2016/09/01{} v9.1{} Class for AA journal
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -1199,7 +1199,7 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 \c@@todonotes@numberoftodonotes=\count158
 )
-(/home/sven/Documents/git/paper_varying_depth/paperdraft.aux)
+(/users/sven/Documents/git/paper_varying_depth/paperdraft.aux)
 \openout1 = `paperdraft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 43.
@@ -1322,8 +1322,8 @@ LaTeX Info: Redefining \ref on input line 43.
 LaTeX Info: Redefining \pageref on input line 43.
 LaTeX Info: Redefining \nameref on input line 43.
 
-(/home/sven/Documents/git/paper_varying_depth/paperdraft.out)
-(/home/sven/Documents/git/paper_varying_depth/paperdraft.out)
+(/users/sven/Documents/git/paper_varying_depth/paperdraft.out)
+(/users/sven/Documents/git/paper_varying_depth/paperdraft.out)
 \@outlinefile=\write4
 \openout4 = `paperdraft.out'.
 
@@ -1438,18 +1438,18 @@ Package pdftex.def Info: images/dist_z_all.pdf  used on input line 230.
 Package hyperref Warning: Suppressing link with empty target on input line 235.
 
 
-[3 </home/sven/Documents/git/paper_varying_depth/images/eoftheta.pdf> </home/sv
-en/Documents/git/paper_varying_depth/images/cov_nz_meanz.pdf
+[3 </users/sven/Documents/git/paper_varying_depth/images/eoftheta.pdf> </users/
+sven/Documents/git/paper_varying_depth/images/cov_nz_meanz.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/cov_nz_meanz.pdf): PDF inclusion: multiple pdfs with page group included in
- a single page
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/cov_nz_meanz.pdf): PDF inclusion: multiple pdfs with page group included i
+n a single page
 >]
 
 Package hyperref Warning: Suppressing link with empty target on input line 280.
 
 
-[4 </home/sven/Documents/git/paper_varying_depth/images/dist_z_all.pdf>]
+[4 </users/sven/Documents/git/paper_varying_depth/images/dist_z_all.pdf>]
 <images/xis_all1.pdf, id=319, 433.62pt x 289.08pt>
 File: images/xis_all1.pdf Graphic file (type pdf)
 <use images/xis_all1.pdf>
@@ -1479,7 +1479,7 @@ Underfull \vbox (badness 3168) has occurred while \output is active []
 Package hyperref Warning: Suppressing link with empty target on input line 354.
 
 
-[6 </home/sven/Documents/git/paper_varying_depth/images/xis_all1.pdf>]
+[6 </users/sven/Documents/git/paper_varying_depth/images/xis_all1.pdf>]
 <images/ebmodes0p5t72.pdf, id=380, 433.62pt x 289.08pt>
 File: images/ebmodes0p5t72.pdf Graphic file (type pdf)
 <use images/ebmodes0p5t72.pdf>
@@ -1490,27 +1490,23 @@ Package pdftex.def Info: images/ebmodes0p5t72.pdf  used on input line 358.
 Package hyperref Warning: Suppressing link with empty target on input line 379.
 
 
-[7 </home/sven/Documents/git/paper_varying_depth/images/mcmc_kids.pdf> </home/s
-ven/Documents/git/paper_varying_depth/images/mcmc_euclid.pdf
+[7 </users/sven/Documents/git/paper_varying_depth/images/mcmc_kids.pdf> </users
+/sven/Documents/git/paper_varying_depth/images/mcmc_euclid.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/mcmc_euclid.pdf): PDF inclusion: multiple pdfs with page group included in 
-a single page
->]
-Underfull \vbox (badness 3646) has occurred while \output is active []
-
-
-(/home/sven/Documents/git/paper_varying_depth/paperdraft.bbl
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/mcmc_euclid.pdf): PDF inclusion: multiple pdfs with page group included in
+ a single page
+>] (/users/sven/Documents/git/paper_varying_depth/paperdraft.bbl
 Underfull \hbox (badness 2065) in paragraph at lines 64--66
 []\T1/txr/m/n/8 Joudaki, S., Hilde-brandt, H., Traykova, D., et al. 2019, arXiv
  e-prints,
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 115.
+Package hyperref Warning: Suppressing link with empty target on input line 124.
 
 
-[8 </home/sven/Documents/git/paper_varying_depth/images/ebmodes0p5t72.pdf>]
+[8 </users/sven/Documents/git/paper_varying_depth/images/ebmodes0p5t72.pdf>]
 Underfull \hbox (badness 3769) in paragraph at lines 149--151
 []\T1/txr/m/n/8 Tröster, T., Sánchez, A. G., As-gari, M., et al. 2019, arXiv e-
 prints,
@@ -1544,14 +1540,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 461.
 
-(/home/sven/Documents/git/paper_varying_depth/images/eoftheta_new.pdf_tex
-<images/eoftheta_new.pdf, id=572, page=1, 437.44484pt x 244.112pt>
+(/users/sven/Documents/git/paper_varying_depth/images/eoftheta_new.pdf_tex
+<images/eoftheta_new.pdf, id=568, page=1, 437.44484pt x 244.112pt>
 File: images/eoftheta_new.pdf Graphic file (type pdf)
 <use images/eoftheta_new.pdf, page 1>
 Package pdftex.def Info: images/eoftheta_new.pdf , page1 used on input line 52.
 
 (pdftex.def)             Requested size: 200.0pt x 111.6075pt.
-<images/eoftheta_new.pdf, id=573, page=2, 437.44484pt x 244.112pt>
+<images/eoftheta_new.pdf, id=569, page=2, 437.44484pt x 244.112pt>
 File: images/eoftheta_new.pdf Graphic file (type pdf)
 <use images/eoftheta_new.pdf, page 2>
 Package pdftex.def Info: images/eoftheta_new.pdf , page2 used on input line 54.
@@ -1562,14 +1558,15 @@ Package pdftex.def Info: images/eoftheta_new.pdf , page2 used on input line 54.
 Package hyperref Warning: Suppressing link with empty target on input line 504.
 
 
-[11 </home/sven/Documents/git/paper_varying_depth/images/eoftheta_new.pdf> </ho
-me/sven/Documents/git/paper_varying_depth/images/eoftheta_new.pdf
+[11 </users/sven/Documents/git/paper_varying_depth/images/eoftheta_new.pdf> </u
+sers/sven/Documents/git/paper_varying_depth/images/eoftheta_new.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/eoftheta_new.pdf): PDF inclusion: multiple pdfs with page group included in
- a single page
->] (/home/sven/Documents/git/paper_varying_depth/images/expand_eoftheta.pdf_tex
-<images/expand_eoftheta.pdf, id=597, page=1, 284.33081pt x 242.50601pt>
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/eoftheta_new.pdf): PDF inclusion: multiple pdfs with page group included i
+n a single page
+>]
+(/users/sven/Documents/git/paper_varying_depth/images/expand_eoftheta.pdf_tex
+<images/expand_eoftheta.pdf, id=594, page=1, 284.33081pt x 242.50601pt>
 File: images/expand_eoftheta.pdf Graphic file (type pdf)
 <use images/expand_eoftheta.pdf, page 1>
 Package pdftex.def Info: images/expand_eoftheta.pdf , page1 used on input line 
@@ -1580,25 +1577,25 @@ Package pdftex.def Info: images/expand_eoftheta.pdf , page1 used on input line
 Package hyperref Warning: Suppressing link with empty target on input line 554.
 
 
-[12] (/home/sven/Documents/git/paper_varying_depth/images/e_1.pdf_tex
-<images/e_1.pdf, id=617, page=1, 164.10234pt x 322.806pt>
+[12] (/users/sven/Documents/git/paper_varying_depth/images/e_1.pdf_tex
+<images/e_1.pdf, id=614, page=1, 164.10234pt x 322.806pt>
 File: images/e_1.pdf Graphic file (type pdf)
 <use images/e_1.pdf, page 1>
 Package pdftex.def Info: images/e_1.pdf , page1 used on input line 52.
 (pdftex.def)             Requested size: 100.0pt x 196.70941pt.
-<images/e_1.pdf, id=618, page=2, 164.10234pt x 322.806pt>
+<images/e_1.pdf, id=615, page=2, 164.10234pt x 322.806pt>
 File: images/e_1.pdf Graphic file (type pdf)
 <use images/e_1.pdf, page 2>
 Package pdftex.def Info: images/e_1.pdf , page2 used on input line 54.
 (pdftex.def)             Requested size: 100.0pt x 196.70941pt.
 )
-(/home/sven/Documents/git/paper_varying_depth/images/e_2.pdf_tex
-<images/e_2.pdf, id=619, page=1, 162.20601pt x 322.806pt>
+(/users/sven/Documents/git/paper_varying_depth/images/e_2.pdf_tex
+<images/e_2.pdf, id=616, page=1, 162.20601pt x 322.806pt>
 File: images/e_2.pdf Graphic file (type pdf)
 <use images/e_2.pdf, page 1>
 Package pdftex.def Info: images/e_2.pdf , page1 used on input line 52.
 (pdftex.def)             Requested size: 100.0pt x 199.00967pt.
-<images/e_2.pdf, id=620, page=2, 162.20601pt x 322.806pt>
+<images/e_2.pdf, id=617, page=2, 162.20601pt x 322.806pt>
 File: images/e_2.pdf Graphic file (type pdf)
 <use images/e_2.pdf, page 2>
 Package pdftex.def Info: images/e_2.pdf , page2 used on input line 54.
@@ -1611,25 +1608,25 @@ Underfull \vbox (badness 1776) has occurred while \output is active []
 Package hyperref Warning: Suppressing link with empty target on input line 611.
 
 
-[13 </home/sven/Documents/git/paper_varying_depth/images/expand_eoftheta.pdf>]
-(/home/sven/Documents/git/paper_varying_depth/images/drawing.pdf_tex
-<images/drawing.pdf, id=638, page=1, 115.74901pt x 161.60374pt>
+[13 </users/sven/Documents/git/paper_varying_depth/images/expand_eoftheta.pdf>]
+(/users/sven/Documents/git/paper_varying_depth/images/drawing.pdf_tex
+<images/drawing.pdf, id=635, page=1, 115.74901pt x 161.60374pt>
 File: images/drawing.pdf Graphic file (type pdf)
 <use images/drawing.pdf, page 1>
 Package pdftex.def Info: images/drawing.pdf , page1 used on input line 52.
 (pdftex.def)             Requested size: 140.0pt x 195.4844pt.
-<images/drawing.pdf, id=639, page=2, 115.74901pt x 161.60374pt>
+<images/drawing.pdf, id=636, page=2, 115.74901pt x 161.60374pt>
 File: images/drawing.pdf Graphic file (type pdf)
 <use images/drawing.pdf, page 2>
 Package pdftex.def Info: images/drawing.pdf , page2 used on input line 54.
 (pdftex.def)             Requested size: 140.0pt x 195.4844pt.
 )
-<images/eab.pdf, id=640, 433.62pt x 289.08pt>
+<images/eab.pdf, id=637, 433.62pt x 289.08pt>
 File: images/eab.pdf Graphic file (type pdf)
 <use images/eab.pdf>
 Package pdftex.def Info: images/eab.pdf  used on input line 629.
 (pdftex.def)             Requested size: 314.12161pt x 209.42545pt.
-<images/finite_footprint.pdf, id=643, 433.62pt x 289.08pt>
+<images/finite_footprint.pdf, id=640, 433.62pt x 289.08pt>
 File: images/finite_footprint.pdf Graphic file (type pdf)
 <use images/finite_footprint.pdf>
 Package pdftex.def Info: images/finite_footprint.pdf  used on input line 636.
@@ -1639,32 +1636,32 @@ Package pdftex.def Info: images/finite_footprint.pdf  used on input line 636.
 Package hyperref Warning: Suppressing link with empty target on input line 639.
 
 
-[14 </home/sven/Documents/git/paper_varying_depth/images/e_1.pdf> </home/sven/D
-ocuments/git/paper_varying_depth/images/e_1.pdf
+[14 </users/sven/Documents/git/paper_varying_depth/images/e_1.pdf> </users/sven
+/Documents/git/paper_varying_depth/images/e_1.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/e_1.pdf): PDF inclusion: multiple pdfs with page group included in a single
- page
-> </home/sven/Documents/git/paper_varying_depth/images/e_2.pdf
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/e_1.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
+> </users/sven/Documents/git/paper_varying_depth/images/e_2.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/e_2.pdf): PDF inclusion: multiple pdfs with page group included in a single
- page
-> </home/sven/Documents/git/paper_varying_depth/images/e_2.pdf
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/e_2.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
+> </users/sven/Documents/git/paper_varying_depth/images/e_2.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/e_2.pdf): PDF inclusion: multiple pdfs with page group included in a single
- page
-> </home/sven/Documents/git/paper_varying_depth/images/drawing.pdf
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/e_2.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
+> </users/sven/Documents/git/paper_varying_depth/images/drawing.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/drawing.pdf): PDF inclusion: multiple pdfs with page group included in a si
-ngle page
-> </home/sven/Documents/git/paper_varying_depth/images/drawing.pdf
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/drawing.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+> </users/sven/Documents/git/paper_varying_depth/images/drawing.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/drawing.pdf): PDF inclusion: multiple pdfs with page group included in a si
-ngle page
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/drawing.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
 >]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1673,14 +1670,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package hyperref Warning: Suppressing link with empty target on input line 665.
 
 
-[15 </home/sven/Documents/git/paper_varying_depth/images/eab.pdf> </home/sven/D
-ocuments/git/paper_varying_depth/images/finite_footprint.pdf
+[15 </users/sven/Documents/git/paper_varying_depth/images/eab.pdf> </users/sven
+/Documents/git/paper_varying_depth/images/finite_footprint.pdf
 
-pdfTeX warning: pdflatex (file /home/sven/Documents/git/paper_varying_depth/ima
-ges/finite_footprint.pdf): PDF inclusion: multiple pdfs with page group include
-d in a single page
+pdfTeX warning: pdflatex (file /users/sven/Documents/git/paper_varying_depth/im
+ages/finite_footprint.pdf): PDF inclusion: multiple pdfs with page group includ
+ed in a single page
 >]
-<images/compare_cosmos.pdf, id=699, 433.62pt x 289.08pt>
+<images/compare_cosmos.pdf, id=696, 433.62pt x 289.08pt>
 File: images/compare_cosmos.pdf Graphic file (type pdf)
 <use images/compare_cosmos.pdf>
 Package pdftex.def Info: images/compare_cosmos.pdf  used on input line 668.
@@ -1690,23 +1687,23 @@ Package pdftex.def Info: images/compare_cosmos.pdf  used on input line 668.
 Package hyperref Warning: Suppressing link with empty target on input line 673.
 
 
-[16 </home/sven/Documents/git/paper_varying_depth/images/compare_cosmos.pdf>]
+[16 </users/sven/Documents/git/paper_varying_depth/images/compare_cosmos.pdf>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 673.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 673.
 
-(/home/sven/Documents/git/paper_varying_depth/paperdraft.aux)
+(/users/sven/Documents/git/paper_varying_depth/paperdraft.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 673.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 673.
 Package rerunfilecheck Info: File `paperdraft.out' has not changed.
 (rerunfilecheck)             Checksum: CE50E673D368E182DFC8ECF6A53B42F2;848.
  ) 
 Here is how much of TeX's memory you used:
- 21449 strings out of 494830
- 381486 string characters out of 6177367
- 469317 words of memory out of 5000000
- 24134 multiletter control sequences out of 15000+600000
+ 21449 strings out of 492991
+ 381514 string characters out of 6135197
+ 473749 words of memory out of 5000000
+ 24356 multiletter control sequences out of 15000+600000
  106669 words of font info for 175 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  62i,19n,77p,1447b,655s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
@@ -1747,11 +1744,11 @@ ts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on /home/sven/Documents/git/paper_varying_depth/paperdraft.pdf (
-16 pages, 1359404 bytes).
+Output written on /users/sven/Documents/git/paper_varying_depth/paperdraft.pdf 
+(16 pages, 1322121 bytes).
 PDF statistics:
- 845 PDF objects out of 1000 (max. 8388607)
- 696 compressed objects within 7 object streams
+ 842 PDF objects out of 1000 (max. 8388607)
+ 693 compressed objects within 7 object streams
  147 named destinations out of 1000 (max. 500000)
  218 words of extra memory for PDF output out of 10000 (max. 10000000)
 
