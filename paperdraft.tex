@@ -99,8 +99,6 @@ The discovery of cosmic shear has provided us with a new and powerful cosmologic
 
 For current cosmic shear surveys, the estimated systematic error is becoming comparable in size to the statistical error, implying that for next-generation surveys, a significant reduction of systematic errors is necessary \citep[][hereafter H17]{2017MNRAS.465.1454H}. With surveys like the Large Synoptic Survey Telescope \citep[LSST,][]{Ivezic:2008} and Euclid \citep{Laureijs:2011} soon to start, systematic effects in gravitational lensing have received a large amount of attention \citep{2018arXiv181002353A,2019arXiv190207439B,2019arXiv190109488S}.
 
-To check for remaining systematics, a weak lensing signal can be divided into two components, the so-called E- and B-modes \citep{2002ApJ...568...20C,2002A&A...389..729S}. To leading order, B-modes cannot be created by astrophysical phenomena and are thus an excellent test for remaining systematics. The most useful E- and B-mode decomposition for cosmic shear surveys is provided by Complete Orthogonal Sets of E- and B-mode Integrals \citep[COSEBIs,][hereafter S10]{2010A&A...520A.116S}, as it can easily be applied to real data. Note that the non-existence of B-modes does not necessarily imply that the sample is free of remaining systematics.
-
 In this paper we focus on systematic effects induced by variation in survey depth that is so far unaccounted for in cosmic shear analyses \citep{Vale:2004}.   For a fixed exposure time survey, varying atmospheric conditions, dithering strategies and galactic extinction all contribute to an inhomogeneous limiting magnitude as a function of sky position.   In order to assess the impact of variable depth for current and future surveys we build an analytical model for the effect based on the survey specifications of the Kilo-Degree Survey \citep[KiDS,][]{Kuijken:2015}.  To first order, the depth variation in KiDS can be modelled by a piece-wise constant depth function, which varies between each $1\,\text{deg}^2$ square pointing.   KiDS object detection is defined in the $r-band$ as these images were chosen to be significantly deeper in comparison to the other optical and near-infra red filters.   We therefore quantify survey depth with the limiting $r$-band magnitude, as defined in \citet{2017A&A...604A.134D}.  We defer the study of multi-band variable depth and its impact on photometric redshift accuracy for future work.
 
 %The depth of a pointing primarily influences the number density as well as the average redshift of galaxies, meaning that a variation in depth is responsible for a correlation between those two quantities (see Fig. \ref{fig:nz_of_meanz}).
@@ -212,7 +210,7 @@ When an observer now calculates the model correlation functions $\xi^{ij}_\pm$ w
 & \left.\left. + \la n^j w^i\ra + \la w^iw^j\ra\right)\right]\inv
 \, .
 \end{align}
-It is interesting to note that $\xi^{ij}_\pm = \xi_\pm^{ij,\rm{obs}}$ holds wherever $E(\theta)=0$, so we expect the observed and the modelled correlation functions to be equivalent on scales where the depth is uncorrelated. 
+It is interesting to note that $\xi^{ij}_\pm = \xi_\pm^{ij,\rm{obs}}$ holds wherever $E(\theta)=0$, so we expect the observed and the modelled correlation functions to be equivalent on scales where the depth is uncorrelated. One thing left to determine is how to define the weight-function $W(\b\theta)$. For this, we will refer the reader to the beginning of Sec.~\ref{sec:results}.
 
 
 %-------------------------------------------------
@@ -322,7 +320,7 @@ While the first method suffers from the fact that the power-law index only holds
 
 We applied both analytic methods and the semianalytic one to data from KV450, following the separation into tomographic bins as in H18, and computed the ratio between our model for the observed correlation functions, $\xi_{\pm}^{\rm{obs}}$, and the model correlation functions, $\xi_{\pm}$, ignoring variations in depth. 
 
-We compare our models to the results measured from numerical simulations. Using a modified version (Joachimi, Lin, et al. in prep.) of Full-sky Lognormal Astro-fields Simulation Kit \citep[FLASK,][]{Xavier:2016}, we generate galaxy mocks with coherent clustering and lensing signals from lognormal fields. For each lognormal field, one mock with uniform depth and another one with variable depth is generated. In the variable case, the depth of KiDS-1000 data \citep{Kuijken:2019} is binned by magnitude into roughly 20 bins. Afterwards, a linear relation between depth and effective number density is extracted. The KiDS-1000 survey is put on a Healpix grid, and for each pixel the limiting magnitude is calculated. According to this limiting magnitude, an effective number density can be assigned, using the linear relation extracted above. For each pixel and each tomographic redshift bin we use the same limiting magnitude to assign an average source redshift distribution from the ones extracted in this work. In the uniform case, redshifts and number densities are sampled from the average of these tomographic sets. Finally, the ratio of the average lensing signals from the two mocks is computed. The number of realizations is 2000. Shape noise is omitted. 
+We compare our models to mock KiDS-like data created using a modified version of the Full-sky Lognormal Astro-fields Simulation Kit \citep[\sc{FLASK},][Joachimi, Lin, et al. in prep.]{Xavier:2016}.  Using {\sc{FLASK}} lognormal fields, we generate galaxy mocks with coherent clustering and lensing signals.   Adopting a linear relation between the limiting $r$-band magnitude and the effective number density, fit to the KiDS data, we imprint the variable depth of the full KiDS-1000 footprint \citep{Kuijken:2019} on a {\sc{Healpix}}\footnote{\url{https://healpix.sourceforge.io}} grid of Nside=4096 (add cite for Healpix).  Our resolution choice represents a compromise between minimising the mock computation time and maximising the accuracy of the recovered shear signal at small angular scales.  With Nside=4096 $\xi_+$ is accurate to 7\% above ~1 arcmin, and $\xi_-$ is accurate to 10\% above ~6 arcmin.   For each \sc{Healpix} pixel in the KiDS-1000 data, the limiting $r$-band magnitude defines the effective number density of sources, and the average source redshift distribution for each tomographic redshift bin (see Fig.~\ref{fig:nofz_quantiles}).  In the uniform depth case, redshifts and number densities are sampled from the average of these tomographic sets.  The ratio of the lensing signals from the two mocks is computed, averaged over 2000 shape-noise-free realizations, and is shown in Fig.~\ref{fig:all_xis} (red).
 
 The results can be seen in Fig.~\ref{fig:all_xis}.
   \begin{figure*}
@@ -361,9 +359,10 @@ Calculating the correction $\xi_\pm^{ij}/\xi_\pm^{ij,\rm{obs}}$ for varying valu
 
 \subsection{Variable depth contribution to B-modes}
 
+To check for remaining systematics, a weak lensing signal can be divided into two components, the so-called E- and B-modes \citep{2002ApJ...568...20C,2002A&A...389..729S}. To leading order, B-modes cannot be created by astrophysical phenomena and are thus an excellent test for remaining systematics. Direct E- and B-mode decomposition for cosmic shear surveys can be provided by Complete Orthogonal Sets of E- and B-mode Integrals \citep[COSEBIs,][hereafter S10]{2010A&A...520A.116S}, as they can easily be applied to real data. Note that the non-existence of B-modes does not necessarily imply that the sample is free of remaining systematics.
 To estimate the B-modes created by this effect, we extract the COSEBIs
 %, once of a reference set of correlation functions, to estimate numerical inaccuracies,\footnote{For a reference correlation function the B-Modes should be consistent with zero.} and then 
- from the correlation functions, $\xi_\pm^{\rm{obs}}$, that have been modified under the semi-analytic model, and from a reference set of correlation functions $\xi_\pm$. To be most sensitive to the effect of varying depth, we chose logarithmic COSEBIs with an angular range of $\theta_{\rm{min}}=0.\!'5$ to $\theta_{\rm{max}}=72'$. As the B-modes of the reference correlation functions are zero, they are a good test for numerical errors in the calculations. Motivated by the discussion in \citet{2017MNRAS.464.1676A}, we calculated the COSEBIs from correlation functions binned in $400\,000$ linear bins, which yielded neglible numerical errors. We report a consistent B-mode behaviour across all redshift-bins, which can be seen in Figure \ref{fig:bmodes_cosebi}. However, we compare the B-Modes to the ones measured by \citet{asgari/etal:2019} in KV450, which were consistent with zero. Since the B-modes created by varying depth are smaller than these by a factor of 50, we conclude that this effect cannot create measurable B-modes in the KV450 survey. It should be noted that the difference in E-modes is as large as the B-modes, which suggests that any significant change in the cosmological parameters due to a varying depth will also yield a significant detection of B-modes.
+ from the correlation functions, $\xi_\pm^{\rm{obs}}$, that have been modified under the semi-analytic model, and from a reference set of correlation functions $\xi_\pm$. To be most sensitive to the effect of varying depth, we chose logarithmic COSEBIs with an angular range of $\theta_{\rm{min}}=0.\!'5$ to $\theta_{\rm{max}}=72'$. As the B-modes of the reference correlation functions are zero, they are a good test for numerical errors in the calculations. Motivated by the discussion in \citet{2017MNRAS.464.1676A}, we calculated the COSEBIs from correlation functions binned in $400\,000$ linear bins, which yielded neglible numerical errors. We report a consistent B-mode behaviour across all redshift-bins, which can be seen in Figure \ref{fig:bmodes_cosebi}. However, we compare the B-Modes to the ones measured by \citet{asgari/etal:2019} in KV450, which were consistent with zero. Since the B-modes created by varying depth are smaller than these by a factor of 50, we conclude that this effect cannot create measurable B-modes in the KV450 survey. It should be noted that the difference in E-modes is as large as the B-modes, which suggests that any significant change in the cosmological parameters due to a varying depth will also yield a significant detection of B-modes. Additionally, the created pattern is very characteristic, which makes it easy to recognize in a B-mode analysis of an actual survey \citep[see][]{2018arXiv181002353A}.
 
 
 \begin{figure*}
@@ -388,8 +387,6 @@ With our semi-analytic model we describe the impact of varying depth in ground-b
 
 Despite these repercussions, we are confident to say that the effects of varying depth are not significant for the KV450 survey. In particular this means that a varying depth cannot explain the discrepancy between observations of the low-redshift Universe and results from analysis of the CMB.
 
-We have shown that this effect can create B-modes. However, \citet{asgari/etal:2019} measured the B-modes of the KV450 survey in the same $\theta$-range. The results are consistent with zero, yet their statistical fluctuations are larger than the B-modes created by varying depth by a factor of approx.~$50$. Thus it is safe to say that varying depth does not create any measurable B-modes in the KV450 survey. An interesting observation is that the change in E-modes is as large as the created B-modes (compare Fig.~\ref{fig:bmodes_cosebi}). This means that as soon as this effect causes a significant bias in the cosmological parameters, it will also create significant B-modes. Additionally, the created pattern is very characteristic, which makes it easy to recognize in a B-mode analysis of an actual survey \citep[see][]{2018arXiv181002353A}.
-
 For next-generation surveys like Euclid and LSST we have demonstrated that if variable depth in unaccounted for in the analysis, the resulting bias is likely to be significant. A detailed LSST and Euclid study that uses a realistic variation of depth should therefore be conducted. If these studies reach a similar conclusion, variable-depth bias could be circumvented in likelihood analyses by including a cosmology-dependent correction for this effect using the semi-analytical model presented in this paper (see Fig. \ref{fig:comparecosmo}).
 
 %As an outlook it would be interesting to perform a full MCMC simulation, including both cosmological and nuisance parameters. One might also check the most popular extensions to the standard model of cosmology, and see whether varying depth could cause a bias towards one of these models. Furthermore, the method developed in Appendix \ref{sec:expand_eoftheta} could be applied to the actual footprint of the KV450 survey to see whether finite field effects or a correlated distribution of $r$-band depth are significant.
@@ -401,13 +398,15 @@ The variations in depth will also affect the covariance of a survey, both becaus
 
 
 \begin{acknowledgements}
-The KV450 results in this paper are based on data products from observations
-made with ESO Telescopes at the La Silla Paranal Observatory under programme
-IDs 177.A-3016, 177.A-3017 and 177.A-3018, and on data products produced by
-Target/OmegaCEN, INAF-OACN, INAF-OAPD and the KiDS production team,
-on behalf of the KiDS consortium.
+The results in this paper are based on observations made with ESO Telescopes at the La Silla Paranal Observatory under programme IDs 177.A-3016, 177.A-3017, 177.A-3018 and 179.A-2004, and on data products produced by the KiDS consortium. The KiDS production team acknowledges support from: Deutsche Forschungsgemeinschaft, ERC, NOVA and NWO-M grants; Target; the University of Padova, and the University Federico II (Naples).
 \\
-\emph{Author contributions:} All authors contributed to the development and writing of this paper. The authorship list is given in two groups: the lead authors (SH, PS, HHi) followed by key contributors to either the scientific analysis or the data products in alphabetical order.
+\emph{Author contributions:} All authors contributed to the development and writing of this paper. The authorship list is given in two groups: the lead authors (SH, PS, HHi) followed by key contributors to the scientific analysis in alphabetical order.
+\\
+H. Hildebrandt is supported by a Heisenberg grant of the Deutsche Forschungsgemeinschaft (Hi 1495/5-1) as well as an ERC Consolidator Grant (No. 770935).
+\\
+KK acknowledges support by the Alexander von Humboldt Foundation.
+\\
+Some of the results in this paper have been derived using the HEALPix \citep{2005ApJ...622..759G} package.
 \\
 This research has made use of NASA's Astrophysics Data System and adstex (\url{https://github.com/yymao/adstex}).
 \end{acknowledgements}
@@ -510,7 +509,7 @@ E(\theta) = & \frac{4}{2\pi}\int_0^{\frac{\pi}{2}}\d\phi\, E(\b\theta) = \frac{2
 
 \subsection{Calculation of the shear correlation functions}
 \label{sec:calc of xipm}
-Following H17, given a set of galaxies we calculate the shear correlation function $\xi_+^{ij}$ via \begin{equation}
+Given a set of galaxies we calculate the shear correlation function $\xi_+^{ij}$ via \begin{equation}
 \xi^{ij}_+(\theta) = \frac{\sum_{a,b}w_a^iw_b^j\epsilon_a^i\epsilon_b^{j*}\Delta(|\b\theta_a^i-\b\theta_b^i|)}{\sum_{a,b}w_a^iw_b^j\Delta(|\b\theta_a^i-\b\theta_b^i|)}\, .
 \label{eq:xip_from_observations}
 \end{equation}
@@ -557,7 +556,7 @@ Taking the ratio of the two quantities, and setting $N_n^i = A\hat{n}_n^i$ we se
     \caption{Graphic representation of the definitions of $E_{ab}(\theta)$. When the first galaxy is in the bottom left pointing, the probability to find the second galaxy in a pointing of distance $(a,b)$ is $E_{ab}(\theta)$.}
     \label{fig:expand_etheta}
 \end{figure}
-In this chapter we will outline how to calculate the correction of the correlation functions for a finite survey with a potentially correlated distribution of depth between pointings. Essentially, this boils down to the calculation of $\mathcal{P}_{mn}^{ij}(\theta)$ from Eq.~\eqref{eq:def_xiobs}. We calculate this weighting by the geometrical probability that a pair of galaxies of separation $\theta$ is of quantiles $m$ and $n$, $\mathcal{P}(m,n|\theta)$, weighted by the respective number of galaxies in the quantiles $N_m^i,N_n^j$: \begin{equation}
+In this appendix we will outline how to calculate the correction of the correlation functions for a finite survey with a potentially correlated distribution of depth between pointings. Essentially, this boils down to the calculation of $\mathcal{P}_{mn}^{ij}(\theta)$ from Eq.~\eqref{eq:def_xiobs}. We calculate this weighting by the geometrical probability that a pair of galaxies of separation $\theta$ is of quantiles $m$ and $n$, $\mathcal{P}(m,n|\theta)$, weighted by the respective number of galaxies in the quantiles $N_m^i,N_n^j$: \begin{equation}
 \mathcal{P}_{mn}^{ij}(\theta) = N_m^iN_n^j\mathcal{P}(m,n|\theta)\, .
 \label{eq:pmnij1}
 \end{equation}
