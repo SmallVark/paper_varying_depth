@@ -135,7 +135,7 @@ In accordance with the definition of the shear power spectrum \begin{equation}
 where $\hat{\gamma}$ denotes the Fourier transform of $\gamma$, we define the observed power spectrum via \begin{equation}
 P^{\text{obs}}(\b\ell) \equiv \frac{1}{(2\pi)^2}\int \d^2 \ell'\,  \la \gammaoh(\b \ell)\, \gammaoh {}^*(\b \ell')\ra \, .
 \end{equation}
-Note that due to the depth-function, both the assumptions of homogeneity and isotropy break down, which means that we can neither assume isotropy in the power spectrum, nor can we assume that $\la \gammaoh(\b \ell) \gammaoh {}^*(\b \ell')\ra$ vanishes for $\b\ell\neq\b\ell'$.
+Note that due to the depth-function, both the assumptions of homogeneity and isotropy break down, which means that we can neither assume isotropy in the power spectrum, nor can we assume that $\la \gammaoh(\b \ell) \gammaoh {}^*(\b \ell')\ra$ vanishes for $\b\ell\neq\b\ell'$. This estimator provides a natural extension to the definition of the regular power spectrum and, in the case of a homogeneous depth distribution, reduces back to the original estimator.
 To model a constant depth on each individual pointing, $\b \alpha$, we can choose random variables, $w_{\b \alpha}$, that only need to satisfy $\langle w_{\b \alpha}\rangle=0$. As we assume an infinite number of pointings, $\b\alpha$ can assume any two-dimensional integer value $\mathbb{Z}^2$ and we can parametrize $w(\b\theta)$ as 
 \begin{equation}
 w(\b \theta) = \sum_{\b \alpha \in \mathbb{Z}^2} w_{\b \alpha} \Xi(\b \theta-L\b \alpha)\, ,
@@ -315,7 +315,7 @@ W_n \propto \sqrt{ \la\gamma_{\rm{t}}\gamma_{\rm{t}}\ra (\theta_{\rm{ref}}) + \l
 \end{equation}
 where the $\xi_{+,nn}^{ij}(\theta_{\rm{ref}})$ denotes the model correlation function defined in Sect. \ref{sec:xipm_semianalytic}, evaluated at a characteristic scale $\theta_{\rm{ref}}$, that needs to be chosen.
 
-While the first method suffers from the fact that the power-law index only holds for sources of redshifts $1\lesssim z \lesssim 2$, the second method is sensitive to the angular range $\theta_{\rm{ref}}$, at which the shear correlation functions are evaluated, which is fairly arbitrary. In our case, we chose $\theta_{\rm{ref}}\approx 11'$, which is roughly in the logarithmic middle between the range of the correlation functions, $[0.\!'5,300']$. The choice of other values for $\theta_{\rm{ref}}$ leads to a different amplitude of the change $\xi_\pm/\xi_\pm^{\rm{obs}}$, but does not affect its shape. In particular, the highest amplitude of the change is at $\theta_{\rm{ref}}=0.\!'5$.
+While the first method suffers from the fact that the power-law index only holds for sources of redshifts $1\lesssim z \lesssim 2$, the second method is sensitive to the angular range $\theta_{\rm{ref}}$, at which the shear correlation functions are evaluated, which is fairly arbitrary. In our case, we chose $\theta_{\rm{ref}}\approx 11'$, which is roughly in the logarithmic middle between the range of the correlation functions, $[0.\!'5,300']$. The choice of other values for $\theta_{\rm{ref}}$ leads to a different amplitude of the change $\xi_\pm/\xi_\pm^{\rm{obs}}$, but does not affect its shape. Generally, a smaller $\theta_{\rm{ref}}$ leads to a stronger effect, in particular, the highest amplitude of the change is at $\theta_{\rm{ref}}=0.\!'5$.
 
 \subsection{Effect on the shear correlation functions}
 
