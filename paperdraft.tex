@@ -422,9 +422,9 @@ Here we will perform the calculation for the observed power spectrum $P^{\text{o
 \begin{align}
 & \la \gammaoh(\b \ell) \gammaoh {}^*(\b \ell')\ra\nonumber\\
  &\qquad = \la\int\text{d}^2 \theta\int\text{d}^2 \theta'\,W(\b \theta)W(\b \theta')\gamma(\b \theta)\gamma^*(\b \theta')\exp(\i \b \ell\b \theta-\i \b \ell'\b \theta')\ra\nonumber\\
- &\qquad = \la\int\text{d}^2 \theta\int\text{d}^2 \theta'\,W(\b \theta)W(\b \theta')\exp(\i \b \ell\b \theta-\i \b \ell'\b \theta') \int \frac{\text{d}^2 k}{(2\pi)^2}\int \frac{\text{d}^2 \ell}{(2\pi)^2}\, \hat{\gamma}(\b k)\hat{\gamma}^*(\b \ell)\exp(-\i \b k\b \theta+\i \b \ell\b \theta')\ra \nonumber\\
-&\qquad = \la \int \text{d}^2 \theta \int \text{d}^2 \theta' \int \frac{\text{d}^2 k}{(2\pi)^2} \int \frac{\text{d}^2 \ell}{(2\pi)^2}\, P(\b k)(2\pi)^2 \delta(\b k-\b \ell) \exp[\i (\b \ell\b \theta-\b \ell'\b \theta'-\b k\b \theta+\b \ell\b \theta')]W(\b \theta)W(\b \theta')\ra \nonumber\\
-  &\qquad = \la \int \frac{\text{d}^2 k}{(2\pi)^2} \, P(\b k) \int \text{d}^2 \theta\, W(\b \theta)\exp[\i\b \theta(\b \ell-\b k)]\int \text{d}^2 \theta'\, W(\b \theta') \exp[-\i\b \theta(\b \ell'-\b k)] \ra \nonumber\\
+ &\qquad = \la\int\text{d}^2 \theta\int\text{d}^2 \theta'\,W(\b \theta)W(\b \theta')\exp(\i \b \ell\b \theta-\i \b \ell'\b \theta') \int \frac{\text{d}^2 k}{(2\pi)^2}\int \frac{\text{d}^2 k'}{(2\pi)^2}\, \hat{\gamma}(\b k)\hat{\gamma}^*(\b k')\exp(-\i \b k\b \theta+\i \b k'\b \theta')\ra \nonumber\\
+&\qquad = \la \int \text{d}^2 \theta \int \text{d}^2 \theta' \int \frac{\text{d}^2 k}{(2\pi)^2} \int \frac{\text{d}^2 k'}{(2\pi)^2}\, P(\b k)(2\pi)^2 \delta(\b k-\b k') \exp[\i (\b \ell\b \theta-\b \ell'\b \theta'-\b k\b \theta+\b k'\b \theta')]W(\b \theta)W(\b \theta')\ra \nonumber\\
+  &\qquad = \la \int \frac{\text{d}^2 k}{(2\pi)^2} \, P(\b k) \int \text{d}^2 \theta\, W(\b \theta)\exp[\i\b \theta(\b \ell-\b k)]\int \text{d}^2 \theta'\, W(\b \theta') \exp[-\i\b \theta'(\b \ell'-\b k)] \ra \nonumber\\
   &\qquad = \la \int\frac{\text{d}^2 k}{(2\pi)^2} \, P(\b k)\widehat{W}(\b \ell-\b k)\widehat{W}^* (\b \ell'-\b k)\ra
 \end{align}
 It is important to keep in mind that the ensemble averages of the weight function are independent of the ensemble averages of the shear values, meaning $\la W(\b \theta)\gamma(\b \theta)\ra = \la W(\b \theta)\ra \la \gamma(\b \theta)\ra$. We can define $W(\b \theta)=1+w(\b\theta)$ with $\la w(\b \theta)\ra = 0$, which leads to the expession
