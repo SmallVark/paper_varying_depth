@@ -214,18 +214,19 @@ It is interesting to note that $\xi^{ij}_\pm = \xi_\pm^{ij,\rm{obs}}$ holds wher
 
 \section{A semi-analytic model}
 \label{sec:xipm_semianalytic}
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{images/cov_nz_meanz.pdf}
-\caption{Weighted number of galaxies $N$ and average redshift $\la z\ra$ in the KiDS+VIKING-450 survey \citep[KV450,][]{Wright:2018} in pointings of different depth for each of the five tomographic bins used in H18. Each colour corresponds to one redshift bin of H18. A single point represents one quantile of the respective redshift bin, where the fainter points denote pointings of shallower depth.}
-\label{fig:nz_of_meanz}
-\end{figure}
 The previously derived analytic model describes how varying depth between pointings modifies the correlation function due to the correlation between number density and the average redshift of source galaxies. While this model serves as an intuitive first approximation, it completely ignores any effects from the large scale structure (LSS) between the closest and the most distant galaxy. Therefore, we do not expect this model to yield accurate, quantitative results for cosmic shear surveys.
 
 Below we derive a more sophisticated model that includes the effects of the LSS. While it is computationally more expensive, it improves the accuracy of the model for cosmic shear surveys, which are sensitive to the exact redshift distributions of sources as well as the underlying cosmology.
 
 An inspection of KiDS-data showed that the redshift distribution of sources is highly correlated with the limiting magnitude in the $r$-band. We thus chose to separate the survey into 10 quantiles, sorted by $r$-band depth, i.e. if a pointing had a shallower depth than 90\% of the other pointings, it would belong to the first quantile, and so on. For each quantile $m$ and each tomographic redshift bin $i$ we can extract a weighted number of galaxies $N^i_m$ and a source redshift distribution $p^i_m(z)$ following the direct spectroscopic calibration method of H18. In Fig.~\ref{fig:nz_of_meanz} the average redshift and weighted number of galaxies are plotted for each quantile of each redshift bin, whereas a selection of source redshift distributions is depicted in Fig.~\ref{fig:nofz_quantiles}. A table of the limiting magnitudes for each quantile can be found in Tab.~\ref{tab:maglim}.
 %
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{images/cov_nz_meanz.pdf}
+\caption{Weighted number of galaxies $N$ and average redshift $\la z\ra$ in the KiDS+VIKING-450 survey \citep[KV450,][]{Wright:2018} in pointings of different depth for each of the five tomographic bins used in H18. Each colour corresponds to one redshift bin of H18. A single point represents one quantile of the respective redshift bin, where the fainter points denote pointings of shallower depth.}
+\label{fig:nz_of_meanz}
+\end{figure}
+
 \begin{figure}
 \centering
 \includegraphics[trim = {1cm 0 1.2cm 0.1cm}, clip, width=\linewidth]{images/dist_z_all.pdf}
