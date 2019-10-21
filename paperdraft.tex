@@ -4,6 +4,7 @@
 \pdfoutput=1
 
 \usepackage[hidelinks]{hyperref}
+% \usepackage[section]{placeins}
 
 
 \renewcommand{\rm}{\mathrm}
@@ -471,15 +472,11 @@ P^{\text{obs}}(\b \ell) = & P(\b \ell)+\int \frac{\text{d}^2\b \ell'}{(2\pi)^2} 
  = & P(\b \ell) + \la w^2\ra \int\frac{\text{d}^2\b k}{(2\pi)^2}\, \widehat{\Xi}(\b \ell-\b k)P(\b k) \sum_{\b \alpha}\exp[-\i L (\b \ell - \b k) \cdot \b \alpha]\,\Xi(L\b \alpha) \nonumber\\
  = & P(\b \ell) + \la w^2\ra \int\frac{\text{d}^2\b k}{(2\pi)^2}\,\widehat{\Xi}(\b \ell-\b k)P(\b k)\, ,
 \end{align}
-which is a convolution of the power spectrum and the 2-dimensional sinc function \eqref{eq:sinc}.
-
-Note that due to the statistical inhomogeneity of the field, many usually adapted conventions fail. In particular, $\langle \gamma(\theta)\gamma^*(\theta')\rangle$ does not only depend on the separation vector $\theta'-\theta$, but also on the position $\theta$. For example, the Fourier transform of the observed power spectrum yields $\langle \gamma(\b 0)\gamma^*(\b\theta)\rangle$, but not the shear correlation function.
+which is a convolution of the power spectrum and the 2-dimensional sinc function \eqref{eq:sinc}. Note that due to the statistical inhomogeneity of the field, many usually adapted conventions fail. In particular, $\langle \gamma(\theta)\gamma^*(\theta')\rangle$ does not only depend on the separation vector $\theta'-\theta$, but also on the position $\theta$. For example, the Fourier transform of the observed power spectrum yields $\langle \gamma(\b 0)\gamma^*(\b\theta)\rangle$, but not the shear correlation function.
 \label{sec:calc of PS}
 
 \subsection{The function $E(\theta)$}
 \label{sec:model_e}
-When computing the shear correlation between a pair of galaxies, it is of central importance whether those two galaxies lie in the same pointing or not. We want to model the probability that a pair of galaxies with separation $\b\theta$ lie in the same pointing by the function $E(\b\theta)$, which we will derive here:
-
 {
 \def\vec{\b}
 \begin{figure}
@@ -493,6 +490,7 @@ When computing the shear correlation between a pair of galaxies, it is of centra
     \label{fig:explain_etheta}
 \end{figure}
 }
+When computing the shear correlation between a pair of galaxies, it is of central importance whether those two galaxies lie in the same pointing or not. We want to model the probability that a pair of galaxies with separation $\b\theta$ lie in the same pointing by the function $E(\b\theta)$, which we will derive here:
 Given one square field of length $L$ (in our case $L=60\arcmin$) and a separation vector $\b\theta = (\theta_1,\theta_2)$, without loss of generality we can assume $\theta_1,\theta_2\geq 0$. The dashed square in Fig.~\ref{fig:explain_etheta} represents all possible positions that the first galaxy can take, such that the second galaxy is still within the same pointing. The volume of this square equals \begin{equation}
 V(|\b\theta|,\phi)  = \big[L-|\b\theta|\cos(\phi)\big]\,\big[L-|\b\theta|\sin(\phi)\big]\, ,
 \end{equation} where $\phi$ represents the polar angle of the vector $\b\theta$. The function $E(\b\theta)$ then simply equals $V(|\b\theta|,\phi)/L^2$. To exclude negative volumes (which could occur when $|\b\theta|>1$ holds), we need to add the Heaviside step function $\mathcal{H}$:
@@ -640,7 +638,7 @@ E_{01}(\theta) = & \begin{cases}
 \label{fig:eoftheta_sim}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!htb]
 \centering
 \sidecaption
 \includegraphics[width = 0.6\linewidth]{images/eab.pdf}
@@ -649,7 +647,7 @@ E_{01}(\theta) = & \begin{cases}
 \end{figure}
 Naturally, to calculate those functions for all possible combinations would be rather tedious, however they are simple to determine numerically (compare Fig.~\ref{fig:eoftheta_sim}). A plot of these functions can be found in Fig.~\ref{fig:eab}.
 
-\begin{figure}
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.9\linewidth]{images/finite_footprint.pdf}
 \caption{$2\sigma$-contours of the corrections for the correlation functions for a $100\,\rm{deg}^2$ field (blue), a $450\,\rm{deg}^2$ field (red) and a $1000\,\rm{deg}^2$ field (green). As can be seen, the variance of the variation is small for a $450\,\rm{deg}^2$ field and barely noticeable for a $1000\,\rm{deg}^2$ field.}
@@ -658,8 +656,9 @@ Naturally, to calculate those functions for all possible combinations would be r
 
 We sample several realizations of a random depth-distribution for a $100\,\rm{deg}^2$-field, a $450\,\rm{deg}^2$-field and a $1000\,\rm{deg}^2$-field. For each realization we extract the Function $\mathcal{P}^*(m,n|a,b)$ and, using Eq.~\eqref{eq:pmntheta}, calculate the ratio $\xi_\pm^{\rm{obs}}/\xi_\pm$. Afterwards, we compute the variance of these ratios. As can be seen from Fig. \ref{fig:finite_footprint}, the effect is quite significant for a $100\,\rm{deg}^2$-field, but almost negligible for a $1000\,\rm{deg}^2$-field. This leads to the assumption that both for the KV450 survey as well as for all next-generation cosmic shear surveys, finite field effects do not need to be accounted for. However, if the distribution of depth is correlated in the surveys, that might have a noticeable impact on the results.
 
+% \clearpage
 \section{Additional Figures and Tables}
-\begin{table}[h]
+\begin{table}[!htb]
 \centering
 \caption{Limiting magnitudes for the ten quantiles}
 \label{tab:maglim}
@@ -681,13 +680,13 @@ quantile & $r$-band depth \\
 \hline
 \end{tabular}
 \end{table}
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.9\linewidth]{images/xis_all_cutoff.pdf}
 \caption{The same Figure as Fig.~\ref{fig:all_xis}, but in this case the redshift distributions $p_n^i(z)$ were set equal to zero for $z>2$ in the models to mimick the redshift-cutoff in the mocks. Any residual differences are explained by the sub-pointing depth variations that are accounted for in the mocks, but not in the models. These variations slightly reduce the effect of varying depth.}
 \label{fig:redshift_cutoff}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.9\linewidth]{images/compare_cosmos.pdf}
 \caption{Correction to the correlation functions in varying cosmologies. Depicted here are three flat sample cosmologies, where values within the 98\% CL of the KV450 survey were sampled.}
