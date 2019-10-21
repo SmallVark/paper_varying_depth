@@ -1,5 +1,9 @@
 \documentclass{aa}  
-\usepackage{hyperref}
+
+%\documentclass[referee]{aa}
+\pdfoutput=1
+
+\usepackage[hidelinks]{hyperref}
 
 
 \renewcommand{\rm}{\mathrm}
@@ -335,7 +339,7 @@ The simulations and the models seem to be in relatively good agreement, but ther
 
 An additional difference between the models and simulations is that in the models we neglect boundary effects and the sample-variance of the depth-distribution between pointings, whereas the simulations were performed with the KiDS-1000 footprint. In App.~\ref{sec:expand_eoftheta} we develop a model to extract the correction $\xi_\pm^{ij}/\xi_{\pm}^{ij,\rm{obs}}$ for a specific survey footprint. With this model we can estimate the impact of a correlated distribution of depth, the sample variance of the depth-distribution and boundary effects. We find that for a square footprint of $450\,\rm{deg}^2$ or $1000\,\rm{deg}^2$ with an uncorrelated depth-distribution, finite field effects are negligible.
 
-\textcolor{blue}{In general, the semi-analytic model predicts a stronger effect than the mocks. This is due to the fact that the mocks are subject to a redshift-cutoff at $z=2$, meaning that they do not take the high-redshift tail of galaxies into account. When the same cutoff is applied to the models, the agreement on sub-pointing scales is striking (compare Fig.~\ref{fig:redshift_cutoff} in the Appendix).}
+\textcolor{blue}{In general, the semi-analytic model predicts a stronger effect than the mocks. This is due to the fact that the mocks are subject to a redshift-cutoff at $z=2$, meaning that they do not take the high-redshift tail of galaxies into account. This is of particular importance in the first redshift bin, where this feature is especially pronounced (compare Fig.~\ref{fig:nofz_quantiles}). When the same cutoff is applied to the models, the agreement on sub-pointing scales is striking (compare Fig.~\ref{fig:redshift_cutoff} in the Appendix). In particular this means that the mocks slightly underestimate the effect of varying depth.}
 
 \begin{figure*}
 \begin{subfigure}{0.45\textwidth}
@@ -400,19 +404,13 @@ The variations in depth will also affect the covariance of a survey, both becaus
 
 \begin{acknowledgements}
 The results in this paper are based on observations made with ESO Telescopes at the La Silla Paranal Observatory under programme IDs 177.A-3016, 177.A-3017, 177.A-3018 and 179.A-2004, and on data products produced by the KiDS consortium. The KiDS production team acknowledges support from: Deutsche Forschungsgemeinschaft, ERC, NOVA and NWO-M grants; Target; the University of Padova, and the University Federico II (Naples).
-\\
 We acknowledge support from the European Research Council under grant numbers 770935 (HH,JLvdB) and 647112 (CH,MA,CL).
-\\
+SH acknowledges support from the German Research Foundation (DFG SCHN 342/13).
 H. Hildebrandt is supported by a Heisenberg grant of the Deutsche Forschungsgemeinschaft (Hi 1495/5-1).
-\\
 CH acknowledges support from the Max Planck Society and the Alexander von Humboldt Foundation in the framework of the Max Planck-Humboldt Research Award endowed by the Federal Ministry of Education and Research. 
-\\
 KK acknowledges support by the Alexander von Humboldt Foundation.
-\\
 TT acknowledges funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sk{l}odowska-Curie grant agreement No 797794.
-\\
 Some of the results in this paper have been derived using the HEALPix \citep{2005ApJ...622..759G} package.
-\\
 This research has made use of NASA's Astrophysics Data System and adstex (\url{https://github.com/yymao/adstex}).
 \\
 \emph{Author contributions:} All authors contributed to the development and writing of this paper. The authorship list is given in two groups: the lead authors (SH, PS, HHi) followed by key contributors to the scientific analysis in alphabetical order.
