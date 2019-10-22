@@ -1,6 +1,6 @@
 \documentclass{aa}  
 
-%\documentclass[referee]{aa}
+% \documentclass[referee]{aa}
 \pdfoutput=1
 
 \usepackage[hidelinks]{hyperref}
@@ -80,16 +80,16 @@ Leiden Observatory, Leiden University, Niels Bohrweg 2, 2333 CA Leiden, The Neth
 \\ \email{sven@astro.uni-bonn.de, peter@astro.uni-bonn.de}
              }
 
-   \date{Received XXX; accepted XXX}
+   \date{Received 21 October 2019; accepted XXX}
 
   \abstract
-   {We present a semi-analytic model for the shear two-point correlation function of a cosmic shear survey with non-uniform depth. Ground-based surveys are subject to depth variations that primarily arise through varying atmospheric conditions. For a survey like the Kilo-Degree Survey (KiDS), we find that the measured depth variation increases the amplitude of the observed shear correlation function at the level of a few percent out to degree-scales, relative to the assumed uniform-depth case. The impact on the inferred cosmological parameters is shown to be insignificant for a KiDS-like survey. For next-generation cosmic shear experiments, however, we conclude that variable depth should be accounted for. \textcolor{blue}{\href{https://docs.google.com/document/d/13j7fUE8jrK5HOVbf4p0HdQs6c14jbWtm9Yq8CtLZCK4/edit?usp=sharing}{[Link to the current google doc]}}}
+   {We present a semi-analytic model for the shear two-point correlation function of a cosmic shear survey with non-uniform depth. Ground-based surveys are subject to depth variations that primarily arise through varying atmospheric conditions. For a survey like the Kilo-Degree Survey (KiDS), we find that the measured depth variation increases the amplitude of the observed shear correlation function at the level of a few percent out to degree-scales, relative to the assumed uniform-depth case. The impact on the inferred cosmological parameters is shown to be insignificant for a KiDS-like survey. For next-generation cosmic shear experiments, however, we conclude that variable depth should be accounted for.}
 
-   \keywords{gravitational lensing --
-                weak lensing --
-                cosmic shear
-               }
-
+   % \keywords{gravitational lensing --
+   %              weak lensing --
+   %              cosmic shear
+   %             }
+   \keywords{gravitational lensing: weak -- cosmology: miscellaneous}
    \maketitle
 
 %
@@ -340,7 +340,7 @@ The simulations and the models seem to be in relatively good agreement, but ther
 
 An additional difference between the models and simulations is that in the models we neglect boundary effects and the sample-variance of the depth-distribution between pointings, whereas the simulations were performed with the KiDS-1000 footprint. In App.~\ref{sec:expand_eoftheta} we develop a model to extract the correction $\xi_\pm^{ij}/\xi_{\pm}^{ij,\rm{obs}}$ for a specific survey footprint. With this model we can estimate the impact of a correlated distribution of depth, the sample variance of the depth-distribution and boundary effects. We find that for a square footprint of $450\,\rm{deg}^2$ or $1000\,\rm{deg}^2$ with an uncorrelated depth-distribution, finite field effects are negligible.
 
-\textcolor{blue}{In general, the semi-analytic model predicts a stronger effect than the mocks. This is due to the fact that the mocks are subject to a redshift-cutoff at $z=2$, meaning that they do not take the high-redshift tail of galaxies into account. This is of particular importance in the first redshift bin, where this feature is especially pronounced (compare Fig.~\ref{fig:nofz_quantiles}). When the same cutoff is applied to the models, the agreement on sub-pointing scales is striking (compare Fig.~\ref{fig:redshift_cutoff} in the Appendix). In particular this means that the mocks slightly underestimate the effect of varying depth.}
+In general, the semi-analytic model predicts a stronger effect than the mocks. This is due to the fact that the mocks are subject to a redshift-cutoff at $z=2$, meaning that they do not take the high-redshift tail of galaxies into account. This is of particular importance in the first redshift bin, where this feature is especially pronounced (compare Fig.~\ref{fig:nofz_quantiles}). When the same cutoff is applied to the models, the agreement on sub-pointing scales is striking (compare Fig.~\ref{fig:redshift_cutoff} in the Appendix). In particular this means that the mocks slightly underestimate the effect of varying depth.
 
 \begin{figure*}
 \begin{subfigure}{0.45\textwidth}
@@ -472,7 +472,7 @@ P^{\text{obs}}(\b \ell) = & P(\b \ell)+\int \frac{\text{d}^2\b \ell'}{(2\pi)^2} 
  = & P(\b \ell) + \la w^2\ra \int\frac{\text{d}^2\b k}{(2\pi)^2}\, \widehat{\Xi}(\b \ell-\b k)P(\b k) \sum_{\b \alpha}\exp[-\i L (\b \ell - \b k) \cdot \b \alpha]\,\Xi(L\b \alpha) \nonumber\\
  = & P(\b \ell) + \la w^2\ra \int\frac{\text{d}^2\b k}{(2\pi)^2}\,\widehat{\Xi}(\b \ell-\b k)P(\b k)\, ,
 \end{align}
-which is a convolution of the power spectrum and the 2-dimensional sinc function \eqref{eq:sinc}. Note that due to the statistical inhomogeneity of the field, many usually adapted conventions fail. In particular, $\langle \gamma(\theta)\gamma^*(\theta')\rangle$ does not only depend on the separation vector $\theta'-\theta$, but also on the position $\theta$. For example, the Fourier transform of the observed power spectrum yields $\langle \gamma(\b 0)\gamma^*(\b\theta)\rangle$, but not the shear correlation function.
+which is a convolution of the power spectrum and the 2-dimensional sinc function \eqref{eq:sinc}. Note that due to the statistical inhomogeneity of the field, many usually adapted conventions fail. In particular, $\langle \gamma(\b \theta)\gamma^*(\b \theta')\rangle$ does not only depend on the separation vector $\b \theta'-\b \theta$, but also on the position $\b \theta$. For example, the Fourier transform of the observed power spectrum yields $\langle \gamma(\b 0)\gamma^*(\b\theta)\rangle$, but not the shear correlation function.
 \label{sec:calc of PS}
 
 \subsection{The function $E(\theta)$}
